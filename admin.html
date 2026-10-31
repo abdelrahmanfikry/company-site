@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>لوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- شاشة الدخول -->
+  <div id="login" class="login">
+    <div class="login-card">
+      <div class="logo">🌾</div>
+      <h1>لوحة تحكم الموقع</h1>
+      <p class="hint">بيانات الربط بـ GitHub (بتتحفظ على الجهاز ده بس).</p>
+      <label>اسم الحساب على GitHub (Owner)<input id="owner" dir="ltr" placeholder="my-company"></label>
+      <label>اسم المستودع (Repository)<input id="repo" dir="ltr" placeholder="my-company.github.io"></label>
+      <label>الفرع (Branch)<input id="branch" dir="ltr" value="main"></label>
+      <label>مفتاح الدخول (Token)<input id="token" dir="ltr" type="password" placeholder="github_pat_…"></label>
+      <button class="btn primary" id="connect">دخول</button>
+      <div class="or"><span>أو</span></div>
+      <button class="btn" id="offline">تعديل بدون إنترنت (تنزيل ملف البيانات يدوياً)</button>
+      <p class="err" id="loginErr"></p>
+    </div>
+  </div>
+
+  <!-- اللوحة -->
+  <div id="panel" class="panel hidden">
+    <aside class="side">
+      <div class="side-head">🌾 <b>لوحة التحكم</b></div>
+      <button class="tab" data-view="settings">⚙️ الإعدادات العامة</button>
+      <div class="side-title">الأقسام <small>(اسحب للترتيب)</small></div>
+      <div id="secList"></div>
+      <div class="add-sec">
+        <select id="newType"></select>
+        <button class="btn primary sm" id="addSec">+ إضافة قسم</button>
+      </div>
+      <div class="side-foot">
+        <button class="btn sm" id="exportBtn">⬇ نسخة احتياطية</button>
+        <label class="btn sm">⬆ استرجاع<input type="file" id="importFile" accept=".json" hidden></label>
+        <button class="btn sm ghost" id="logout">خروج</button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="bar">
+        <button class="btn sm menu-btn" id="menuBtn">☰</button>
+        <span id="status" class="status"></span>
+        <div class="bar-actions">
+          <button class="btn" id="previewBtn">👁 معاينة</button>
+          <button class="btn primary" id="saveBtn">🚀 حفظ ونشر</button>
+        </div>
+      </header>
+      <div id="editor" class="editor"></div>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+
+  <script src="schema.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

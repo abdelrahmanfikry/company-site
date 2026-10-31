@@ -1,0 +1,194 @@
+{
+  "settings": {
+    "name": { "ar": "الوادي الأخضر", "en": "Green Valley" },
+    "subtitle": { "ar": "للاستيراد والتصدير", "en": "Import & Export" },
+    "logo": "",
+    "favicon": "",
+    "defaultLang": "ar",
+    "colors": { "primary": "#1f5130", "accent": "#d4a017", "dark": "#0f1f15", "light": "#f8f4ea" },
+    "whatsapp": "201000000000",
+    "whatsappMessage": { "ar": "السلام عليكم، أريد الاستفسار عن منتجاتكم", "en": "Hello, I'd like to ask about your products" },
+    "phones": [
+      { "label": { "ar": "المبيعات", "en": "Sales" }, "number": "+20 100 000 0000" },
+      { "label": { "ar": "التصدير", "en": "Export Desk" }, "number": "+20 111 000 0000" },
+      { "label": { "ar": "خدمة العملاء", "en": "Customer Service" }, "number": "+20 122 000 0000" }
+    ],
+    "email": "info@example.com",
+    "address": { "ar": "القاهرة، جمهورية مصر العربية", "en": "Cairo, Egypt" },
+    "workHours": { "ar": "السبت – الخميس: 9 ص – 6 م", "en": "Sat – Thu: 9 AM – 6 PM" },
+    "mapEmbed": "https://www.google.com/maps?q=Cairo%2C%20Egypt&output=embed",
+    "social": { "facebook": "#", "instagram": "#", "linkedin": "#", "x": "", "youtube": "", "tiktok": "" },
+    "seoDescription": { "ar": "شركة متخصصة في تصدير واستيراد المنتجات الزراعية الطازجة بأعلى معايير الجودة", "en": "Exporter and importer of premium fresh agricultural produce" },
+    "footerText": { "ar": "من مزارعنا إلى موائد العالم.", "en": "From our farms to the world's tables." }
+  },
+  "sections": [
+    {
+      "id": "home", "type": "hero", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "الرئيسية", "en": "Home" },
+      "slides": [
+        { "image": "hero-1.svg", "kicker": { "ar": "منتجات زراعية مصرية", "en": "Premium Egyptian Produce" }, "title": { "ar": "من الحقل إلى العالم بجودة لا تُضاهى", "en": "From the Field to the World, Uncompromised" }, "text": { "ar": "نصدّر الخضروات والفواكه الطازجة إلى أكثر من 30 دولة بسلسلة تبريد متكاملة وشهادات جودة دولية.", "en": "Fresh fruits and vegetables exported to 30+ countries with a full cold chain and international certifications." } },
+        { "image": "hero-2.svg", "kicker": { "ar": "زراعة مستدامة", "en": "Sustainable Farming" }, "title": { "ar": "مزارع مختارة بعناية… ومحاصيل في موسمها", "en": "Hand-picked Farms, Harvested in Season" }, "text": { "ar": "نتعاقد مع مزارع معتمدة ونتابع المحصول من البذرة حتى التعبئة.", "en": "We contract certified farms and follow every crop from seed to packing." } },
+        { "image": "hero-3.svg", "kicker": { "ar": "لوجستيات عالمية", "en": "Global Logistics" }, "title": { "ar": "شحنتك في موعدها… أينما كنت", "en": "Your Shipment, On Time, Anywhere" }, "text": { "ar": "حاويات مبرّدة، تخليص جمركي، ومتابعة لحظية حتى ميناء الوصول.", "en": "Reefer containers, customs clearance and live tracking to the port of discharge." } }
+      ],
+      "buttons": [
+        { "label": { "ar": "تصفّح منتجاتنا", "en": "Browse Products" }, "link": "#products", "style": "primary" },
+        { "label": { "ar": "اطلب عرض سعر", "en": "Request a Quote" }, "link": "#contact", "style": "ghost" }
+      ],
+      "autoplay": 6
+    },
+    {
+      "id": "stats", "type": "stats", "visible": true, "showInNav": false,
+      "navLabel": { "ar": "أرقامنا", "en": "Numbers" },
+      "items": [
+        { "value": 25, "suffix": "+", "label": { "ar": "سنة خبرة", "en": "Years of Experience" }, "icon": "🏆" },
+        { "value": 30, "suffix": "+", "label": { "ar": "دولة نصدّر لها", "en": "Export Countries" }, "icon": "🌍" },
+        { "value": 12000, "suffix": "+", "label": { "ar": "حاوية تم شحنها", "en": "Containers Shipped" }, "icon": "🚢" },
+        { "value": 450, "suffix": "+", "label": { "ar": "عميل حول العالم", "en": "Clients Worldwide" }, "icon": "🤝" }
+      ]
+    },
+    {
+      "id": "about", "type": "about", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "من نحن", "en": "About" },
+      "kicker": { "ar": "قصتنا", "en": "Our Story" },
+      "title": { "ar": "خبرة ربع قرن في تجارة المحاصيل", "en": "A Quarter Century in Produce Trading" },
+      "text": { "ar": "بدأنا كمزرعة عائلية صغيرة، واليوم نحن من أبرز مصدّري المنتجات الزراعية في المنطقة. نؤمن أن الجودة تبدأ من التربة، لذلك نشرف على كل مرحلة: الزراعة، الحصاد، الفرز، التعبئة، والتبريد حتى تصل الشحنة إلى عميلنا كما خرجت من الحقل.", "en": "We started as a small family farm and today we are among the region's leading produce exporters. Quality starts in the soil, so we oversee every step — growing, harvesting, grading, packing and cooling — until the shipment reaches our client exactly as it left the field." },
+      "image": "about.svg",
+      "badge": { "ar": "معتمدون دولياً", "en": "Internationally Certified" },
+      "bullets": [
+        { "text": { "ar": "محطات تعبئة وتبريد خاصة", "en": "Own packing & cooling stations" } },
+        { "text": { "ar": "فريق جودة في كل مرحلة", "en": "QC team at every stage" } },
+        { "text": { "ar": "تتبّع كامل لكل شحنة", "en": "Full traceability for every lot" } },
+        { "text": { "ar": "أسعار تنافسية وعقود موسمية", "en": "Competitive pricing & seasonal contracts" } }
+      ]
+    },
+    {
+      "id": "products", "type": "products", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "المنتجات", "en": "Products" },
+      "kicker": { "ar": "ما نقدّمه", "en": "What We Offer" },
+      "title": { "ar": "منتجاتنا", "en": "Our Products" },
+      "text": { "ar": "تشكيلة واسعة من المنتجات الطازجة والمجففة حسب الموسم ومواصفات العميل.", "en": "A wide range of fresh and dried produce, by season and to client specs." },
+      "showQuoteButton": true,
+      "items": [
+        { "name": { "ar": "برتقال فالنسيا", "en": "Valencia Oranges" }, "category": { "ar": "فواكه", "en": "Fruits" }, "image": "p-citrus.svg", "description": { "ar": "برتقال عصير ومائدة بأحجام 48–113، تعبئة كرتون 15 كجم.", "en": "Juice & table oranges, sizes 48–113, 15 kg cartons." }, "season": { "ar": "يناير – يونيو", "en": "Jan – Jun" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "رمان وندرفل", "en": "Wonderful Pomegranates" }, "category": { "ar": "فواكه", "en": "Fruits" }, "image": "p-pomegranate.svg", "description": { "ar": "رمان أحمر داكن بنسبة سكر عالية.", "en": "Deep red pomegranates with high brix." }, "season": { "ar": "سبتمبر – ديسمبر", "en": "Sep – Dec" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "عنب فليم", "en": "Flame Seedless Grapes" }, "category": { "ar": "فواكه", "en": "Fruits" }, "image": "p-grapes.svg", "description": { "ar": "عنب بدون بذور، تعبئة بانيت وأكياس.", "en": "Seedless grapes, punnets and bags." }, "season": { "ar": "مايو – يوليو", "en": "May – Jul" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "بطاطس", "en": "Potatoes" }, "category": { "ar": "خضروات", "en": "Vegetables" }, "image": "p-potato.svg", "description": { "ar": "أصناف سبونتا وديامونت، شكائر 25 كجم.", "en": "Spunta & Diamant, 25 kg bags." }, "season": { "ar": "ديسمبر – مايو", "en": "Dec – May" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "بصل أحمر", "en": "Red Onions" }, "category": { "ar": "خضروات", "en": "Vegetables" }, "image": "p-onion.svg", "description": { "ar": "بصل أحمر وذهبي بأحجام مختلفة.", "en": "Red & golden onions in all calibers." }, "season": { "ar": "مارس – يوليو", "en": "Mar – Jul" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "تمور مجدول", "en": "Medjool Dates" }, "category": { "ar": "مجففات", "en": "Dried" }, "image": "p-dates.svg", "description": { "ar": "تمور فاخرة معبأة حسب الطلب.", "en": "Premium dates, custom packing." }, "season": { "ar": "طوال العام", "en": "All Year" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "أعشاب طبية وعطرية", "en": "Herbs & Spices" }, "category": { "ar": "أعشاب", "en": "Herbs" }, "image": "p-herbs.svg", "description": { "ar": "نعناع، بقدونس، كزبرة، شمر — مجففة أو طازجة.", "en": "Mint, parsley, coriander, fennel — fresh or dried." }, "season": { "ar": "طوال العام", "en": "All Year" }, "origin": { "ar": "مصر", "en": "Egypt" } },
+        { "name": { "ar": "فول وبقوليات", "en": "Beans & Pulses" }, "category": { "ar": "مجففات", "en": "Dried" }, "image": "p-beans.svg", "description": { "ar": "فول بلدي، فاصوليا، حمص، عدس.", "en": "Fava beans, white beans, chickpeas, lentils." }, "season": { "ar": "طوال العام", "en": "All Year" }, "origin": { "ar": "مصر", "en": "Egypt" } }
+      ]
+    },
+    {
+      "id": "services", "type": "features", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "خدماتنا", "en": "Services" },
+      "kicker": { "ar": "لماذا نحن", "en": "Why Us" },
+      "title": { "ar": "خدمة متكاملة من الباب للباب", "en": "End-to-End, Door to Door" },
+      "items": [
+        { "icon": "🌱", "title": { "ar": "التوريد من المزارع", "en": "Farm Sourcing" }, "text": { "ar": "شبكة مزارع معتمدة بعقود زراعة مسبقة.", "en": "Network of certified farms on pre-season contracts." } },
+        { "icon": "🔬", "title": { "ar": "فحص الجودة", "en": "Quality Control" }, "text": { "ar": "فحص متبقيات المبيدات ومطابقة المواصفات.", "en": "Residue testing and spec compliance." } },
+        { "icon": "📦", "title": { "ar": "التعبئة حسب الطلب", "en": "Custom Packing" }, "text": { "ar": "عبوات وعلامة تجارية خاصة بالعميل.", "en": "Client packaging and private label." } },
+        { "icon": "❄️", "title": { "ar": "سلسلة التبريد", "en": "Cold Chain" }, "text": { "ar": "تبريد أولي وحاويات مبرّدة مراقبة.", "en": "Pre-cooling and monitored reefers." } },
+        { "icon": "📑", "title": { "ar": "التخليص والمستندات", "en": "Docs & Clearance" }, "text": { "ar": "شهادات المنشأ والصحة النباتية والتخليص.", "en": "Origin, phytosanitary certificates and clearance." } },
+        { "icon": "🚢", "title": { "ar": "الشحن الدولي", "en": "Global Shipping" }, "text": { "ar": "بحري وجوي مع تتبّع حتى الوصول.", "en": "Sea and air freight with tracking." } }
+      ]
+    },
+    {
+      "id": "process", "type": "process", "visible": true, "showInNav": false,
+      "navLabel": { "ar": "كيف نعمل", "en": "Process" },
+      "kicker": { "ar": "رحلة المنتج", "en": "The Journey" },
+      "title": { "ar": "من البذرة إلى ميناء الوصول", "en": "From Seed to Destination Port" },
+      "steps": [
+        { "title": { "ar": "الزراعة", "en": "Growing" }, "text": { "ar": "اختيار البذور والمزارع.", "en": "Seeds and farm selection." } },
+        { "title": { "ar": "الحصاد", "en": "Harvest" }, "text": { "ar": "في التوقيت المثالي للنضج.", "en": "At peak ripeness." } },
+        { "title": { "ar": "الفرز والتعبئة", "en": "Grading & Packing" }, "text": { "ar": "حسب الحجم والمواصفات.", "en": "By size and spec." } },
+        { "title": { "ar": "التبريد", "en": "Cooling" }, "text": { "ar": "تبريد أولي سريع.", "en": "Fast pre-cooling." } },
+        { "title": { "ar": "الشحن", "en": "Shipping" }, "text": { "ar": "حاويات مبرّدة إلى العميل.", "en": "Reefer to the client." } }
+      ]
+    },
+    {
+      "id": "markets", "type": "markets", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "أسواقنا", "en": "Markets" },
+      "kicker": { "ar": "حضور عالمي", "en": "Global Reach" },
+      "title": { "ar": "نصدّر إلى أسواق العالم", "en": "Exporting Worldwide" },
+      "items": [
+        { "flag": "🇸🇦", "name": { "ar": "السعودية", "en": "Saudi Arabia" } },
+        { "flag": "🇦🇪", "name": { "ar": "الإمارات", "en": "UAE" } },
+        { "flag": "🇰🇼", "name": { "ar": "الكويت", "en": "Kuwait" } },
+        { "flag": "🇬🇧", "name": { "ar": "المملكة المتحدة", "en": "United Kingdom" } },
+        { "flag": "🇳🇱", "name": { "ar": "هولندا", "en": "Netherlands" } },
+        { "flag": "🇩🇪", "name": { "ar": "ألمانيا", "en": "Germany" } },
+        { "flag": "🇷🇺", "name": { "ar": "روسيا", "en": "Russia" } },
+        { "flag": "🇨🇳", "name": { "ar": "الصين", "en": "China" } },
+        { "flag": "🇲🇾", "name": { "ar": "ماليزيا", "en": "Malaysia" } },
+        { "flag": "🇨🇦", "name": { "ar": "كندا", "en": "Canada" } }
+      ]
+    },
+    {
+      "id": "gallery", "type": "gallery", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "معرض الصور", "en": "Gallery" },
+      "kicker": { "ar": "من أرض الواقع", "en": "Behind the Scenes" },
+      "title": { "ar": "معرض الصور", "en": "Gallery" },
+      "images": [
+        { "src": "hero-2.svg", "caption": { "ar": "مزارعنا", "en": "Our farms" } },
+        { "src": "p-citrus.svg", "caption": { "ar": "موسم الموالح", "en": "Citrus season" } },
+        { "src": "hero-3.svg", "caption": { "ar": "الشحن", "en": "Shipping" } },
+        { "src": "p-grapes.svg", "caption": { "ar": "العنب", "en": "Grapes" } },
+        { "src": "hero-1.svg", "caption": { "ar": "الحصاد", "en": "Harvest" } },
+        { "src": "p-pomegranate.svg", "caption": { "ar": "الرمان", "en": "Pomegranates" } }
+      ]
+    },
+    {
+      "id": "certificates", "type": "logos", "visible": true, "showInNav": false,
+      "navLabel": { "ar": "الشهادات", "en": "Certificates" },
+      "kicker": { "ar": "ثقة وجودة", "en": "Trust & Quality" },
+      "title": { "ar": "شهاداتنا وشركاؤنا", "en": "Certifications & Partners" },
+      "items": [
+        { "image": "", "name": "GLOBALG.A.P." },
+        { "image": "", "name": "ISO 22000" },
+        { "image": "", "name": "HACCP" },
+        { "image": "", "name": "BRCGS" },
+        { "image": "", "name": "SMETA" },
+        { "image": "", "name": "Organic" }
+      ]
+    },
+    {
+      "id": "testimonials", "type": "testimonials", "visible": true, "showInNav": false,
+      "navLabel": { "ar": "آراء العملاء", "en": "Testimonials" },
+      "kicker": { "ar": "عملاؤنا", "en": "Clients" },
+      "title": { "ar": "ماذا يقول عملاؤنا", "en": "What Clients Say" },
+      "items": [
+        { "name": { "ar": "اسم العميل", "en": "Client Name" }, "role": { "ar": "مستورد — الرياض", "en": "Importer — Riyadh" }, "text": { "ar": "اكتب هنا رأي عميل حقيقي من لوحة التحكم.", "en": "Replace with a real client quote from the admin panel." } },
+        { "name": { "ar": "اسم العميل", "en": "Client Name" }, "role": { "ar": "سلسلة متاجر — دبي", "en": "Retail chain — Dubai" }, "text": { "ar": "اكتب هنا رأي عميل حقيقي من لوحة التحكم.", "en": "Replace with a real client quote from the admin panel." } }
+      ]
+    },
+    {
+      "id": "faq", "type": "faq", "visible": true, "showInNav": false,
+      "navLabel": { "ar": "أسئلة شائعة", "en": "FAQ" },
+      "kicker": { "ar": "استفسارات", "en": "Questions" },
+      "title": { "ar": "أسئلة شائعة", "en": "FAQ" },
+      "items": [
+        { "q": { "ar": "ما الحد الأدنى للطلب؟", "en": "What is the minimum order?" }, "a": { "ar": "حاوية واحدة 40 قدم مبرّدة، ويمكن الدمج بين أكثر من منتج.", "en": "One 40ft reefer; mixed loads are possible." } },
+        { "q": { "ar": "ما شروط الدفع؟", "en": "What are the payment terms?" }, "a": { "ar": "اعتماد مستندي أو دفعة مقدمة والباقي مقابل المستندات.", "en": "L/C or advance payment with balance against documents." } },
+        { "q": { "ar": "هل توفرون تعبئة بعلامة العميل؟", "en": "Do you offer private label?" }, "a": { "ar": "نعم، نعبّئ بالعلامة التجارية للعميل.", "en": "Yes, we pack under the client's brand." } }
+      ]
+    },
+    {
+      "id": "cta", "type": "cta", "visible": true, "showInNav": false,
+      "navLabel": { "ar": "اطلب الآن", "en": "Order" },
+      "image": "hero-1.svg",
+      "title": { "ar": "جاهز لشحنتك القادمة؟", "en": "Ready for Your Next Shipment?" },
+      "text": { "ar": "تواصل معنا الآن واحصل على عرض سعر خلال 24 ساعة.", "en": "Contact us now and get a quote within 24 hours." },
+      "buttonLabel": { "ar": "راسلنا على واتساب", "en": "Chat on WhatsApp" },
+      "buttonLink": "whatsapp"
+    },
+    {
+      "id": "contact", "type": "contact", "visible": true, "showInNav": true,
+      "navLabel": { "ar": "تواصل معنا", "en": "Contact" },
+      "kicker": { "ar": "نسعد بتواصلك", "en": "Get in Touch" },
+      "title": { "ar": "تواصل معنا", "en": "Contact Us" },
+      "showMap": true,
+      "formTo": "whatsapp"
+    }
+  ]
+}
