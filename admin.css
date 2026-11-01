@@ -104,3 +104,24 @@ input[type=color]{padding:3px;height:42px;width:70px}
   .bar{padding:10px 16px}
   .bar .btn:not(.menu-btn){padding:8px 12px}
 }
+
+.login-card .logo-img{width:96px;height:96px;border-radius:50%;margin:0 auto;box-shadow:0 0 0 3px var(--a)}
+.login-card #passBox{display:flex;flex-direction:column;gap:12px}
+.remember{flex-direction:row!important;align-items:center;gap:8px!important;font-weight:500!important}
+.remember input{width:auto}
+#devBox{border-top:1px solid var(--line);padding-top:12px;font-size:.9rem}
+#devBox summary{cursor:pointer;color:var(--mut);text-align:center}
+#devBox[open]{display:flex;flex-direction:column;gap:10px}
+:root{--p:#0f2747;--a:#c9a24a;--d:#0a1a30}
+.login{background:radial-gradient(circle at 30% 20%,#1f4e79,var(--d))}
+/* media manager */
+.media-group{margin-bottom:22px}
+.media-group h3{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.mcard .ph{aspect-ratio:4/3;background:#eef0f3 center/cover no-repeat;display:grid;place-items:center;color:var(--mut);font-size:.85rem}
+.mcard .cap{padding:8px 10px;font-size:.85rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mcard .acts{display:flex;gap:6px;padding:0 10px 10px}
+.mcard .acts .btn{flex:1;padding:6px 8px;font-size:.8rem}
+.mcard.busy{opacity:.5;pointer-events:none}
+.hintbox{background:#fff8e6;border:1px solid #f0d58c;border-radius:12px;padding:12px 16px;margin-bottom:18px;font-size:.92rem}

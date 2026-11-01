@@ -23,7 +23,7 @@
   const setPath = (o, p, v) => { const ks = p.split('.'); const last = ks.pop(); const t = ks.reduce((a, k) => (a[k] = a[k] || {}), o); t[last] = v; };
   const tx = v => v == null ? '' : typeof v === 'object' ? (v.ar || v.en || '') : String(v);
 
-  let DATA = null, GH = null, OFFLINE = false, VIEW = 'settings', DIRTY = false;
+  let DATA = null, GH = null, OFFLINE = false, DEV = false, VIEW = 'media', DIRTY = false;
   const BLOBS = {}; // مسار الصورة ← رابط مؤقت لعرضها قبل ما GitHub ينشرها
 
   function toast(msg, err) { const t = $('#toast'); t.textContent = msg; t.className = 'toast show' + (err ? ' err' : ''); clearTimeout(t._t); t._t = setTimeout(() => t.className = 'toast', 3500); }
@@ -50,28 +50,78 @@
   }
 
   /* ---------------- الدخول ---------------- */
+  /* ---------------- تشفير مفتاح الدخول بكلمة سر ---------------- */
+  const enc = new TextEncoder(), dec = new TextDecoder();
+  const toB64 = u8 => { let s = ''; u8.forEach(x => s += String.fromCharCode(x)); return btoa(s); };
+  const fromB64 = b => Uint8Array.from(atob(b), c => c.charCodeAt(0));
+  async function deriveKey(pass, salt, iter) {
+    const base = await crypto.subtle.importKey('raw', enc.encode(pass), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+  }
+  async function encryptConn(conn, pass) {
+    const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), iter = 310000;
+    const key = await deriveKey(pass, salt, iter);
+    const data = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, enc.encode(JSON.stringify(conn))));
+    return { v: 1, iter, salt: toB64(salt), iv: toB64(iv), data: toB64(data) };
+  }
+  async function decryptConn(k, pass) {
+    const key = await deriveKey(pass, fromB64(k.salt), k.iter);
+    const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: fromB64(k.iv) }, key, fromB64(k.data));
+    return JSON.parse(dec.decode(plain));
+  }
+
+  /* ---------------- الدخول ---------------- */
+  async function connectWith(conn, remember) {
+    GH = conn;
+    const f = await gh('site.json');
+    DATA = JSON.parse(b64dec(f.content));
+    if (remember) store.set('gh_conn', JSON.stringify(GH));
+    store.set('site_draft_raw', `https://raw.githubusercontent.com/${GH.owner}/${GH.repo}/${GH.branch}/`);
+    start();
+  }
   function initLogin() {
+    const err = m => $('#loginErr').textContent = m || '';
     const saved = JSON.parse(store.get('gh_conn') || 'null');
-    if (saved) { ['owner', 'repo', 'branch', 'token'].forEach(k => $('#' + k).value = saved[k] || ''); }
+    let KEYFILE = null;
+    fetch('admin-key.json?t=' + Date.now()).then(r => r.ok ? r.json() : null).then(k => {
+      KEYFILE = k && k.data ? k : null;
+      if (!KEYFILE && !saved) { $('#passBox').classList.add('hidden'); $('#devBox').open = true; }
+    }).catch(() => { $('#passBox').classList.add('hidden'); $('#devBox').open = true; });
+    const doPass = async () => {
+      const pass = $('#pass').value; if (!pass) return err('اكتب كلمة السر');
+      if (!KEYFILE) return err('لم يتم إعداد كلمة سر بعد — اطلبها من المطوّر');
+      $('#passLogin').disabled = true; err('');
+      let conn = null;
+      try { conn = await decryptConn(KEYFILE, pass); } catch (e) { err('كلمة السر غير صحيحة'); }
+      if (conn) { try { await connectWith(conn, $('#remember').checked); } catch (e) { err('تعذّر الاتصال: ' + e.message); } }
+      $('#passLogin').disabled = false;
+    };
+    $('#passLogin').onclick = doPass;
+    $('#pass').onkeydown = e => { if (e.key === 'Enter') doPass(); };
     $('#connect').onclick = async () => {
-      GH = { owner: $('#owner').value.trim(), repo: $('#repo').value.trim(), branch: $('#branch').value.trim() || 'main', token: $('#token').value.trim() };
-      if (!GH.owner || !GH.repo || !GH.token) { $('#loginErr').textContent = 'كمّل البيانات الأربعة'; return; }
-      $('#connect').disabled = true; $('#loginErr').textContent = '';
-      try {
-        const f = await gh('site.json');
-        DATA = JSON.parse(b64dec(f.content));
-        store.set('gh_conn', JSON.stringify(GH));
-        store.set('site_draft_raw', `https://raw.githubusercontent.com/${GH.owner}/${GH.repo}/${GH.branch}/`);
-        start();
-      } catch (e) { $('#loginErr').textContent = 'فشل الاتصال: ' + e.message; }
+      const conn = { owner: $('#owner').value.trim(), repo: $('#repo').value.trim(), branch: $('#branch').value.trim() || 'main', token: $('#token').value.trim() };
+      if (!conn.owner || !conn.repo || !conn.token) return err('كمّل البيانات الأربعة');
+      $('#connect').disabled = true; err('');
+      try { DEV = true; await connectWith(conn, true); } catch (e) { DEV = false; err('فشل الاتصال: ' + e.message); }
       $('#connect').disabled = false;
     };
     $('#offline').onclick = async () => {
       OFFLINE = true;
       try { DATA = await (await fetch('site.json?t=' + Date.now())).json(); start(); }
-      catch (e) { $('#loginErr').textContent = 'تعذّر قراءة site.json'; }
+      catch (e) { err('تعذّر قراءة site.json'); }
     };
-    if (saved && saved.token) $('#connect').click();
+    if (saved && saved.token) { connectWith(saved, true).catch(e => { store.del('gh_conn'); err('انتهت صلاحية الدخول، ادخل تاني'); }); }
+  }
+
+  async function setClientPassword() {
+    const p1 = prompt('اكتب كلمة السر الجديدة للعميل (8 حروف على الأقل):'); if (!p1) return;
+    if (p1.length < 8) return toast('كلمة السر قصيرة — 8 حروف على الأقل', true);
+    const p2 = prompt('اكتبها تاني للتأكيد:'); if (p1 !== p2) return toast('كلمتا السر غير متطابقتين', true);
+    try {
+      const k = await encryptConn(GH, p1);
+      await putFile('admin-key.json', b64enc(JSON.stringify(k)), 'تحديث كلمة سر لوحة التحكم');
+      toast('✓ اتحفظت كلمة السر — العميل يدخل بيها بعد دقيقة');
+    } catch (e) { toast('فشل الحفظ: ' + e.message, true); }
   }
 
   function start() {
@@ -87,7 +137,9 @@
     $('#logout').onclick = () => { if (DIRTY && !confirm('فيه تعديلات لم تُنشر، تخرج برضه؟')) return; store.del('gh_conn'); DIRTY = false; location.reload(); };
     $('#menuBtn').onclick = () => $('#panel').classList.toggle('menu');
     $$('.tab[data-view="settings"]').forEach(b => b.onclick = () => show('settings'));
-    dirty(false); renderSide(); show('settings');
+    $$('.tab[data-view="media"]').forEach(b => b.onclick = () => show('media'));
+    if (!OFFLINE) { $('#setPass').classList.remove('hidden'); $('#setPass').onclick = setClientPassword; }
+    dirty(false); renderSide(); show('media');
   }
 
   /* ---------------- القائمة الجانبية ---------------- */
@@ -106,12 +158,13 @@
       list.append(it);
     });
     $('.tab[data-view="settings"]').classList.toggle('on', VIEW === 'settings');
+    $('.tab[data-view="media"]').classList.toggle('on', VIEW === 'media');
   }
   function moveSection(from, to) {
     if (from === to || isNaN(from)) return;
-    const viewed = VIEW === 'settings' ? null : DATA.sections[VIEW];
+    const viewed = typeof VIEW === 'number' ? DATA.sections[VIEW] : null;
     const [s] = DATA.sections.splice(from, 1); DATA.sections.splice(to, 0, s);
-    dirty(); show(viewed ? DATA.sections.indexOf(viewed) : 'settings');
+    dirty(); show(viewed ? DATA.sections.indexOf(viewed) : VIEW);
   }
   function addSection() {
     const type = $('#newType').value, def = SECTION_TYPES[type];
@@ -126,6 +179,7 @@
   /* ---------------- المحرر ---------------- */
   function show(v) {
     VIEW = v; const ed = $('#editor'); ed.innerHTML = ''; renderSide(); $('#panel').classList.remove('menu');
+    if (v === 'media') return renderMedia(ed);
     if (v === 'settings') {
       ed.append(h('h2', {}, '⚙️ الإعدادات العامة'), h('p', { class: 'sub' }, 'الاسم واللوجو والألوان وأرقام التواصل — بتظهر في الموقع كله.'));
       SETTINGS_FIELDS.forEach(g => { const c = h('div', { class: 'card' }, h('h3', {}, g.group)); g.fields.forEach(f => c.append(field(DATA.settings, f))); ed.append(c); });
@@ -149,6 +203,80 @@
     const c = h('div', { class: 'card' }, h('h3', {}, 'المحتوى'));
     def.fields.forEach(f => c.append(field(s, f)));
     ed.append(c);
+  }
+
+
+  /* ---------------- شاشة الصور ---------------- */
+  const REMOVABLE = { gallery: 'images', logos: 'items' };
+  function collectGroups() {
+    const groups = [];
+    const st = DATA.settings;
+    groups.push({ title: '⚙️ الهوية', entries: [
+      { label: 'اللوجو', get: () => st.logo, set: v => st.logo = v },
+      { label: 'أيقونة المتصفح', get: () => st.favicon, set: v => st.favicon = v }
+    ]});
+    DATA.sections.forEach((s, si) => {
+      const def = SECTION_TYPES[s.type]; if (!def) return;
+      const g = { title: (tx(s.navLabel) || def.label) + (s.visible === false ? ' (مخفي)' : ''), entries: [], add: null };
+      def.fields.forEach(f => {
+        if (f.type === 'image') g.entries.push({ label: f.label, get: () => s[f.key], set: v => s[f.key] = v });
+        if (f.type === 'list') {
+          const imgF = f.fields.find(x => x.type === 'image'); if (!imgF) return;
+          if (!Array.isArray(s[f.key])) s[f.key] = [];
+          const arr = s[f.key];
+          const removable = REMOVABLE[s.type] === f.key;
+          arr.forEach((it, i) => {
+            const name = f.fields.map(x => tx(it[x.key])).find(x => x && !/^(images\/|data:|https?:)|\.(svg|png|jpe?g|webp|gif)$/i.test(x)) || `${f.itemLabel} ${i + 1}`;
+            g.entries.push({ label: name, get: () => it[imgF.key], set: v => it[imgF.key] = v, remove: removable ? () => arr.splice(arr.indexOf(it), 1) : null });
+          });
+          if (removable) g.add = file => { const n = {}; f.fields.forEach(sf => n[sf.key] = emptyOf(sf)); n[imgF.key] = file; arr.push(n); };
+        }
+      });
+      if (g.entries.length || g.add) groups.push(g);
+    });
+    return groups;
+  }
+  function renderMedia(ed) {
+    ed.append(h('h2', {}, '📷 الصور'), h('p', { class: 'sub' }, 'كل صور الموقع في مكان واحد.'),
+      h('div', { class: 'hintbox' }, 'اضغط «تغيير» لتبديل أي صورة، أو «حذف» لإزالتها. في معرض الصور تقدر ترفع كذا صورة مرة واحدة. بعد ما تخلص اضغط «🚀 حفظ ونشر» فوق.'));
+    collectGroups().forEach(g => {
+      const grid = h('div', { class: 'media-grid' });
+      const head = h('h3', {}, h('span', {}, g.title));
+      if (g.add) {
+        const fi = h('input', { type: 'file', accept: 'image/*', multiple: true, hidden: true });
+        const lb = h('label', { class: 'btn sm primary' }, '＋ إضافة صور', fi);
+        fi.onchange = async () => {
+          const files = Array.from(fi.files); if (!files.length) return;
+          lb.firstChild.textContent = `… جاري رفع ${files.length}`;
+          let ok = 0;
+          for (const f of files) { try { g.add(await uploadImage(f)); ok++; } catch (e) { toast('فشل رفع ' + f.name + ': ' + e.message, true); } }
+          if (ok) { dirty(); toast(`✓ اتضافت ${ok} صورة — متنساش «حفظ ونشر»`); }
+          show('media');
+        };
+        head.append(lb);
+      }
+      g.entries.forEach(en => {
+        const ph = h('div', { class: 'ph' });
+        const paint = () => { const u = imgURL(en.get()); ph.style.backgroundImage = u ? `url("${u}")` : ''; ph.textContent = u ? '' : 'لا توجد صورة'; };
+        paint();
+        const card = h('div', { class: 'mcard' }, ph, h('div', { class: 'cap', title: en.label }, en.label));
+        const fi = h('input', { type: 'file', accept: 'image/*', hidden: true });
+        fi.onchange = async () => {
+          const f = fi.files[0]; if (!f) return; card.classList.add('busy');
+          try { en.set(await uploadImage(f)); dirty(); paint(); toast('✓ اتغيّرت الصورة — متنساش «حفظ ونشر»'); }
+          catch (e) { toast('فشل الرفع: ' + e.message, true); }
+          card.classList.remove('busy'); fi.value = '';
+        };
+        const acts = h('div', { class: 'acts' }, h('label', { class: 'btn primary' }, 'تغيير', fi));
+        acts.append(h('button', { class: 'btn danger', onclick: () => {
+          if (!confirm('حذف الصورة «' + en.label + '»؟')) return;
+          if (en.remove) en.remove(); else en.set('');
+          dirty(); show('media');
+        } }, 'حذف'));
+        card.append(acts); grid.append(card);
+      });
+      ed.append(h('div', { class: 'card media-group' }, head, grid));
+    });
   }
 
   function toggle(obj, key, label, defTrue) {

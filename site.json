@@ -1,192 +1,916 @@
 {
   "settings": {
-    "name": { "ar": "الوادي الأخضر", "en": "Green Valley" },
-    "subtitle": { "ar": "للاستيراد والتصدير", "en": "Import & Export" },
-    "logo": "",
-    "favicon": "",
+    "name": {
+      "ar": "كريستلاين",
+      "en": "CRESTLINE"
+    },
+    "subtitle": {
+      "ar": "للاستيراد والتصدير",
+      "en": "For Import & Export"
+    },
+    "logo": "logo.webp",
+    "favicon": "logo.webp",
     "defaultLang": "ar",
-    "colors": { "primary": "#1f5130", "accent": "#d4a017", "dark": "#0f1f15", "light": "#f8f4ea" },
+    "colors": {
+      "primary": "#0f2747",
+      "accent": "#c9a24a",
+      "dark": "#0a1a30",
+      "light": "#f6f4ee"
+    },
     "whatsapp": "201000000000",
-    "whatsappMessage": { "ar": "السلام عليكم، أريد الاستفسار عن منتجاتكم", "en": "Hello, I'd like to ask about your products" },
+    "whatsappMessage": {
+      "ar": "السلام عليكم، أريد الاستفسار عن خدماتكم",
+      "en": "Hello, I'd like to ask about your services"
+    },
     "phones": [
-      { "label": { "ar": "المبيعات", "en": "Sales" }, "number": "+20 100 000 0000" },
-      { "label": { "ar": "التصدير", "en": "Export Desk" }, "number": "+20 111 000 0000" },
-      { "label": { "ar": "خدمة العملاء", "en": "Customer Service" }, "number": "+20 122 000 0000" }
+      {
+        "label": {
+          "ar": "المبيعات",
+          "en": "Sales"
+        },
+        "number": "+20 100 000 0000"
+      },
+      {
+        "label": {
+          "ar": "قسم التصدير",
+          "en": "Export Desk"
+        },
+        "number": "+20 111 000 0000"
+      }
     ],
-    "email": "info@example.com",
-    "address": { "ar": "القاهرة، جمهورية مصر العربية", "en": "Cairo, Egypt" },
-    "workHours": { "ar": "السبت – الخميس: 9 ص – 6 م", "en": "Sat – Thu: 9 AM – 6 PM" },
+    "email": "info@crestline.com",
+    "address": {
+      "ar": "القاهرة، جمهورية مصر العربية",
+      "en": "Cairo, Egypt"
+    },
+    "workHours": {
+      "ar": "الأحد – الخميس: 9 ص – 5 م",
+      "en": "Sun – Thu: 9 AM – 5 PM"
+    },
     "mapEmbed": "https://www.google.com/maps?q=Cairo%2C%20Egypt&output=embed",
-    "social": { "facebook": "#", "instagram": "#", "linkedin": "#", "x": "", "youtube": "", "tiktok": "" },
-    "seoDescription": { "ar": "شركة متخصصة في تصدير واستيراد المنتجات الزراعية الطازجة بأعلى معايير الجودة", "en": "Exporter and importer of premium fresh agricultural produce" },
-    "footerText": { "ar": "من مزارعنا إلى موائد العالم.", "en": "From our farms to the world's tables." }
+    "social": {
+      "facebook": "#",
+      "instagram": "#",
+      "linkedin": "#",
+      "x": "",
+      "youtube": "",
+      "tiktok": ""
+    },
+    "seoDescription": {
+      "ar": "كريستلاين للاستيراد والتصدير — شريكك الموثوق في التجارة الدولية: استيراد وتصدير، توريد عالمي، لوجستيات وسلاسل إمداد.",
+      "en": "Crestline for Import & Export — your trusted partner in global trade: import & export, global sourcing, logistics and supply chain."
+    },
+    "footerText": {
+      "ar": "نربط الأسواق… ونصنع الفرص. معًا لغدٍ أكبر.",
+      "en": "Bridging markets, creating opportunities. Together for a bigger tomorrow."
+    }
   },
   "sections": [
     {
-      "id": "home", "type": "hero", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "الرئيسية", "en": "Home" },
+      "id": "home",
+      "type": "hero",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "الرئيسية",
+        "en": "Home"
+      },
       "slides": [
-        { "image": "hero-1.svg", "kicker": { "ar": "منتجات زراعية مصرية", "en": "Premium Egyptian Produce" }, "title": { "ar": "من الحقل إلى العالم بجودة لا تُضاهى", "en": "From the Field to the World, Uncompromised" }, "text": { "ar": "نصدّر الخضروات والفواكه الطازجة إلى أكثر من 30 دولة بسلسلة تبريد متكاملة وشهادات جودة دولية.", "en": "Fresh fruits and vegetables exported to 30+ countries with a full cold chain and international certifications." } },
-        { "image": "hero-2.svg", "kicker": { "ar": "زراعة مستدامة", "en": "Sustainable Farming" }, "title": { "ar": "مزارع مختارة بعناية… ومحاصيل في موسمها", "en": "Hand-picked Farms, Harvested in Season" }, "text": { "ar": "نتعاقد مع مزارع معتمدة ونتابع المحصول من البذرة حتى التعبئة.", "en": "We contract certified farms and follow every crop from seed to packing." } },
-        { "image": "hero-3.svg", "kicker": { "ar": "لوجستيات عالمية", "en": "Global Logistics" }, "title": { "ar": "شحنتك في موعدها… أينما كنت", "en": "Your Shipment, On Time, Anywhere" }, "text": { "ar": "حاويات مبرّدة، تخليص جمركي، ومتابعة لحظية حتى ميناء الوصول.", "en": "Reefer containers, customs clearance and live tracking to the port of discharge." } }
+        {
+          "image": "hero-port.svg",
+          "kicker": {
+            "ar": "شريكك الموثوق في التجارة الدولية",
+            "en": "Your Trusted Partner in Global Trade"
+          },
+          "title": {
+            "ar": "نربط الأسواق… ونصنع الفرص",
+            "en": "Bridging Markets, Creating Opportunities"
+          },
+          "text": {
+            "ar": "استيراد وتصدير، توريد من أفضل المصانع، وشحن بحري وجوي وبري حتى باب مخزنك.",
+            "en": "Import & export, sourcing from trusted factories, and sea, air and land freight to your warehouse door."
+          }
+        },
+        {
+          "image": "hero-air.svg",
+          "kicker": {
+            "ar": "توريد عالمي",
+            "en": "Global Sourcing"
+          },
+          "title": {
+            "ar": "نوصلك لأفضل المنتجات من كل مكان",
+            "en": "The Best Products, From Anywhere"
+          },
+          "text": {
+            "ar": "شبكة موردين ومصانع معتمدة في أكثر من دولة، ومقارنة عروض توفّر عليك الوقت والتكلفة.",
+            "en": "A network of verified suppliers and factories across many countries, with offers compared for you."
+          }
+        },
+        {
+          "image": "hero-road.svg",
+          "kicker": {
+            "ar": "لوجستيات وسلاسل إمداد",
+            "en": "Logistics & Supply Chain"
+          },
+          "title": {
+            "ar": "من المصنع لمخزنك… في موعدها",
+            "en": "From the Factory to Your Warehouse, On Time"
+          },
+          "text": {
+            "ar": "تخليص جمركي، تأمين، ومتابعة لحظية لكل شحنة.",
+            "en": "Customs clearance, insurance and live tracking for every shipment."
+          }
+        }
       ],
       "buttons": [
-        { "label": { "ar": "تصفّح منتجاتنا", "en": "Browse Products" }, "link": "#products", "style": "primary" },
-        { "label": { "ar": "اطلب عرض سعر", "en": "Request a Quote" }, "link": "#contact", "style": "ghost" }
+        {
+          "label": {
+            "ar": "اطلب عرض سعر",
+            "en": "Get a Quote"
+          },
+          "link": "#contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "خدماتنا",
+            "en": "Our Services"
+          },
+          "link": "#services",
+          "style": "ghost"
+        }
       ],
       "autoplay": 6
     },
     {
-      "id": "stats", "type": "stats", "visible": true, "showInNav": false,
-      "navLabel": { "ar": "أرقامنا", "en": "Numbers" },
+      "id": "values",
+      "type": "values",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "قيمنا",
+        "en": "Values"
+      },
       "items": [
-        { "value": 25, "suffix": "+", "label": { "ar": "سنة خبرة", "en": "Years of Experience" }, "icon": "🏆" },
-        { "value": 30, "suffix": "+", "label": { "ar": "دولة نصدّر لها", "en": "Export Countries" }, "icon": "🌍" },
-        { "value": 12000, "suffix": "+", "label": { "ar": "حاوية تم شحنها", "en": "Containers Shipped" }, "icon": "🚢" },
-        { "value": 450, "suffix": "+", "label": { "ar": "عميل حول العالم", "en": "Clients Worldwide" }, "icon": "🤝" }
+        {
+          "icon": "🏅",
+          "title": {
+            "ar": "الجودة",
+            "en": "Quality"
+          }
+        },
+        {
+          "icon": "🤝",
+          "title": {
+            "ar": "الموثوقية",
+            "en": "Reliability"
+          }
+        },
+        {
+          "icon": "🌍",
+          "title": {
+            "ar": "انتشار عالمي",
+            "en": "Global Reach"
+          }
+        }
       ]
     },
     {
-      "id": "about", "type": "about", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "من نحن", "en": "About" },
-      "kicker": { "ar": "قصتنا", "en": "Our Story" },
-      "title": { "ar": "خبرة ربع قرن في تجارة المحاصيل", "en": "A Quarter Century in Produce Trading" },
-      "text": { "ar": "بدأنا كمزرعة عائلية صغيرة، واليوم نحن من أبرز مصدّري المنتجات الزراعية في المنطقة. نؤمن أن الجودة تبدأ من التربة، لذلك نشرف على كل مرحلة: الزراعة، الحصاد، الفرز، التعبئة، والتبريد حتى تصل الشحنة إلى عميلنا كما خرجت من الحقل.", "en": "We started as a small family farm and today we are among the region's leading produce exporters. Quality starts in the soil, so we oversee every step — growing, harvesting, grading, packing and cooling — until the shipment reaches our client exactly as it left the field." },
-      "image": "about.svg",
-      "badge": { "ar": "معتمدون دولياً", "en": "Internationally Certified" },
+      "id": "services",
+      "type": "features",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "خدماتنا",
+        "en": "Services"
+      },
+      "kicker": {
+        "ar": "ماذا نقدّم",
+        "en": "What We Do"
+      },
+      "title": {
+        "ar": "حلول تجارية متكاملة",
+        "en": "Complete Trading Solutions"
+      },
+      "items": [
+        {
+          "icon": "🚢",
+          "title": {
+            "ar": "الاستيراد والتصدير",
+            "en": "Import & Export"
+          },
+          "text": {
+            "ar": "ندير عملية الاستيراد والتصدير كاملة من التعاقد حتى الاستلام.",
+            "en": "We handle the full import & export cycle, from contract to delivery."
+          }
+        },
+        {
+          "icon": "🌐",
+          "title": {
+            "ar": "التوريد العالمي",
+            "en": "Global Sourcing"
+          },
+          "text": {
+            "ar": "نبحث ونقارن ونتفاوض مع أفضل الموردين نيابةً عنك.",
+            "en": "We find, compare and negotiate with the best suppliers for you."
+          }
+        },
+        {
+          "icon": "📦",
+          "title": {
+            "ar": "اللوجستيات وسلاسل الإمداد",
+            "en": "Logistics & Supply Chain"
+          },
+          "text": {
+            "ar": "شحن بحري وجوي وبري وتخزين وتوزيع.",
+            "en": "Sea, air and land freight, warehousing and distribution."
+          }
+        },
+        {
+          "icon": "🤝",
+          "title": {
+            "ar": "حلول تجارية",
+            "en": "Trading Solutions"
+          },
+          "text": {
+            "ar": "عقود توريد، تمثيل تجاري، وحلول دفع آمنة.",
+            "en": "Supply contracts, trade representation and secure payment options."
+          }
+        },
+        {
+          "icon": "📑",
+          "title": {
+            "ar": "التخليص الجمركي",
+            "en": "Customs Clearance"
+          },
+          "text": {
+            "ar": "نجهّز كل المستندات والشهادات ونخلّص شحنتك بسرعة.",
+            "en": "We prepare all documents and certificates and clear your shipment fast."
+          }
+        },
+        {
+          "icon": "🔍",
+          "title": {
+            "ar": "فحص الجودة",
+            "en": "Quality Inspection"
+          },
+          "text": {
+            "ar": "فحص البضاعة في المصنع قبل الشحن.",
+            "en": "Pre-shipment inspection at the factory."
+          }
+        }
+      ]
+    },
+    {
+      "id": "stats",
+      "type": "stats",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "أرقامنا",
+        "en": "Numbers"
+      },
+      "items": [
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": {
+            "ar": "دولة نتعامل معها",
+            "en": "Countries Served"
+          },
+          "icon": "🌍"
+        },
+        {
+          "value": 12,
+          "suffix": "",
+          "label": {
+            "ar": "فئة منتجات",
+            "en": "Product Categories"
+          },
+          "icon": "📦"
+        },
+        {
+          "value": 100,
+          "suffix": "+",
+          "label": {
+            "ar": "مصنع ومورّد شريك",
+            "en": "Partner Suppliers"
+          },
+          "icon": "🏭"
+        },
+        {
+          "value": 24,
+          "suffix": "h",
+          "label": {
+            "ar": "للرد على طلبك",
+            "en": "Quote Response"
+          },
+          "icon": "⏱️"
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "type": "about",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "من نحن",
+        "en": "About"
+      },
+      "kicker": {
+        "ar": "رحلتنا بدأت",
+        "en": "Our Journey Begins"
+      },
+      "title": {
+        "ar": "كريستلاين… شريكك في التجارة الدولية",
+        "en": "Crestline — Your Partner in Global Trade"
+      },
+      "text": {
+        "ar": "كريستلاين شركة متخصصة في الاستيراد والتصدير والتوريد العالمي. نربط المصانع والموردين بالمشترين في الأسواق العربية والعالمية، ونتولى كل التفاصيل: البحث عن المورد، التفاوض، فحص الجودة، الشحن، والتخليص الجمركي.\n\nهدفنا أن تكون التجارة الدولية سهلة وآمنة وواضحة لكل عملائنا.",
+        "en": "Crestline is an import, export and global sourcing company. We connect factories and suppliers with buyers across Arab and international markets, handling every detail: sourcing, negotiation, quality inspection, shipping and customs clearance.\n\nOur goal is to make global trade simple, safe and transparent for every client."
+      },
+      "image": "hero-port.svg",
+      "badge": {
+        "ar": "الافتتاح الكبير",
+        "en": "Grand Opening"
+      },
       "bullets": [
-        { "text": { "ar": "محطات تعبئة وتبريد خاصة", "en": "Own packing & cooling stations" } },
-        { "text": { "ar": "فريق جودة في كل مرحلة", "en": "QC team at every stage" } },
-        { "text": { "ar": "تتبّع كامل لكل شحنة", "en": "Full traceability for every lot" } },
-        { "text": { "ar": "أسعار تنافسية وعقود موسمية", "en": "Competitive pricing & seasonal contracts" } }
+        {
+          "text": {
+            "ar": "موردون ومصانع موثّقة",
+            "en": "Verified suppliers & factories"
+          }
+        },
+        {
+          "text": {
+            "ar": "فحص جودة قبل الشحن",
+            "en": "Pre-shipment quality checks"
+          }
+        },
+        {
+          "text": {
+            "ar": "شحن بحري وجوي وبري",
+            "en": "Sea, air & land freight"
+          }
+        },
+        {
+          "text": {
+            "ar": "متابعة شخصية لكل طلب",
+            "en": "Dedicated follow-up on every order"
+          }
+        }
       ]
     },
     {
-      "id": "products", "type": "products", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "المنتجات", "en": "Products" },
-      "kicker": { "ar": "ما نقدّمه", "en": "What We Offer" },
-      "title": { "ar": "منتجاتنا", "en": "Our Products" },
-      "text": { "ar": "تشكيلة واسعة من المنتجات الطازجة والمجففة حسب الموسم ومواصفات العميل.", "en": "A wide range of fresh and dried produce, by season and to client specs." },
+      "id": "products",
+      "type": "products",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "المنتجات",
+        "en": "Products"
+      },
+      "kicker": {
+        "ar": "ما نتاجر فيه",
+        "en": "What We Trade"
+      },
+      "title": {
+        "ar": "فئات المنتجات",
+        "en": "Product Categories"
+      },
+      "text": {
+        "ar": "نورّد ونصدّر مجموعة واسعة من المنتجات حسب طلب العميل ومواصفاته.",
+        "en": "We source and export a wide range of products to client specifications."
+      },
       "showQuoteButton": true,
       "items": [
-        { "name": { "ar": "برتقال فالنسيا", "en": "Valencia Oranges" }, "category": { "ar": "فواكه", "en": "Fruits" }, "image": "p-citrus.svg", "description": { "ar": "برتقال عصير ومائدة بأحجام 48–113، تعبئة كرتون 15 كجم.", "en": "Juice & table oranges, sizes 48–113, 15 kg cartons." }, "season": { "ar": "يناير – يونيو", "en": "Jan – Jun" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "رمان وندرفل", "en": "Wonderful Pomegranates" }, "category": { "ar": "فواكه", "en": "Fruits" }, "image": "p-pomegranate.svg", "description": { "ar": "رمان أحمر داكن بنسبة سكر عالية.", "en": "Deep red pomegranates with high brix." }, "season": { "ar": "سبتمبر – ديسمبر", "en": "Sep – Dec" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "عنب فليم", "en": "Flame Seedless Grapes" }, "category": { "ar": "فواكه", "en": "Fruits" }, "image": "p-grapes.svg", "description": { "ar": "عنب بدون بذور، تعبئة بانيت وأكياس.", "en": "Seedless grapes, punnets and bags." }, "season": { "ar": "مايو – يوليو", "en": "May – Jul" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "بطاطس", "en": "Potatoes" }, "category": { "ar": "خضروات", "en": "Vegetables" }, "image": "p-potato.svg", "description": { "ar": "أصناف سبونتا وديامونت، شكائر 25 كجم.", "en": "Spunta & Diamant, 25 kg bags." }, "season": { "ar": "ديسمبر – مايو", "en": "Dec – May" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "بصل أحمر", "en": "Red Onions" }, "category": { "ar": "خضروات", "en": "Vegetables" }, "image": "p-onion.svg", "description": { "ar": "بصل أحمر وذهبي بأحجام مختلفة.", "en": "Red & golden onions in all calibers." }, "season": { "ar": "مارس – يوليو", "en": "Mar – Jul" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "تمور مجدول", "en": "Medjool Dates" }, "category": { "ar": "مجففات", "en": "Dried" }, "image": "p-dates.svg", "description": { "ar": "تمور فاخرة معبأة حسب الطلب.", "en": "Premium dates, custom packing." }, "season": { "ar": "طوال العام", "en": "All Year" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "أعشاب طبية وعطرية", "en": "Herbs & Spices" }, "category": { "ar": "أعشاب", "en": "Herbs" }, "image": "p-herbs.svg", "description": { "ar": "نعناع، بقدونس، كزبرة، شمر — مجففة أو طازجة.", "en": "Mint, parsley, coriander, fennel — fresh or dried." }, "season": { "ar": "طوال العام", "en": "All Year" }, "origin": { "ar": "مصر", "en": "Egypt" } },
-        { "name": { "ar": "فول وبقوليات", "en": "Beans & Pulses" }, "category": { "ar": "مجففات", "en": "Dried" }, "image": "p-beans.svg", "description": { "ar": "فول بلدي، فاصوليا، حمص، عدس.", "en": "Fava beans, white beans, chickpeas, lentils." }, "season": { "ar": "طوال العام", "en": "All Year" }, "origin": { "ar": "مصر", "en": "Egypt" } }
+        {
+          "name": {
+            "ar": "منتجات غذائية وزراعية",
+            "en": "Food & Agricultural"
+          },
+          "category": {
+            "ar": "غذائي",
+            "en": "Food"
+          },
+          "image": "cat-food.svg",
+          "description": {
+            "ar": "خضروات وفواكه، بقوليات، توابل، ومنتجات معلّبة.",
+            "en": "Produce, pulses, spices and packaged foods."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "مواد بناء",
+            "en": "Building Materials"
+          },
+          "category": {
+            "ar": "صناعي",
+            "en": "Industrial"
+          },
+          "image": "cat-building.svg",
+          "description": {
+            "ar": "رخام وجرانيت، سيراميك، حديد، وأدوات صحية.",
+            "en": "Marble & granite, ceramics, steel and sanitary ware."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "منسوجات وملابس",
+            "en": "Textiles & Clothing"
+          },
+          "category": {
+            "ar": "استهلاكي",
+            "en": "Consumer"
+          },
+          "image": "cat-textile.svg",
+          "description": {
+            "ar": "قطن، مفروشات، مناشف، وملابس جاهزة.",
+            "en": "Cotton, home linen, towels and ready-made garments."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "أثاث",
+            "en": "Furniture"
+          },
+          "category": {
+            "ar": "استهلاكي",
+            "en": "Consumer"
+          },
+          "image": "cat-furniture.svg",
+          "description": {
+            "ar": "أثاث منزلي ومكتبي وفندقي.",
+            "en": "Home, office and hotel furniture."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "معدات صناعية",
+            "en": "Industrial Equipment"
+          },
+          "category": {
+            "ar": "صناعي",
+            "en": "Industrial"
+          },
+          "image": "cat-industrial.svg",
+          "description": {
+            "ar": "ماكينات، قطع غيار، ومعدات إنتاج.",
+            "en": "Machinery, spare parts and production equipment."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "كيماويات وبلاستيك",
+            "en": "Chemicals & Plastics"
+          },
+          "category": {
+            "ar": "صناعي",
+            "en": "Industrial"
+          },
+          "image": "cat-chemical.svg",
+          "description": {
+            "ar": "خامات بلاستيك، أسمدة، ومواد تنظيف.",
+            "en": "Plastic raw materials, fertilizers and detergents."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "إلكترونيات",
+            "en": "Electronics"
+          },
+          "category": {
+            "ar": "استهلاكي",
+            "en": "Consumer"
+          },
+          "image": "cat-electronics.svg",
+          "description": {
+            "ar": "أجهزة منزلية، إضاءة، ومستلزمات كهربائية.",
+            "en": "Home appliances, lighting and electrical supplies."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {
+            "ar": "سلع استهلاكية",
+            "en": "Consumer Goods"
+          },
+          "category": {
+            "ar": "استهلاكي",
+            "en": "Consumer"
+          },
+          "image": "cat-consumer.svg",
+          "description": {
+            "ar": "أدوات منزلية، تغليف، ومستلزمات تجزئة.",
+            "en": "Housewares, packaging and retail supplies."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
+        }
       ]
     },
     {
-      "id": "services", "type": "features", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "خدماتنا", "en": "Services" },
-      "kicker": { "ar": "لماذا نحن", "en": "Why Us" },
-      "title": { "ar": "خدمة متكاملة من الباب للباب", "en": "End-to-End, Door to Door" },
-      "items": [
-        { "icon": "🌱", "title": { "ar": "التوريد من المزارع", "en": "Farm Sourcing" }, "text": { "ar": "شبكة مزارع معتمدة بعقود زراعة مسبقة.", "en": "Network of certified farms on pre-season contracts." } },
-        { "icon": "🔬", "title": { "ar": "فحص الجودة", "en": "Quality Control" }, "text": { "ar": "فحص متبقيات المبيدات ومطابقة المواصفات.", "en": "Residue testing and spec compliance." } },
-        { "icon": "📦", "title": { "ar": "التعبئة حسب الطلب", "en": "Custom Packing" }, "text": { "ar": "عبوات وعلامة تجارية خاصة بالعميل.", "en": "Client packaging and private label." } },
-        { "icon": "❄️", "title": { "ar": "سلسلة التبريد", "en": "Cold Chain" }, "text": { "ar": "تبريد أولي وحاويات مبرّدة مراقبة.", "en": "Pre-cooling and monitored reefers." } },
-        { "icon": "📑", "title": { "ar": "التخليص والمستندات", "en": "Docs & Clearance" }, "text": { "ar": "شهادات المنشأ والصحة النباتية والتخليص.", "en": "Origin, phytosanitary certificates and clearance." } },
-        { "icon": "🚢", "title": { "ar": "الشحن الدولي", "en": "Global Shipping" }, "text": { "ar": "بحري وجوي مع تتبّع حتى الوصول.", "en": "Sea and air freight with tracking." } }
-      ]
-    },
-    {
-      "id": "process", "type": "process", "visible": true, "showInNav": false,
-      "navLabel": { "ar": "كيف نعمل", "en": "Process" },
-      "kicker": { "ar": "رحلة المنتج", "en": "The Journey" },
-      "title": { "ar": "من البذرة إلى ميناء الوصول", "en": "From Seed to Destination Port" },
+      "id": "process",
+      "type": "process",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "كيف نعمل",
+        "en": "How We Work"
+      },
+      "kicker": {
+        "ar": "خطوات واضحة",
+        "en": "Clear Steps"
+      },
+      "title": {
+        "ar": "كيف نعمل معك",
+        "en": "How We Work With You"
+      },
       "steps": [
-        { "title": { "ar": "الزراعة", "en": "Growing" }, "text": { "ar": "اختيار البذور والمزارع.", "en": "Seeds and farm selection." } },
-        { "title": { "ar": "الحصاد", "en": "Harvest" }, "text": { "ar": "في التوقيت المثالي للنضج.", "en": "At peak ripeness." } },
-        { "title": { "ar": "الفرز والتعبئة", "en": "Grading & Packing" }, "text": { "ar": "حسب الحجم والمواصفات.", "en": "By size and spec." } },
-        { "title": { "ar": "التبريد", "en": "Cooling" }, "text": { "ar": "تبريد أولي سريع.", "en": "Fast pre-cooling." } },
-        { "title": { "ar": "الشحن", "en": "Shipping" }, "text": { "ar": "حاويات مبرّدة إلى العميل.", "en": "Reefer to the client." } }
+        {
+          "title": {
+            "ar": "طلبك",
+            "en": "Your Request"
+          },
+          "text": {
+            "ar": "ترسل المنتج والكمية والمواصفات.",
+            "en": "Send product, quantity and specs."
+          }
+        },
+        {
+          "title": {
+            "ar": "التوريد",
+            "en": "Sourcing"
+          },
+          "text": {
+            "ar": "نختار أفضل الموردين.",
+            "en": "We shortlist the best suppliers."
+          }
+        },
+        {
+          "title": {
+            "ar": "عرض السعر",
+            "en": "Quotation"
+          },
+          "text": {
+            "ar": "عرض واضح خلال 24 ساعة.",
+            "en": "A clear quote within 24h."
+          }
+        },
+        {
+          "title": {
+            "ar": "الفحص",
+            "en": "Inspection"
+          },
+          "text": {
+            "ar": "فحص الجودة قبل الشحن.",
+            "en": "Quality check before shipping."
+          }
+        },
+        {
+          "title": {
+            "ar": "الشحن والتسليم",
+            "en": "Shipping & Delivery"
+          },
+          "text": {
+            "ar": "نوصّل لحد مخزنك.",
+            "en": "Delivered to your warehouse."
+          }
+        }
       ]
     },
     {
-      "id": "markets", "type": "markets", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "أسواقنا", "en": "Markets" },
-      "kicker": { "ar": "حضور عالمي", "en": "Global Reach" },
-      "title": { "ar": "نصدّر إلى أسواق العالم", "en": "Exporting Worldwide" },
+      "id": "markets",
+      "type": "markets",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "أسواقنا",
+        "en": "Markets"
+      },
+      "kicker": {
+        "ar": "انتشار عالمي",
+        "en": "Global Reach"
+      },
+      "title": {
+        "ar": "أسواق نخدمها",
+        "en": "Markets We Serve"
+      },
       "items": [
-        { "flag": "🇸🇦", "name": { "ar": "السعودية", "en": "Saudi Arabia" } },
-        { "flag": "🇦🇪", "name": { "ar": "الإمارات", "en": "UAE" } },
-        { "flag": "🇰🇼", "name": { "ar": "الكويت", "en": "Kuwait" } },
-        { "flag": "🇬🇧", "name": { "ar": "المملكة المتحدة", "en": "United Kingdom" } },
-        { "flag": "🇳🇱", "name": { "ar": "هولندا", "en": "Netherlands" } },
-        { "flag": "🇩🇪", "name": { "ar": "ألمانيا", "en": "Germany" } },
-        { "flag": "🇷🇺", "name": { "ar": "روسيا", "en": "Russia" } },
-        { "flag": "🇨🇳", "name": { "ar": "الصين", "en": "China" } },
-        { "flag": "🇲🇾", "name": { "ar": "ماليزيا", "en": "Malaysia" } },
-        { "flag": "🇨🇦", "name": { "ar": "كندا", "en": "Canada" } }
+        {
+          "flag": "🇪🇬",
+          "name": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "flag": "🇸🇦",
+          "name": {
+            "ar": "السعودية",
+            "en": "Saudi Arabia"
+          }
+        },
+        {
+          "flag": "🇦🇪",
+          "name": {
+            "ar": "الإمارات",
+            "en": "UAE"
+          }
+        },
+        {
+          "flag": "🇰🇼",
+          "name": {
+            "ar": "الكويت",
+            "en": "Kuwait"
+          }
+        },
+        {
+          "flag": "🇴🇲",
+          "name": {
+            "ar": "عُمان",
+            "en": "Oman"
+          }
+        },
+        {
+          "flag": "🇨🇳",
+          "name": {
+            "ar": "الصين",
+            "en": "China"
+          }
+        },
+        {
+          "flag": "🇹🇷",
+          "name": {
+            "ar": "تركيا",
+            "en": "Turkey"
+          }
+        },
+        {
+          "flag": "🇩🇪",
+          "name": {
+            "ar": "ألمانيا",
+            "en": "Germany"
+          }
+        },
+        {
+          "flag": "🇳🇱",
+          "name": {
+            "ar": "هولندا",
+            "en": "Netherlands"
+          }
+        },
+        {
+          "flag": "🇬🇧",
+          "name": {
+            "ar": "المملكة المتحدة",
+            "en": "United Kingdom"
+          }
+        }
       ]
     },
     {
-      "id": "gallery", "type": "gallery", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "معرض الصور", "en": "Gallery" },
-      "kicker": { "ar": "من أرض الواقع", "en": "Behind the Scenes" },
-      "title": { "ar": "معرض الصور", "en": "Gallery" },
+      "id": "gallery",
+      "type": "gallery",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "معرض الصور",
+        "en": "Gallery"
+      },
+      "kicker": {
+        "ar": "من أعمالنا",
+        "en": "Our Work"
+      },
+      "title": {
+        "ar": "معرض الصور",
+        "en": "Gallery"
+      },
       "images": [
-        { "src": "hero-2.svg", "caption": { "ar": "مزارعنا", "en": "Our farms" } },
-        { "src": "p-citrus.svg", "caption": { "ar": "موسم الموالح", "en": "Citrus season" } },
-        { "src": "hero-3.svg", "caption": { "ar": "الشحن", "en": "Shipping" } },
-        { "src": "p-grapes.svg", "caption": { "ar": "العنب", "en": "Grapes" } },
-        { "src": "hero-1.svg", "caption": { "ar": "الحصاد", "en": "Harvest" } },
-        { "src": "p-pomegranate.svg", "caption": { "ar": "الرمان", "en": "Pomegranates" } }
+        {
+          "src": "hero-port.svg",
+          "caption": {
+            "ar": "الشحن البحري",
+            "en": "Sea Freight"
+          }
+        },
+        {
+          "src": "hero-air.svg",
+          "caption": {
+            "ar": "الشحن الجوي",
+            "en": "Air Freight"
+          }
+        },
+        {
+          "src": "hero-road.svg",
+          "caption": {
+            "ar": "النقل البري",
+            "en": "Land Transport"
+          }
+        }
       ]
     },
     {
-      "id": "certificates", "type": "logos", "visible": true, "showInNav": false,
-      "navLabel": { "ar": "الشهادات", "en": "Certificates" },
-      "kicker": { "ar": "ثقة وجودة", "en": "Trust & Quality" },
-      "title": { "ar": "شهاداتنا وشركاؤنا", "en": "Certifications & Partners" },
+      "id": "partners",
+      "type": "logos",
+      "visible": false,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "شركاؤنا",
+        "en": "Partners"
+      },
+      "kicker": {
+        "ar": "ثقة",
+        "en": "Trust"
+      },
+      "title": {
+        "ar": "شركاؤنا",
+        "en": "Our Partners"
+      },
+      "items": []
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "visible": false,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "آراء العملاء",
+        "en": "Testimonials"
+      },
+      "kicker": {
+        "ar": "عملاؤنا",
+        "en": "Clients"
+      },
+      "title": {
+        "ar": "ماذا يقول عملاؤنا",
+        "en": "What Clients Say"
+      },
+      "items": []
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "أسئلة شائعة",
+        "en": "FAQ"
+      },
+      "kicker": {
+        "ar": "استفسارات",
+        "en": "Questions"
+      },
+      "title": {
+        "ar": "أسئلة شائعة",
+        "en": "Frequently Asked Questions"
+      },
       "items": [
-        { "image": "", "name": "GLOBALG.A.P." },
-        { "image": "", "name": "ISO 22000" },
-        { "image": "", "name": "HACCP" },
-        { "image": "", "name": "BRCGS" },
-        { "image": "", "name": "SMETA" },
-        { "image": "", "name": "Organic" }
+        {
+          "q": {
+            "ar": "ما الحد الأدنى للطلب؟",
+            "en": "What is the minimum order?"
+          },
+          "a": {
+            "ar": "يختلف حسب المنتج، وغالبًا يبدأ من حاوية واحدة أو شحنة مجمّعة.",
+            "en": "It depends on the product; usually from one container or a consolidated shipment."
+          }
+        },
+        {
+          "q": {
+            "ar": "ما شروط الدفع؟",
+            "en": "What are the payment terms?"
+          },
+          "a": {
+            "ar": "اعتماد مستندي أو دفعة مقدمة والباقي مقابل المستندات، حسب الاتفاق.",
+            "en": "L/C, or an advance payment with the balance against documents, as agreed."
+          }
+        },
+        {
+          "q": {
+            "ar": "هل تتولون التخليص الجمركي؟",
+            "en": "Do you handle customs clearance?"
+          },
+          "a": {
+            "ar": "نعم، نجهّز المستندات ونتابع التخليص في ميناء الوصول.",
+            "en": "Yes, we prepare the documents and follow clearance at the destination port."
+          }
+        },
+        {
+          "q": {
+            "ar": "متى أستلم عرض السعر؟",
+            "en": "When will I get a quote?"
+          },
+          "a": {
+            "ar": "خلال 24 ساعة عمل من استلام طلب مكتمل.",
+            "en": "Within 24 business hours of receiving a complete request."
+          }
+        }
       ]
     },
     {
-      "id": "testimonials", "type": "testimonials", "visible": true, "showInNav": false,
-      "navLabel": { "ar": "آراء العملاء", "en": "Testimonials" },
-      "kicker": { "ar": "عملاؤنا", "en": "Clients" },
-      "title": { "ar": "ماذا يقول عملاؤنا", "en": "What Clients Say" },
-      "items": [
-        { "name": { "ar": "اسم العميل", "en": "Client Name" }, "role": { "ar": "مستورد — الرياض", "en": "Importer — Riyadh" }, "text": { "ar": "اكتب هنا رأي عميل حقيقي من لوحة التحكم.", "en": "Replace with a real client quote from the admin panel." } },
-        { "name": { "ar": "اسم العميل", "en": "Client Name" }, "role": { "ar": "سلسلة متاجر — دبي", "en": "Retail chain — Dubai" }, "text": { "ar": "اكتب هنا رأي عميل حقيقي من لوحة التحكم.", "en": "Replace with a real client quote from the admin panel." } }
-      ]
-    },
-    {
-      "id": "faq", "type": "faq", "visible": true, "showInNav": false,
-      "navLabel": { "ar": "أسئلة شائعة", "en": "FAQ" },
-      "kicker": { "ar": "استفسارات", "en": "Questions" },
-      "title": { "ar": "أسئلة شائعة", "en": "FAQ" },
-      "items": [
-        { "q": { "ar": "ما الحد الأدنى للطلب؟", "en": "What is the minimum order?" }, "a": { "ar": "حاوية واحدة 40 قدم مبرّدة، ويمكن الدمج بين أكثر من منتج.", "en": "One 40ft reefer; mixed loads are possible." } },
-        { "q": { "ar": "ما شروط الدفع؟", "en": "What are the payment terms?" }, "a": { "ar": "اعتماد مستندي أو دفعة مقدمة والباقي مقابل المستندات.", "en": "L/C or advance payment with balance against documents." } },
-        { "q": { "ar": "هل توفرون تعبئة بعلامة العميل؟", "en": "Do you offer private label?" }, "a": { "ar": "نعم، نعبّئ بالعلامة التجارية للعميل.", "en": "Yes, we pack under the client's brand." } }
-      ]
-    },
-    {
-      "id": "cta", "type": "cta", "visible": true, "showInNav": false,
-      "navLabel": { "ar": "اطلب الآن", "en": "Order" },
-      "image": "hero-1.svg",
-      "title": { "ar": "جاهز لشحنتك القادمة؟", "en": "Ready for Your Next Shipment?" },
-      "text": { "ar": "تواصل معنا الآن واحصل على عرض سعر خلال 24 ساعة.", "en": "Contact us now and get a quote within 24 hours." },
-      "buttonLabel": { "ar": "راسلنا على واتساب", "en": "Chat on WhatsApp" },
+      "id": "cta",
+      "type": "cta",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "اطلب الآن",
+        "en": "Order"
+      },
+      "image": "hero-port.svg",
+      "title": {
+        "ar": "معًا لغدٍ أكبر",
+        "en": "Together for a Bigger Tomorrow"
+      },
+      "text": {
+        "ar": "أرسل طلبك الآن واحصل على عرض سعر خلال 24 ساعة.",
+        "en": "Send your request now and get a quote within 24 hours."
+      },
+      "buttonLabel": {
+        "ar": "راسلنا على واتساب",
+        "en": "Chat on WhatsApp"
+      },
       "buttonLink": "whatsapp"
     },
     {
-      "id": "contact", "type": "contact", "visible": true, "showInNav": true,
-      "navLabel": { "ar": "تواصل معنا", "en": "Contact" },
-      "kicker": { "ar": "نسعد بتواصلك", "en": "Get in Touch" },
-      "title": { "ar": "تواصل معنا", "en": "Contact Us" },
+      "id": "contact",
+      "type": "contact",
+      "visible": true,
+      "showInNav": true,
+      "navLabel": {
+        "ar": "تواصل معنا",
+        "en": "Contact"
+      },
+      "kicker": {
+        "ar": "اطلب عرض سعر",
+        "en": "Request a Quote"
+      },
+      "title": {
+        "ar": "تواصل معنا",
+        "en": "Contact Us"
+      },
       "showMap": true,
       "formTo": "whatsapp"
     }

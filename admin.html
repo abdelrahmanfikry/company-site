@@ -13,24 +13,31 @@
   <!-- شاشة الدخول -->
   <div id="login" class="login">
     <div class="login-card">
-      <div class="logo">🌾</div>
+      <img class="logo-img" src="logo.webp" alt="" onerror="this.remove()">
       <h1>لوحة تحكم الموقع</h1>
-      <p class="hint">بيانات الربط بـ GitHub (بتتحفظ على الجهاز ده بس).</p>
-      <label>اسم الحساب على GitHub (Owner)<input id="owner" dir="ltr" placeholder="my-company"></label>
-      <label>اسم المستودع (Repository)<input id="repo" dir="ltr" placeholder="my-company.github.io"></label>
-      <label>الفرع (Branch)<input id="branch" dir="ltr" value="main"></label>
-      <label>مفتاح الدخول (Token)<input id="token" dir="ltr" type="password" placeholder="github_pat_…"></label>
-      <button class="btn primary" id="connect">دخول</button>
-      <div class="or"><span>أو</span></div>
-      <button class="btn" id="offline">تعديل بدون إنترنت (تنزيل ملف البيانات يدوياً)</button>
+      <div id="passBox">
+        <label>كلمة السر<input id="pass" type="password" autocomplete="current-password"></label>
+        <label class="remember"><input type="checkbox" id="remember" checked> تذكّرني على الجهاز ده</label>
+        <button class="btn primary" id="passLogin">دخول</button>
+      </div>
       <p class="err" id="loginErr"></p>
+      <details id="devBox">
+        <summary>إعداد المطوّر (GitHub)</summary>
+        <label>اسم الحساب على GitHub (Owner)<input id="owner" dir="ltr" placeholder="my-account"></label>
+        <label>اسم المستودع (Repository)<input id="repo" dir="ltr" placeholder="company-site"></label>
+        <label>الفرع (Branch)<input id="branch" dir="ltr" value="main"></label>
+        <label>مفتاح الدخول (Token)<input id="token" dir="ltr" type="password" placeholder="github_pat_…"></label>
+        <button class="btn primary" id="connect">دخول بالمفتاح</button>
+        <button class="btn" id="offline">تعديل بدون إنترنت</button>
+      </details>
     </div>
   </div>
 
   <!-- اللوحة -->
   <div id="panel" class="panel hidden">
     <aside class="side">
-      <div class="side-head">🌾 <b>لوحة التحكم</b></div>
+      <div class="side-head">⚓ <b>لوحة التحكم</b></div>
+      <button class="tab" data-view="media">📷 الصور</button>
       <button class="tab" data-view="settings">⚙️ الإعدادات العامة</button>
       <div class="side-title">الأقسام <small>(اسحب للترتيب)</small></div>
       <div id="secList"></div>
@@ -41,6 +48,7 @@
       <div class="side-foot">
         <button class="btn sm" id="exportBtn">⬇ نسخة احتياطية</button>
         <label class="btn sm">⬆ استرجاع<input type="file" id="importFile" accept=".json" hidden></label>
+        <button class="btn sm hidden" id="setPass">🔑 كلمة سر للعميل</button>
         <button class="btn sm ghost" id="logout">خروج</button>
       </div>
     </aside>

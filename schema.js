@@ -17,6 +17,15 @@ window.SECTION_TYPES = {
       { key: 'autoplay', type: 'number', label: 'تبديل الشرائح كل (ثانية) — 0 = يدوي' }
     ]
   },
+  values: {
+    label: 'شريط القيم (Values)',
+    fields: [
+      { key: 'items', type: 'list', label: 'القيم', itemLabel: 'قيمة', fields: [
+        { key: 'icon', type: 'text', label: 'أيقونة (إيموجي)' },
+        { key: 'title', type: 'i18n', label: 'النص' }
+      ]}
+    ]
+  },
   stats: {
     label: 'أرقام بتعدّ (Stats)',
     fields: [

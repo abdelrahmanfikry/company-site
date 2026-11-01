@@ -51,6 +51,9 @@
       const dots = (s.slides || []).length > 1 ? `<div class="dots">${s.slides.map((_, i) => `<button aria-label="${i + 1}" class="${i === 0 ? 'on' : ''}" data-i="${i}"></button>`).join('')}</div>` : '';
       return `<section class="hero" id="${esc(s.id)}" data-autoplay="${+s.autoplay || 0}">${slides}${dots}<a href="#${esc(nextId(s))}" class="scroll-down" aria-label="scroll"><span></span></a></section>`;
     },
+    values(s) {
+      return `<section class="values" id="${esc(s.id)}"><div class="container values-in reveal">${(s.items || []).map(v => `<div class="value"><span>${esc(v.icon || '')}</span><b>${T(v.title)}</b></div>`).join('<i></i>')}</div></section>`;
+    },
     stats(s) {
       return `<section class="stats" id="${esc(s.id)}"><div class="container stats-grid">${(s.items || []).map(it => `
         <div class="stat reveal"><div class="stat-icon">${esc(it.icon || '')}</div><div class="stat-num"><span class="count" data-to="${+it.value || 0}">0</span><b>${esc(it.suffix || '')}</b></div><div class="stat-label">${T(it.label)}</div></div>`).join('')}</div></section>`;
@@ -158,7 +161,7 @@
 
     const vis = DATA.sections.filter(s => s.visible !== false);
     const nav = vis.filter(s => s.showInNav).map(s => `<a href="#${esc(s.id)}">${T(s.navLabel)}</a>`).join('');
-    const brand = `<a href="#${esc(vis[0] ? vis[0].id : '')}" class="brand">${st.logo ? `<img src="${esc(P(st.logo))}" alt="${T(st.name)}">` : `<span class="brand-mark">🌾</span>`}<span class="brand-text"><b>${T(st.name)}</b><small>${T(st.subtitle)}</small></span></a>`;
+    const brand = `<a href="#${esc(vis[0] ? vis[0].id : '')}" class="brand">${st.logo ? `<img src="${esc(P(st.logo))}" alt="${T(st.name)}">` : `<span class="brand-mark">⚓</span>`}<span class="brand-text"><b>${T(st.name)}</b><small>${T(st.subtitle)}</small></span></a>`;
     const socials = Object.entries(st.social || {}).filter(([, v]) => v).map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener" aria-label="${k}">${svg(k, 18)}</a>`).join('');
     const firstPhone = (st.phones || [])[0];
 
