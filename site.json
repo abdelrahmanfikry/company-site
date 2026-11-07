@@ -78,23 +78,11 @@
           "en": "Import"
         },
         "address": "import@crestline-impex.com"
-      },
-      {
-        "label": {
-          "ar": "أحمد طارق",
-          "en": "Ahmed Tarek"
-        },
-        "address": "ahmed.tarek@crestline-impex.com"
-      },
-      {
-        "label": {
-          "ar": "محمد النجار",
-          "en": "Mohamed Elnagar"
-        },
-        "address": "mohamed.elnagar@crestline-impex.com"
       }
     ],
-    "domain": "crestline-impex.com"
+    "domain": "crestline-impex.com",
+    "catalog": "",
+    "gaId": ""
   },
   "sections": [
     {
@@ -600,7 +588,50 @@
             "en": ""
           }
         }
+      ],
+      "categories": [
+        {
+          "name": {
+            "ar": "غذائي",
+            "en": "Food"
+          }
+        },
+        {
+          "name": {
+            "ar": "صناعي",
+            "en": "Industrial"
+          }
+        },
+        {
+          "name": {
+            "ar": "استهلاكي",
+            "en": "Consumer"
+          }
+        }
       ]
+    },
+    {
+      "id": "certificates",
+      "type": "certificates",
+      "visible": false,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "الشهادات",
+        "en": "Certificates"
+      },
+      "kicker": {
+        "ar": "الجودة أولًا",
+        "en": "Quality First"
+      },
+      "title": {
+        "ar": "شهاداتنا واعتماداتنا",
+        "en": "Our Certificates"
+      },
+      "text": {
+        "ar": "",
+        "en": ""
+      },
+      "items": []
     },
     {
       "id": "process",
@@ -804,6 +835,25 @@
       ]
     },
     {
+      "id": "news",
+      "type": "news",
+      "visible": false,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "الأخبار",
+        "en": "News"
+      },
+      "kicker": {
+        "ar": "آخر الأخبار",
+        "en": "Latest"
+      },
+      "title": {
+        "ar": "أخبار ومواسم",
+        "en": "News & Seasons"
+      },
+      "items": []
+    },
+    {
       "id": "partners",
       "type": "logos",
       "visible": false,
@@ -902,6 +952,54 @@
       ]
     },
     {
+      "id": "team",
+      "type": "team",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "فريقنا",
+        "en": "Our Team"
+      },
+      "kicker": {
+        "ar": "تواصل مباشر",
+        "en": "Talk to Us Directly"
+      },
+      "title": {
+        "ar": "فريق العمل",
+        "en": "Our Team"
+      },
+      "items": [
+        {
+          "photo": "",
+          "name": {
+            "ar": "أحمد طارق",
+            "en": "Ahmed Tarek"
+          },
+          "role": {
+            "ar": "",
+            "en": ""
+          },
+          "email": "ahmed.tarek@crestline-impex.com",
+          "phone": "",
+          "whatsapp": ""
+        },
+        {
+          "photo": "",
+          "name": {
+            "ar": "محمد النجار",
+            "en": "Mohamed Elnagar"
+          },
+          "role": {
+            "ar": "",
+            "en": ""
+          },
+          "email": "mohamed.elnagar@crestline-impex.com",
+          "phone": "",
+          "whatsapp": ""
+        }
+      ]
+    },
+    {
       "id": "cta",
       "type": "cta",
       "visible": true,
@@ -943,7 +1041,7 @@
         "en": "Contact Us"
       },
       "showMap": true,
-      "formTo": "whatsapp"
+      "formTo": "emailform"
     }
   ]
 }

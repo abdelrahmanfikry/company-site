@@ -1,8 +1,8 @@
 (function () {
   'use strict';
   const UI = {
-    ar: { all: 'الكل', quote: 'اطلب عرض سعر', season: 'الموسم', origin: 'المنشأ', name: 'الاسم', phone: 'رقم الجوال', email: 'الإيميل', company: 'الشركة', product: 'المنتج المطلوب', message: 'رسالتك', send: 'إرسال', call: 'اتصل بنا', mail: 'راسلنا', address: 'العنوان', hours: 'مواعيد العمل', rights: 'جميع الحقوق محفوظة', follow: 'تابعنا', quick: 'روابط سريعة', contact: 'تواصل', menu: 'القائمة', langBtn: 'EN', hello: 'مرحباً، أنا', want: 'أريد عرض سعر لـ' },
-    en: { all: 'All', quote: 'Request a Quote', season: 'Season', origin: 'Origin', name: 'Name', phone: 'Phone', email: 'Email', company: 'Company', product: 'Product', message: 'Your message', send: 'Send', call: 'Call Us', mail: 'Email Us', address: 'Address', hours: 'Working Hours', rights: 'All rights reserved', follow: 'Follow Us', quick: 'Quick Links', contact: 'Contact', menu: 'Menu', langBtn: 'ع', hello: 'Hello, I am', want: 'I would like a quote for' }
+    ar: { all: 'الكل', quote: 'اطلب عرض سعر', season: 'الموسم', origin: 'المنشأ', name: 'الاسم', phone: 'رقم الجوال', email: 'الإيميل', company: 'الشركة', product: 'المنتج المطلوب', message: 'رسالتك', send: 'إرسال', call: 'اتصل بنا', mail: 'راسلنا', address: 'العنوان', hours: 'مواعيد العمل', rights: 'جميع الحقوق محفوظة', follow: 'تابعنا', quick: 'روابط سريعة', contact: 'تواصل', menu: 'القائمة', langBtn: 'EN', hello: 'مرحباً، أنا', want: 'أريد عرض سعر لـ', catalog: 'تحميل الكتالوج', details: 'التفاصيل', specs: 'المواصفات', moq: 'أقل كمية للطلب', packing: 'التعبئة', incoterms: 'شروط التسليم', quoteForm: 'اطلب بالفورم', sending: 'جاري الإرسال…', sent: 'تم الإرسال ✓ هنرد عليك في أقرب وقت', sendFail: 'تعذّر الإرسال — هنفتحلك واتساب', readMore: 'اقرأ المزيد', view: 'عرض الشهادة', close: 'إغلاق' },
+    en: { all: 'All', quote: 'Request a Quote', season: 'Season', origin: 'Origin', name: 'Name', phone: 'Phone', email: 'Email', company: 'Company', product: 'Product', message: 'Your message', send: 'Send', call: 'Call Us', mail: 'Email Us', address: 'Address', hours: 'Working Hours', rights: 'All rights reserved', follow: 'Follow Us', quick: 'Quick Links', contact: 'Contact', menu: 'Menu', langBtn: 'ع', hello: 'Hello, I am', want: 'I would like a quote for', catalog: 'Download Catalog', details: 'Details', specs: 'Specifications', moq: 'Minimum Order', packing: 'Packing', incoterms: 'Delivery Terms', quoteForm: 'Request via form', sending: 'Sending…', sent: 'Sent ✓ We will get back to you shortly', sendFail: 'Could not send — opening WhatsApp instead', readMore: 'Read more', view: 'View certificate', close: 'Close' }
   };
   const ICONS = {
     facebook: '<path d="M14 9h3V5h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9.5c0-.3.2-.5.5-.5z"/>',
@@ -15,6 +15,7 @@
     phone: '<path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/>',
     mail: '<path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2"/>',
     pin: '<path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/>',
+    download: '<path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
     clock: '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2"/>'
   };
   const svg = (n, s = 20) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="currentColor" aria-hidden="true">${ICONS[n] || ''}</svg>`;
@@ -28,7 +29,7 @@
   const u = k => UI[LANG][k];
   const paras = v => t(v).split(/\n\s*\n/).map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
   let RAW = '';
-  const P = src => (RAW && src && /^images\/uploads\//.test(src)) ? RAW + src : (src || '');
+  const P = src => (RAW && src && /^(images|files)\/uploads\//.test(src)) ? RAW + src : (src || '');
   const img = (src, alt = '', cls = '') => src ? `<img src="${esc(P(src))}" alt="${esc(alt)}" loading="lazy" class="${cls}">` : '';
   const S = () => DATA.settings;
   const waLink = (msg) => `https://wa.me/${(S().whatsapp || '').replace(/\D/g, '')}?text=${encodeURIComponent(msg || t(S().whatsappMessage))}`;
@@ -68,15 +69,17 @@
       </div></section>`;
     },
     products(s) {
-      const cats = [...new Set((s.items || []).map(p => t(p.category)).filter(Boolean))];
+      const used = new Set((s.items || []).map(p => t(p.category)).filter(Boolean));
+      const cats = [...new Set([...(s.categories || []).map(c => t(c.name)).filter(c => used.has(c)), ...used])];
       return `<section class="sec products" id="${esc(s.id)}"><div class="container">${head(s)}
+        ${S().catalog ? `<div class="center reveal" style="margin:-10px 0 26px"><a class="btn btn-ghost-dark" href="${esc(P(S().catalog))}" target="_blank" rel="noopener" download>${svg('download', 18)} ${u('catalog')}</a></div>` : ''}
         ${cats.length > 1 ? `<div class="filters reveal"><button class="on" data-cat="*">${u('all')}</button>${cats.map(c => `<button data-cat="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}
-        <div class="prod-grid">${(s.items || []).map(p => `
-          <article class="prod reveal" data-cat="${esc(t(p.category))}">
+        <div class="prod-grid">${(s.items || []).map((p, i) => `
+          <article class="prod reveal" data-cat="${esc(t(p.category))}" data-i="${i}" tabindex="0" role="button" aria-label="${T(p.name)} — ${u('details')}">
             <div class="prod-img">${img(p.image, t(p.name))}${p.category ? `<span class="tag">${T(p.category)}</span>` : ''}</div>
             <div class="prod-body"><h3>${T(p.name)}</h3><p>${T(p.description)}</p>
               <div class="meta">${p.season && t(p.season) ? `<span>🗓 ${u('season')}: ${T(p.season)}</span>` : ''}${p.origin && t(p.origin) ? `<span>📍 ${u('origin')}: ${T(p.origin)}</span>` : ''}</div>
-              ${s.showQuoteButton ? `<a class="btn btn-sm btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${u('quote')}</a>` : ''}
+              <div class="prod-actions"><button type="button" class="btn btn-sm btn-light more">${u('details')}</button>${s.showQuoteButton ? `<a class="btn btn-sm btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${u('quote')}</a>` : ''}</div>
             </div>
           </article>`).join('')}</div></div></section>`;
     },
@@ -123,6 +126,41 @@
       const body = `<div class="rt-body reveal">${s.kicker ? `<span class="kicker">${T(s.kicker)}</span>` : ''}${s.title ? `<h2>${T(s.title)}</h2>` : ''}${paras(s.text)}</div>`;
       return `<section class="sec richtext${s.dark ? ' dark' : ''}" id="${esc(s.id)}"><div class="container ${s.image ? 'split' : 'narrow'}">${s.imageSide === 'end' ? body + media : media + body}</div></section>`;
     },
+    certificates(s) {
+      const items = (s.items || []).filter(c => c.image || t(c.name));
+      return `<section class="sec certs" id="${esc(s.id)}"><div class="container">${head(s)}
+        <div class="cert-grid">${items.map(c => { const link = c.file || c.image; return `
+          <a class="cert reveal"${link ? ` href="${esc(P(link))}" target="_blank" rel="noopener"` : ''}>
+            <div class="cert-img">${c.image ? img(c.image, t(c.name)) : '<span>🏅</span>'}</div>
+            <div class="cert-body"><h3>${T(c.name)}</h3>${t(c.issuer) ? `<small>${T(c.issuer)}</small>` : ''}${link ? `<span class="cert-link">${u('view')} ↗</span>` : ''}</div>
+          </a>`; }).join('')}</div></div></section>`;
+    },
+    team(s) {
+      const ini = n => { const w = t(n).trim().split(/\s+/); return /[\u0600-\u06FF]/.test(w[0] || '') ? (w[0] || '')[0] || '' : w.slice(0, 2).map(x => x[0]).join('').toUpperCase(); };
+      return `<section class="sec team" id="${esc(s.id)}"><div class="container">${head(s)}
+        <div class="team-grid">${(s.items || []).map(m => `
+          <div class="member reveal">
+            <div class="avatar">${m.photo ? img(m.photo, t(m.name)) : `<span>${esc(ini(m.name))}</span>`}</div>
+            <h3>${T(m.name)}</h3>${t(m.role) ? `<p class="role">${T(m.role)}</p>` : ''}
+            <div class="m-links">
+              ${m.email ? `<a href="mailto:${esc(m.email)}" title="${esc(m.email)}">${svg('mail', 18)}<span dir="ltr">${esc(m.email)}</span></a>` : ''}
+              ${m.phone ? `<a href="tel:${esc(String(m.phone).replace(/[^\d+]/g, ''))}">${svg('phone', 18)}<span dir="ltr">${esc(m.phone)}</span></a>` : ''}
+              ${m.whatsapp ? `<a class="wa" target="_blank" rel="noopener" href="https://wa.me/${esc(String(m.whatsapp).replace(/\D/g, ''))}">${svg('whatsapp', 18)}<span>WhatsApp</span></a>` : ''}
+            </div>
+          </div>`).join('')}</div></div></section>`;
+    },
+    news(s) {
+      const items = (s.items || []).slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+      const fd = d => { if (!d) return ''; const x = new Date(d); return isNaN(x) ? esc(d) : x.toLocaleDateString(LANG === 'ar' ? 'ar-EG' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); };
+      return `<section class="sec news" id="${esc(s.id)}"><div class="container">${head(s)}
+        <div class="news-grid">${items.map(n => { const full = t(n.text); const short = full.length > 160 ? full.slice(0, 160).replace(/\s+\S*$/, '') + '…' : full; return `
+          <article class="post reveal">
+            ${n.image ? `<div class="post-img">${img(n.image, t(n.title))}</div>` : ''}
+            <div class="post-body">${n.date ? `<time>${fd(n.date)}</time>` : ''}<h3>${T(n.title)}</h3>
+              ${full.length > 160 ? `<details><summary><span class="ex">${esc(short)}</span><b>${u('readMore')}</b></summary>${paras(n.text)}</details>` : paras(n.text)}
+            </div>
+          </article>`; }).join('')}</div></div></section>`;
+    },
     contact(s) {
       const st = S();
       const phones = (st.phones || []).map(p => `<a class="c-row" href="tel:${esc(String(p.number).replace(/[^\d+]/g, ''))}">${svg('phone')}<div><small>${T(p.label)}</small><b dir="ltr">${esc(p.number)}</b></div></a>`).join('');
@@ -139,7 +177,8 @@
           <div class="row2"><label><span>${u('phone')}</span><input name="phone" dir="ltr" required></label><label><span>${u('email')}</span><input name="email" type="email" dir="ltr"></label></div>
           <label><span>${u('product')}</span><input name="product"></label>
           <label><span>${u('message')}</span><textarea name="message" rows="4"></textarea></label>
-          <button class="btn btn-primary btn-lg" type="submit">${u('send')} ${s.formTo === 'email' ? svg('mail') : svg('whatsapp')}</button>
+          <button class="btn btn-primary btn-lg" type="submit">${u('send')} ${/email/.test(s.formTo || '') ? svg('mail') : svg('whatsapp')}</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>${s.showMap && st.mapEmbed ? `<div class="map reveal"><iframe src="${esc(st.mapEmbed)}" loading="lazy" title="map"></iframe></div>` : ''}</div></section>`;
     }
@@ -158,6 +197,7 @@
     if (c.dark) root.setProperty('--dark', c.dark);
     if (c.light) root.setProperty('--light', c.light);
     document.title = `${t(st.name)} | ${t(st.subtitle)}`;
+    if (st.gaId && /^G-[A-Z0-9]+$/i.test(st.gaId) && !window.__ga && !/preview/.test(location.search)) { window.__ga = 1; const g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + st.gaId; document.head.append(g); window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; gtag('js', new Date()); gtag('config', st.gaId, { anonymize_ip: true }); }
     const md = $('meta[name="description"]'); if (md) md.content = t(st.seoDescription);
     if (st.favicon) { let l = $('link[rel="icon"]'); l.href = P(st.favicon); }
 
@@ -170,7 +210,7 @@
     $('#app').innerHTML = `
       <div class="topbar"><div class="container topbar-in">
         <div class="tb-info">${firstPhone ? `<a href="tel:${esc(String(firstPhone.number).replace(/[^\d+]/g, ''))}">${svg('phone', 14)} <span dir="ltr">${esc(firstPhone.number)}</span></a>` : ''}${st.email ? `<a href="mailto:${esc(st.email)}">${svg('mail', 14)} ${esc(st.email)}</a>` : ''}</div>
-        <div class="tb-social">${socials}</div>
+        <div class="tb-social">${st.catalog ? `<a class="tb-cat" href="${esc(P(st.catalog))}" target="_blank" rel="noopener" download>${svg('download', 14)} ${u('catalog')}</a>` : ''}${socials}</div>
       </div></div>
       <header class="nav" id="nav"><div class="container nav-in">${brand}
         <nav class="menu" id="menu">${nav}</nav>
@@ -182,10 +222,11 @@
       <footer class="footer"><div class="container foot-grid">
         <div>${brand}<p class="muted">${T(st.footerText)}</p><div class="foot-social">${socials}</div></div>
         <div><h4>${u('quick')}</h4>${nav}</div>
-        <div><h4>${u('contact')}</h4>${(st.phones || []).map(p => `<a href="tel:${esc(String(p.number).replace(/[^\d+]/g, ''))}"><small>${T(p.label)}:</small> <span dir="ltr">${esc(p.number)}</span></a>`).join('')}${mails().slice(0, 3).map(e => `<a href="mailto:${esc(e.address)}">${t(e.label) ? `<small>${T(e.label)}:</small> ` : ''}<span dir="ltr">${esc(e.address)}</span></a>`).join('')}${t(st.address) ? `<span>${T(st.address)}</span>` : ''}</div>
+        <div><h4>${u('contact')}</h4>${(st.phones || []).map(p => `<a href="tel:${esc(String(p.number).replace(/[^\d+]/g, ''))}"><small>${T(p.label)}:</small> <span dir="ltr">${esc(p.number)}</span></a>`).join('')}${mails().slice(0, 3).map(e => `<a href="mailto:${esc(e.address)}">${t(e.label) ? `<small>${T(e.label)}:</small> ` : ''}<span dir="ltr">${esc(e.address)}</span></a>`).join('')}${t(st.address) ? `<span>${T(st.address)}</span>` : ''}${st.catalog ? `<a href="${esc(P(st.catalog))}" target="_blank" rel="noopener" download>⬇ ${u('catalog')}</a>` : ''}</div>
       </div><div class="copy">© ${new Date().getFullYear()} ${T(st.name)} — ${u('rights')}</div></footer>
       ${st.whatsapp ? `<a class="wa-float" target="_blank" rel="noopener" href="${esc(waLink())}" aria-label="WhatsApp">${svg('whatsapp', 30)}</a>` : ''}
       <button class="to-top" id="toTop" aria-label="top">↑</button>
+      <div class="pmodal" id="pm" role="dialog" aria-modal="true"><div class="pm-card"><button class="pm-x" aria-label="${u('close')}">✕</button><div class="pm-in"></div></div></div>
       <div class="lightbox" id="lb"><button class="lb-x">✕</button><button class="lb-prev">‹</button><img alt=""><button class="lb-next">›</button><p></p></div>`;
     wire();
   }
@@ -238,12 +279,55 @@
     $('.lb-prev', lb).onclick = () => { gi = (gi - 1 + gal.length) % gal.length; show(); };
     document.onkeydown = e => { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') lb.classList.remove('open'); if (e.key === 'ArrowRight') $('.lb-next', lb).click(); if (e.key === 'ArrowLeft') $('.lb-prev', lb).click(); };
 
+    // product details modal
+    const pm = $('#pm');
+    const closePM = () => { pm.classList.remove('open'); document.body.classList.remove('noscroll'); if (/^#p\//.test(location.hash)) history.replaceState(null, '', location.pathname + location.search); };
+    const openPM = (secId, i) => {
+      const sec = DATA.sections.find(x => x.id === secId); const p = sec && (sec.items || [])[i]; if (!p) return;
+      const row = (k, v) => t(v) ? `<tr><th>${u(k)}</th><td>${T(v)}</td></tr>` : '';
+      const specs = (p.specs || []).filter(x => t(x.label)).map(x => `<tr><th>${T(x.label)}</th><td>${T(x.value)}</td></tr>`).join('');
+      const table = row('origin', p.origin) + row('season', p.season) + row('moq', p.moq) + row('packing', p.packing) + (p.incoterms ? `<tr><th>${u('incoterms')}</th><td dir="ltr">${esc(p.incoterms)}</td></tr>` : '') + specs;
+      const hasForm = !!$('.contact-form');
+      $('.pm-in', pm).innerHTML = `
+        <div class="pm-img">${img(p.image, t(p.name))}</div>
+        <div class="pm-body">${p.category ? `<span class="kicker">${T(p.category)}</span>` : ''}<h2>${T(p.name)}</h2>${paras(p.longDescription && t(p.longDescription) ? p.longDescription : p.description)}
+          ${table ? `<h4>${u('specs')}</h4><table class="spec">${table}</table>` : ''}
+          <div class="pm-btns">${S().whatsapp ? `<a class="btn btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${svg('whatsapp', 18)} ${u('quote')}</a>` : ''}${hasForm ? `<button type="button" class="btn btn-ghost-dark pm-form">${svg('mail', 18)} ${u('quoteForm')}</button>` : ''}</div>
+        </div>`;
+      const fb = $('.pm-form', pm);
+      if (fb) fb.onclick = () => { closePM(); const f = $('.contact-form'); f.elements.product.value = t(p.name); f.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => f.elements.name.focus(), 600); };
+      pm.classList.add('open'); document.body.classList.add('noscroll');
+      history.replaceState(null, '', `#p/${secId}/${i}`);
+    };
+    $$('.products').forEach(sec => $$('.prod', sec).forEach(card => {
+      const go = e => { if (e.target.closest('a')) return; openPM(sec.id, +card.dataset.i); };
+      card.onclick = go; card.onkeydown = e => { if (e.key === 'Enter') go(e); };
+    }));
+    $('.pm-x', pm).onclick = closePM;
+    pm.onclick = e => { if (e.target === pm) closePM(); };
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && pm.classList.contains('open')) closePM(); });
+    const mh = location.hash.match(/^#p\/([^/]+)\/(\d+)$/); if (mh) setTimeout(() => openPM(mh[1], +mh[2]), 300);
+
     // contact form
-    $$('.contact-form').forEach(f => f.onsubmit = e => {
+    $$('.contact-form').forEach(f => f.onsubmit = async e => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(f));
       const lines = [`${u('hello')} ${d.name}`, d.company && `${u('company')}: ${d.company}`, `${u('phone')}: ${d.phone}`, d.email && `${u('email')}: ${d.email}`, d.product && `${u('product')}: ${d.product}`, d.message].filter(Boolean).join('\n');
-      if (f.dataset.to === 'email') location.href = `mailto:${S().email}?subject=${encodeURIComponent(u('quote') + ' — ' + d.name)}&body=${encodeURIComponent(lines)}`;
+      const to = f.dataset.to;
+      if (to === 'emailform' && S().email) {
+        const btn = $('button[type=submit]', f), st = $('.form-status', f), old = btn.innerHTML;
+        btn.disabled = true; btn.textContent = u('sending'); st.className = 'form-status';
+        try {
+          const r = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(S().email), { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ _subject: `${u('quote')} — ${d.name}${d.product ? ' — ' + d.product : ''}`, _template: 'table', _captcha: 'false', _replyto: d.email || undefined, Name: d.name, Company: d.company, Phone: d.phone, Email: d.email, Product: d.product, Message: d.message, Language: LANG }) });
+          const j = await r.json().catch(() => ({}));
+          if (!r.ok || String(j.success) === 'false') throw new Error(j.message || r.status);
+          st.textContent = u('sent'); st.classList.add('ok'); f.reset();
+        } catch (err) {
+          st.textContent = u('sendFail'); st.classList.add('bad'); setTimeout(() => window.open(waLink(lines), '_blank'), 900);
+        }
+        btn.disabled = false; btn.innerHTML = old;
+      } else if (to === 'email') location.href = `mailto:${S().email}?subject=${encodeURIComponent(u('quote') + ' — ' + d.name)}&body=${encodeURIComponent(lines)}`;
       else window.open(waLink(lines), '_blank');
     });
   }

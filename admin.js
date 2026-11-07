@@ -303,6 +303,8 @@
       case 'color': { const i = h('input', { type: 'color' }); i.value = val || '#000000'; const t = h('input', { dir: 'ltr', style: 'max-width:140px' }); t.value = val || ''; i.oninput = () => { t.value = i.value; set(i.value); }; t.oninput = () => { if (/^#[0-9a-f]{6}$/i.test(t.value)) { i.value = t.value; set(t.value); } }; wrap.append(h('div', { class: 'row' }, i, t)); break; }
       case 'select': { const sel = h('select', {}, f.options.map(([k, l]) => h('option', { value: k }, l))); sel.value = val ?? f.options[0][0]; sel.onchange = () => set(sel.value); wrap.append(sel); break; }
       case 'image': wrap.append(imageField(val, set)); break;
+      case 'file': wrap.append(fileField(val, set)); break;
+      case 'date': { const i = h('input', { type: 'date', dir: 'ltr', style: 'max-width:200px' }); i.value = val || ''; i.oninput = () => set(i.value); wrap.append(i); break; }
       case 'list': wrap.append(listField(obj, f)); break;
       default: { const i = h('input', { dir: /link|url|email|whatsapp|social|map|id|youtube|number/i.test(f.key) ? 'ltr' : 'auto' }); i.value = val ?? ''; i.oninput = () => set(clean ? clean(i.value) : i.value); wrap.append(i); }
     }
@@ -326,6 +328,36 @@
     const clr = h('button', { class: 'btn sm ghost', onclick: () => { path.value = ''; set(''); paint(); } }, 'إزالة');
     paint();
     return h('div', { class: 'img-field' }, thumb, h('div', { class: 'col' }, path, h('div', { class: 'row' }, up, clr)));
+  }
+
+  function fileField(val, set) {
+    const path = h('input', { dir: 'ltr', placeholder: 'files/... أو رابط' }); path.value = val || '';
+    const open = h('a', { class: 'btn sm ghost', target: '_blank', rel: 'noopener' }, 'فتح');
+    const paint = () => { open.href = imgURL(path.value) || path.value; open.style.display = path.value ? '' : 'none'; };
+    path.oninput = () => { set(path.value); paint(); };
+    const file = h('input', { type: 'file', accept: '.pdf,application/pdf', hidden: true });
+    const up = h('label', { class: 'btn sm primary' }, '⬆ رفع ملف PDF', file);
+    file.onchange = async () => {
+      const f = file.files[0]; if (!f) return;
+      if (f.size > 20 * 1024 * 1024) { file.value = ''; return toast('الملف أكبر من 20 ميجا — صغّره الأول', true); }
+      up.firstChild.textContent = '… جاري الرفع'; up.style.pointerEvents = 'none';
+      try { const p = await uploadFile(f); path.value = p; set(p); paint(); toast('✓ اتّرفع الملف — متنساش «حفظ ونشر»'); }
+      catch (e) { toast('فشل رفع الملف: ' + e.message, true); }
+      up.firstChild.textContent = '⬆ رفع ملف PDF'; up.style.pointerEvents = ''; file.value = '';
+    };
+    const clr = h('button', { class: 'btn sm ghost', onclick: () => { path.value = ''; set(''); paint(); } }, 'إزالة');
+    paint();
+    return h('div', { class: 'col' }, path, h('div', { class: 'row' }, up, open, clr));
+  }
+  async function uploadFile(file) {
+    const dataURL = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(file); });
+    if (OFFLINE) return dataURL;
+    const ext = (file.name.split('.').pop() || 'pdf').toLowerCase().replace(/[^a-z0-9]/g, '') || 'pdf';
+    const safe = file.name.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'file';
+    const path = `files/uploads/${Date.now()}-${safe}.${ext}`;
+    await putFile(path, dataURL.split(',')[1], 'رفع ملف: ' + path);
+    BLOBS[path] = URL.createObjectURL(file);
+    return path;
   }
 
   async function shrink(file) {
