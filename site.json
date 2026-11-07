@@ -17,7 +17,7 @@
       "dark": "#0a1a30",
       "light": "#f6f4ee"
     },
-    "whatsapp": "201000000000",
+    "whatsapp": "201553550880",
     "whatsappMessage": {
       "ar": "السلام عليكم، أريد الاستفسار عن خدماتكم",
       "en": "Hello, I'd like to ask about your services"
@@ -25,20 +25,13 @@
     "phones": [
       {
         "label": {
-          "ar": "المبيعات",
-          "en": "Sales"
+          "ar": "المبيعات وخدمة العملاء",
+          "en": "Sales & Customer Service"
         },
-        "number": "+20 100 000 0000"
-      },
-      {
-        "label": {
-          "ar": "قسم التصدير",
-          "en": "Export Desk"
-        },
-        "number": "+20 111 000 0000"
+        "number": "+20 155 355 0880"
       }
     ],
-    "email": "info@crestline.com",
+    "email": "sales@crestline-impex.com",
     "address": {
       "ar": "القاهرة، جمهورية مصر العربية",
       "en": "Cairo, Egypt"
@@ -63,7 +56,45 @@
     "footerText": {
       "ar": "نربط الأسواق… ونصنع الفرص. معًا لغدٍ أكبر.",
       "en": "Bridging markets, creating opportunities. Together for a bigger tomorrow."
-    }
+    },
+    "emails": [
+      {
+        "label": {
+          "ar": "المبيعات",
+          "en": "Sales"
+        },
+        "address": "sales@crestline-impex.com"
+      },
+      {
+        "label": {
+          "ar": "قسم التصدير",
+          "en": "Export"
+        },
+        "address": "export@crestline-impex.com"
+      },
+      {
+        "label": {
+          "ar": "قسم الاستيراد",
+          "en": "Import"
+        },
+        "address": "import@crestline-impex.com"
+      },
+      {
+        "label": {
+          "ar": "أحمد طارق",
+          "en": "Ahmed Tarek"
+        },
+        "address": "ahmed.tarek@crestline-impex.com"
+      },
+      {
+        "label": {
+          "ar": "محمد النجار",
+          "en": "Mohamed Elnagar"
+        },
+        "address": "mohamed.elnagar@crestline-impex.com"
+      }
+    ],
+    "domain": "crestline-impex.com"
   },
   "sections": [
     {

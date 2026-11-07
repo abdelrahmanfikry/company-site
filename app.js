@@ -32,6 +32,8 @@
   const img = (src, alt = '', cls = '') => src ? `<img src="${esc(P(src))}" alt="${esc(alt)}" loading="lazy" class="${cls}">` : '';
   const S = () => DATA.settings;
   const waLink = (msg) => `https://wa.me/${(S().whatsapp || '').replace(/\D/g, '')}?text=${encodeURIComponent(msg || t(S().whatsappMessage))}`;
+  const mails = () => { const st = S(); const l = (st.emails || []).filter(e => e && e.address); return l.length ? l : (st.email ? [{ label: '', address: st.email }] : []); };
+  const fmtWa = n => { const d = String(n || '').replace(/\D/g, ''); return d.startsWith('20') && d.length === 12 ? `+20 ${d.slice(2, 5)} ${d.slice(5, 8)} ${d.slice(8)}` : '+' + d; };
   const resolveLink = l => l === 'whatsapp' ? waLink() : (l || '#');
   const head = s => (s.kicker || s.title) ? `<div class="sec-head reveal">${s.kicker ? `<span class="kicker">${T(s.kicker)}</span>` : ''}${s.title ? `<h2>${T(s.title)}</h2>` : ''}${s.text && s.type !== 'richtext' && s.type !== 'video' ? `<p class="lead">${T(s.text)}</p>` : ''}</div>` : '';
   const ext = l => /^https?:/.test(l) ? ' target="_blank" rel="noopener"' : '';
@@ -127,8 +129,8 @@
       return `<section class="sec contact" id="${esc(s.id)}"><div class="container">${head(s)}<div class="contact-grid">
         <div class="contact-info reveal">
           ${phones}
-          ${st.whatsapp ? `<a class="c-row wa" target="_blank" rel="noopener" href="${esc(waLink())}">${svg('whatsapp')}<div><small>WhatsApp</small><b dir="ltr">+${esc(st.whatsapp)}</b></div></a>` : ''}
-          ${st.email ? `<a class="c-row" href="mailto:${esc(st.email)}">${svg('mail')}<div><small>${u('email')}</small><b>${esc(st.email)}</b></div></a>` : ''}
+          ${st.whatsapp ? `<a class="c-row wa" target="_blank" rel="noopener" href="${esc(waLink())}">${svg('whatsapp')}<div><small>WhatsApp</small><b dir="ltr">${esc(fmtWa(st.whatsapp))}</b></div></a>` : ''}
+          ${mails().length ? `<div class="c-row c-multi">${svg('mail')}<div><small>${u('email')}</small>${mails().map(e => `<a href="mailto:${esc(e.address)}">${t(e.label) ? `<em>${T(e.label)}</em>` : ''}<b dir="ltr">${esc(e.address)}</b></a>`).join('')}</div></div>` : ''}
           ${t(st.address) ? `<div class="c-row">${svg('pin')}<div><small>${u('address')}</small><b>${T(st.address)}</b></div></div>` : ''}
           ${t(st.workHours) ? `<div class="c-row">${svg('clock')}<div><small>${u('hours')}</small><b>${T(st.workHours)}</b></div></div>` : ''}
         </div>
@@ -180,7 +182,7 @@
       <footer class="footer"><div class="container foot-grid">
         <div>${brand}<p class="muted">${T(st.footerText)}</p><div class="foot-social">${socials}</div></div>
         <div><h4>${u('quick')}</h4>${nav}</div>
-        <div><h4>${u('contact')}</h4>${(st.phones || []).map(p => `<a href="tel:${esc(String(p.number).replace(/[^\d+]/g, ''))}"><small>${T(p.label)}:</small> <span dir="ltr">${esc(p.number)}</span></a>`).join('')}${st.email ? `<a href="mailto:${esc(st.email)}">${esc(st.email)}</a>` : ''}${t(st.address) ? `<span>${T(st.address)}</span>` : ''}</div>
+        <div><h4>${u('contact')}</h4>${(st.phones || []).map(p => `<a href="tel:${esc(String(p.number).replace(/[^\d+]/g, ''))}"><small>${T(p.label)}:</small> <span dir="ltr">${esc(p.number)}</span></a>`).join('')}${mails().slice(0, 3).map(e => `<a href="mailto:${esc(e.address)}">${t(e.label) ? `<small>${T(e.label)}:</small> ` : ''}<span dir="ltr">${esc(e.address)}</span></a>`).join('')}${t(st.address) ? `<span>${T(st.address)}</span>` : ''}</div>
       </div><div class="copy">© ${new Date().getFullYear()} ${T(st.name)} — ${u('rights')}</div></footer>
       ${st.whatsapp ? `<a class="wa-float" target="_blank" rel="noopener" href="${esc(waLink())}" aria-label="WhatsApp">${svg('whatsapp', 30)}</a>` : ''}
       <button class="to-top" id="toTop" aria-label="top">↑</button>

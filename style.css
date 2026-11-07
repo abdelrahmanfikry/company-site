@@ -235,6 +235,15 @@ html[dir=ltr] a.c-row:hover{transform:translateX(6px)}
 .c-row.wa svg{background:#25d366;color:#fff}
 .c-row small{display:block;color:var(--muted);font-size:.82rem}
 .c-row b{font-size:1.05rem}
+.c-multi{align-items:flex-start}
+.c-multi>div{flex:1;min-width:0}
+.c-multi a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;padding:7px 0;border-bottom:1px dashed rgba(0,0,0,.08);transition:color .2s}
+.c-multi a:last-child{border-bottom:0}
+.c-multi a:hover{color:var(--accent)}
+.c-multi em{font-style:normal;font-size:.85rem;color:var(--muted)}
+.c-multi b{font-size:.95rem;overflow-wrap:anywhere}
+@media(max-width:560px){.c-multi a{flex-direction:column;align-items:flex-start;gap:2px}.c-multi b{font-size:.8rem;overflow-wrap:anywhere}}
+.footer a span[dir=ltr]{white-space:nowrap}
 .contact-form{background:var(--dark);color:#fff;padding:36px;border-radius:24px;display:flex;flex-direction:column;gap:14px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .contact-form label span{display:block;font-size:.88rem;margin-bottom:6px;opacity:.75}

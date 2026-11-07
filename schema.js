@@ -210,7 +210,11 @@ window.SETTINGS_FIELDS = [
       { key: 'label', type: 'i18n', label: 'القسم' },
       { key: 'number', type: 'text', label: 'الرقم' }
     ]},
-    { key: 'email', type: 'text', label: 'الإيميل' },
+    { key: 'email', type: 'text', label: 'الإيميل الرئيسي (يظهر في الشريط العلوي ويستقبل الفورم)' },
+    { key: 'emails', type: 'list', label: 'إيميلات الأقسام والفريق', itemLabel: 'إيميل', fields: [
+      { key: 'label', type: 'i18n', label: 'القسم أو الاسم' },
+      { key: 'address', type: 'text', label: 'الإيميل' }
+    ]},
     { key: 'address', type: 'i18n', label: 'العنوان' },
     { key: 'workHours', type: 'i18n', label: 'مواعيد العمل' },
     { key: 'mapEmbed', type: 'text', label: 'رابط خريطة جوجل (Embed)' }
