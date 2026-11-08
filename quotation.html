@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>عرض سعر — Quotation</title>
+<link rel="icon" href="logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0f2747;--accent:#c9a24a;--dark:#0a1a30;--light:#f6f4ee;--ink:#14213a;--muted:#5f6b7d;--line:#dfe3ea}
+*{box-sizing:border-box}
+body{margin:0;background:#e9ecf1;color:var(--ink);font-family:Tajawal,Inter,system-ui,sans-serif;font-size:14px}
+html[dir=ltr] body{font-family:Inter,Tajawal,system-ui,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+.toolbar{position:sticky;top:0;z-index:10;background:var(--dark);color:#fff;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 16px}
+.toolbar b{margin-inline-end:auto;font-size:1.05rem}
+.tb{border:0;border-radius:9px;padding:8px 14px;cursor:pointer;background:rgba(255,255,255,.12);color:#fff;font-weight:600}
+.tb:hover{background:rgba(255,255,255,.22)}
+.tb.gold{background:var(--accent);color:var(--dark)}
+.tb select{background:transparent;border:0;color:#fff}
+.tb select option{color:#000}
+.saved{background:#fff;max-width:900px;margin:14px auto 0;border-radius:12px;padding:12px 16px;display:none}
+.saved.open{display:block}
+.saved table{width:100%;border-collapse:collapse}
+.saved td,.saved th{padding:7px 8px;border-bottom:1px solid var(--line);text-align:start}
+.saved button{border:0;background:none;cursor:pointer;color:var(--primary);font-weight:600}
+.saved .del{color:#c0392b}
+.page{width:210mm;min-height:297mm;margin:18px auto 40px;background:#fff;padding:14mm 14mm 16mm;box-shadow:0 10px 40px -15px rgba(0,0,0,.35);position:relative}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-bottom:3px solid var(--primary);padding-bottom:14px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand img{width:72px;height:72px;object-fit:contain}
+.brand h1{margin:0;font-size:1.5rem;color:var(--primary)}
+.brand small{display:block;color:var(--muted);font-size:.9rem}
+.co{font-size:.82rem;color:var(--muted);line-height:1.6;text-align:end}
+.title{display:flex;justify-content:space-between;align-items:flex-end;margin:18px 0 12px}
+.title h2{margin:0;font-size:1.9rem;letter-spacing:.5px;color:var(--dark)}
+.title h2 span{color:var(--accent)}
+.meta{display:grid;grid-template-columns:auto auto;gap:3px 14px;font-size:.9rem}
+.meta label{color:var(--muted)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.box{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.box h4{margin:0 0 6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)}
+.f{display:block;width:100%;border:0;border-bottom:1px dashed transparent;background:transparent;padding:3px 2px;outline:none;resize:none}
+.f:hover,.f:focus{border-bottom-color:#b9c2d0;background:#fafbfd}
+.f::placeholder{color:#b2bac6}
+.f.big{font-weight:700;font-size:1.05rem}
+.meta .f{width:150px;padding:1px 2px}
+table.lines{width:100%;border-collapse:collapse;margin-top:4px}
+.lines th{background:var(--primary);color:#fff;font-weight:600;font-size:.82rem;padding:8px 6px;text-align:start}
+.lines th:first-child{border-start-start-radius:8px}.lines th:last-child{border-start-end-radius:8px}
+.lines td{border-bottom:1px solid var(--line);padding:5px 6px;vertical-align:top}
+.lines tr:nth-child(even) td{background:#fafbfc}
+.lines .n{width:28px;color:var(--muted);text-align:center;padding-top:9px}
+.lines .num{text-align:end}
+.lines input.f.num{text-align:end}
+.lines .x{width:24px}
+.lines .x button{border:0;background:none;color:#c0392b;cursor:pointer;font-size:1rem;padding-top:4px}
+.addrow{display:flex;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.addrow button,.addrow select{border:1px dashed var(--primary);background:#fff;color:var(--primary);border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.bottom{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:16px;align-items:start}
+.totals{width:100%;border-collapse:collapse}
+.totals td{padding:6px 8px}
+.totals td:last-child{text-align:end;font-weight:600;white-space:nowrap}
+.totals .pct{width:52px;display:inline-block;text-align:center;border:1px solid var(--line);border-radius:6px;padding:1px 3px}
+.totals tr.grand td{background:var(--primary);color:#fff;font-size:1.1rem;font-weight:800}
+.totals tr.grand td:first-child{border-start-start-radius:8px;border-end-start-radius:8px}
+.totals tr.grand td:last-child{border-start-end-radius:8px;border-end-end-radius:8px}
+.words{font-size:.82rem;color:var(--muted);margin-top:6px}
+.terms .row{display:grid;grid-template-columns:120px 1fr;gap:6px;align-items:baseline;border-bottom:1px solid #f0f2f5;padding:3px 0}
+.terms .row label{color:var(--muted);font-size:.85rem}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:38px}
+.sign div{border-top:1px solid var(--ink);padding-top:6px;text-align:center;font-size:.85rem;color:var(--muted)}
+.foot{position:absolute;bottom:8mm;left:14mm;right:14mm;border-top:1px solid var(--line);padding-top:6px;font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hidden-print{}
+@media(max-width:900px){.page{width:auto;min-height:0;margin:12px;padding:18px}.cols,.bottom{grid-template-columns:1fr}.foot{position:static;margin-top:20px}.lines{font-size:.85rem}}
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff}
+  .toolbar,.saved,.addrow,.lines .x,.hidden-print{display:none!important}
+  .page{margin:0;box-shadow:none;width:210mm;min-height:297mm}
+  .f{border:0!important;background:transparent!important}
+  .f::placeholder{color:transparent}
+  select.f{appearance:none;-webkit-appearance:none}
+  .lines th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .totals tr.grand td,.lines tr:nth-child(even) td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .empty-print{display:none!important}
+  input[type=date]{display:none}
+  .dp{display:inline!important}
+  .f.num{appearance:textfield;-moz-appearance:textfield}
+}
+.dp{display:none;padding:1px 2px}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.totals td:first-child{white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b>🧾 <span data-t="tool">عروض الأسعار</span></b>
+  <button class="tb" id="bNew" data-t="new">+ عرض جديد</button>
+  <button class="tb" id="bSave" data-t="save">💾 حفظ</button>
+  <button class="tb" id="bList" data-t="list">📂 المحفوظة</button>
+  <button class="tb" id="bDup" data-t="dup">⧉ نسخة</button>
+  <label class="tb">🌐 <select id="lang"><option value="ar">عربي</option><option value="en">English</option></select></label>
+  <label class="tb">💱 <select id="cur"><option>USD</option><option>EUR</option><option>EGP</option><option>SAR</option><option>AED</option><option>GBP</option><option>CNY</option></select></label>
+  <button class="tb gold" id="bPrint" data-t="print">🖨 طباعة / PDF</button>
+</div>
+<div class="saved" id="saved"></div>
+
+<div class="page" id="page">
+  <div class="hd">
+    <div class="brand"><img id="logo" alt=""><div><h1 id="coName"></h1><small id="coSub"></small></div></div>
+    <div class="co" id="coInfo"></div>
+  </div>
+
+  <div class="title">
+    <h2><span data-t="qt">عرض سعر</span></h2>
+    <div class="meta">
+      <label data-t="no">رقم العرض</label><input class="f" id="no" dir="ltr">
+      <label data-t="date">التاريخ</label><span><input class="f" id="date" type="date" dir="ltr"><span class="dp" id="dateP" dir="ltr"></span></span>
+      <label data-t="valid">صالح حتى</label><span><input class="f" id="validTo" type="date" dir="ltr"><span class="dp" id="validToP" dir="ltr"></span></span>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="box"><h4 data-t="to">مقدم إلى</h4>
+      <input class="f big" id="cName" data-p="cName">
+      <input class="f" id="cCompany" data-p="cCompany">
+      <input class="f" id="cCountry" data-p="cCountry">
+      <input class="f" id="cPhone" dir="ltr" data-p="cPhone">
+      <input class="f" id="cEmail" dir="ltr" data-p="cEmail">
+    </div>
+    <div class="box"><h4 data-t="ship">الشحن والتسليم</h4>
+      <div class="terms">
+        <div class="row"><label data-t="inco">شروط التسليم</label><input class="f" id="inco" dir="ltr" placeholder="FOB / CIF / EXW"></div>
+        <div class="row"><label data-t="port">ميناء الشحن</label><input class="f" id="port" data-p="port"></div>
+        <div class="row"><label data-t="dest">ميناء الوصول</label><input class="f" id="dest" data-p="dest"></div>
+        <div class="row"><label data-t="lead">مدة التجهيز</label><input class="f" id="lead" data-p="lead"></div>
+      </div>
+    </div>
+  </div>
+
+  <table class="lines">
+    <thead><tr><th>#</th><th data-t="item">الصنف / الوصف</th><th class="num" data-t="qty">الكمية</th><th data-t="unit">الوحدة</th><th class="num" data-t="price">سعر الوحدة</th><th class="num" data-t="total">الإجمالي</th><th class="x"></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div class="addrow">
+    <select id="addProd"><option value="" data-t="fromCat">+ إضافة منتج من الكتالوج</option></select>
+    <button id="addLine" data-t="addLine">+ سطر حر</button>
+  </div>
+
+  <div class="bottom">
+    <div class="box"><h4 data-t="termsT">الشروط والملاحظات</h4>
+      <div class="terms">
+        <div class="row"><label data-t="pay">طريقة الدفع</label><input class="f" id="pay" data-p="pay"></div>
+        <div class="row"><label data-t="pack">التعبئة</label><input class="f" id="pack" data-p="pack"></div>
+      </div>
+      <textarea class="f" id="notes" rows="4" data-p="notes" style="margin-top:6px"></textarea>
+    </div>
+    <div>
+      <table class="totals">
+        <tr><td data-t="sub">الإجمالي قبل الخصم</td><td id="tSub"></td></tr>
+        <tr class="opt-disc"><td><span data-t="disc">خصم</span> <input class="pct f" id="disc" type="number" min="0" step="any" dir="ltr"> %</td><td id="tDisc"></td></tr>
+        <tr class="opt-tax"><td><span data-t="tax">ضريبة</span> <input class="pct f" id="tax" type="number" min="0" step="any" dir="ltr"> %</td><td id="tTax"></td></tr>
+        <tr class="opt-ship"><td><span data-t="shipC">شحن وتأمين</span></td><td><input class="f num" id="shipC" type="number" min="0" step="any" dir="ltr" style="text-align:end;width:110px;display:inline-block"></td></tr>
+        <tr class="grand"><td data-t="grand">الإجمالي</td><td id="tGrand"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sign"><div data-t="prep">إعداد</div><div data-t="appr">اعتماد العميل</div></div>
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const T = {
+    ar: { tool: 'عروض الأسعار', new: '+ عرض جديد', save: '💾 حفظ', list: '📂 المحفوظة', dup: '⧉ نسخة', print: '🖨 طباعة / PDF', qt: 'عرض سعر', no: 'رقم العرض', date: 'التاريخ', valid: 'صالح حتى', to: 'مقدم إلى', ship: 'الشحن والتسليم', inco: 'شروط التسليم', port: 'ميناء الشحن', dest: 'ميناء الوصول', lead: 'مدة التجهيز', item: 'الصنف / الوصف', qty: 'الكمية', unit: 'الوحدة', price: 'سعر الوحدة', total: 'الإجمالي', fromCat: '+ إضافة منتج من الكتالوج', addLine: '+ سطر حر', termsT: 'الشروط والملاحظات', pay: 'طريقة الدفع', pack: 'التعبئة', sub: 'الإجمالي قبل الخصم', disc: 'خصم', tax: 'ضريبة', shipC: 'شحن وتأمين', grand: 'الإجمالي', prep: 'إعداد', appr: 'اعتماد العميل',
+      ph: { cName: 'اسم العميل', cCompany: 'الشركة', cCountry: 'الدولة / المدينة', cPhone: 'الجوال', cEmail: 'الإيميل', port: 'مثال: الإسكندرية', dest: 'مثال: جدة', lead: 'مثال: 14 يوم من تأكيد الطلب', pay: 'مثال: 30% مقدم و70% مقابل المستندات', pack: 'مثال: كرتون 15 كجم', notes: 'ملاحظات إضافية…', desc: 'الصنف والمواصفات' },
+      units: ['كجم', 'طن', 'كرتون', 'حاوية 20 قدم', 'حاوية 40 قدم', 'قطعة'],
+      savedT: 'العروض المحفوظة على الجهاز ده', open: 'فتح', del: 'حذف', none: 'مفيش عروض محفوظة لسه.', saved: 'اتحفظ ✓', confirmNew: 'تبدأ عرض جديد؟ أي تعديل مش محفوظ هيضيع.', confirmDel: 'حذف العرض؟', valid0: 'صالح لمدة' },
+    en: { tool: 'Quotations', new: '+ New', save: '💾 Save', list: '📂 Saved', dup: '⧉ Duplicate', print: '🖨 Print / PDF', qt: 'QUOTATION', no: 'Quotation No.', date: 'Date', valid: 'Valid until', to: 'Quotation to', ship: 'Shipping & Delivery', inco: 'Incoterms', port: 'Port of loading', dest: 'Destination', lead: 'Lead time', item: 'Item / Description', qty: 'Qty', unit: 'Unit', price: 'Unit price', total: 'Amount', fromCat: '+ Add product from catalog', addLine: '+ Custom line', termsT: 'Terms & Notes', pay: 'Payment', pack: 'Packing', sub: 'Subtotal', disc: 'Discount', tax: 'Tax', shipC: 'Freight & insurance', grand: 'Total', prep: 'Prepared by', appr: 'Customer approval',
+      ph: { cName: 'Customer name', cCompany: 'Company', cCountry: 'Country / City', cPhone: 'Phone', cEmail: 'Email', port: 'e.g. Alexandria', dest: 'e.g. Jeddah', lead: 'e.g. 14 days from order confirmation', pay: 'e.g. 30% advance, 70% against documents', pack: 'e.g. 15 kg cartons', notes: 'Additional notes…', desc: 'Item and specifications' },
+      units: ['kg', 'ton', 'carton', '20ft container', '40ft container', 'piece'],
+      savedT: 'Quotations saved on this device', open: 'Open', del: 'Delete', none: 'No saved quotations yet.', saved: 'Saved ✓', confirmNew: 'Start a new quotation? Unsaved changes will be lost.', confirmDel: 'Delete this quotation?' }
+  };
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+  let SITE = { settings: {}, sections: [] }, PRODUCTS = [], Q;
+  const today = () => new Date().toISOString().slice(0, 10);
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x.toISOString().slice(0, 10); };
+  const tx = (v, l) => v == null ? '' : typeof v === 'object' ? (v[l] || v.ar || v.en || '') : String(v);
+  const nextNo = () => { const y = new Date().getFullYear(); const c = store.get('q_counter', {}); const n = (c[y] || 0) + 1; return { no: `QT-${y}-${String(n).padStart(4, '0')}`, y, n }; };
+  const blank = () => ({ id: Date.now(), no: nextNo().no, date: today(), validTo: addDays(today(), 15), lang: 'ar', cur: 'USD', lines: [], disc: '', tax: '', shipC: '', inco: 'FOB', fields: {} });
+  const fmt = n => (Math.round((+n || 0) * 100) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  function paintStatic() {
+    const L = T[Q.lang], st = SITE.settings || {}, l = Q.lang;
+    document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-t]').forEach(e => { const k = e.dataset.t; if (L[k]) e.textContent = L[k]; });
+    document.querySelectorAll('[data-p]').forEach(e => { e.placeholder = L.ph[e.dataset.p] || ''; });
+    $('#lang').value = l; $('#cur').value = Q.cur;
+    $('#logo').src = st.logo || 'logo.webp';
+    $('#coName').textContent = tx(st.name, l); $('#coSub').textContent = tx(st.subtitle, l);
+    const ph = (st.phones || [])[0];
+    $('#coInfo').innerHTML = [tx(st.address, l), ph && `<span dir="ltr">${esc(ph.number)}</span>`, st.email && `<span dir="ltr">${esc(st.email)}</span>`, st.domain && `<span dir="ltr">${esc(st.domain)}</span>`].filter(Boolean).join('<br>');
+    $('#foot').innerHTML = `<span>${esc(tx(st.name, l))} — ${esc(tx(st.subtitle, l))}</span><span dir="ltr">${esc([st.domain, st.email, ph && ph.number].filter(Boolean).join('  •  '))}</span>`;
+    const sel = $('#addProd'); sel.length = 1; sel.options[0].textContent = L.fromCat;
+    PRODUCTS.forEach((p, i) => sel.add(new Option(tx(p.name, l), i)));
+  }
+
+  function paintRows() {
+    const L = T[Q.lang];
+    $('#rows').innerHTML = Q.lines.map((r, i) => `
+      <tr data-i="${i}">
+        <td class="n">${i + 1}</td>
+        <td><textarea class="f" rows="1" data-k="desc" placeholder="${esc(L.ph.desc)}">${esc(r.desc)}</textarea></td>
+        <td style="width:80px"><input class="f num" data-k="qty" type="number" min="0" step="any" dir="ltr" value="${esc(r.qty)}"></td>
+        <td style="width:110px"><select class="f" data-k="unit">${L.units.map((u, n) => `<option value="${n}"${+r.unit === n ? ' selected' : ''}>${esc(u)}</option>`).join('')}</select></td>
+        <td style="width:100px"><input class="f num" data-k="price" type="number" min="0" step="any" dir="ltr" value="${esc(r.price)}"></td>
+        <td class="num" style="width:110px;padding-top:8px" data-tot dir="ltr"></td>
+        <td class="x"><button title="×">✕</button></td>
+      </tr>`).join('');
+    document.querySelectorAll('#rows tr').forEach(tr => {
+      const r = Q.lines[+tr.dataset.i];
+      tr.querySelectorAll('[data-k]').forEach(el => {
+        const ev = el.tagName === 'SELECT' ? 'change' : 'input';
+        el.addEventListener(ev, () => { r[el.dataset.k] = el.dataset.k === 'unit' ? +el.value : el.value; if (el.tagName === 'TEXTAREA') autoH(el); calc(); });
+        if (el.tagName === 'TEXTAREA') autoH(el);
+      });
+      tr.querySelector('.x button').onclick = () => { Q.lines.splice(+tr.dataset.i, 1); paintRows(); };
+    });
+    calc();
+  }
+  const autoH = el => { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; };
+
+  function calc() {
+    let sub = 0;
+    document.querySelectorAll('#rows tr').forEach(tr => { const r = Q.lines[+tr.dataset.i]; const t = (+r.qty || 0) * (+r.price || 0); sub += t; tr.querySelector('[data-tot]').textContent = fmt(t); });
+    const d = sub * (+Q.disc || 0) / 100, after = sub - d, tax = after * (+Q.tax || 0) / 100, ship = +Q.shipC || 0;
+    const c = ' ' + Q.cur;
+    $('#tSub').textContent = fmt(sub) + c; $('#tDisc').textContent = d ? '- ' + fmt(d) + c : '—'; $('#tTax').textContent = tax ? fmt(tax) + c : '—';
+    $('#tGrand').textContent = fmt(after + tax + ship) + c;
+    document.querySelector('.opt-disc').classList.toggle('hidden-print', !+Q.disc);
+    document.querySelector('.opt-tax').classList.toggle('hidden-print', !+Q.tax);
+    document.querySelector('.opt-ship').classList.toggle('hidden-print', !+Q.shipC);
+    const fd = v => { if (!v) return ''; const [y, m, d] = v.split('-'); return `${d}/${m}/${y}`; };
+    $('#dateP').textContent = fd(Q.date); $('#validToP').textContent = fd(Q.validTo);
+    document.querySelectorAll('.terms .row').forEach(r => { const i = r.querySelector('input'); r.classList.toggle('empty-print', !i.value.trim()); });
+    store.set('q_draft', Q);
+  }
+
+  function load(q) {
+    Q = q;
+    ['no', 'date', 'validTo', 'inco', 'disc', 'tax', 'shipC'].forEach(k => { $('#' + k).value = Q[k] ?? ''; });
+    document.querySelectorAll('[data-p]').forEach(e => { e.value = (Q.fields || {})[e.id] || ''; if (e.tagName === 'TEXTAREA') autoH(e); });
+    paintStatic(); paintRows();
+  }
+
+  // bindings
+  ['no', 'date', 'validTo', 'inco', 'disc', 'tax', 'shipC'].forEach(k => $('#' + k).addEventListener('input', e => { Q[k] = e.target.value; calc(); }));
+  document.querySelectorAll('[data-p]').forEach(e => e.addEventListener('input', () => { Q.fields = Q.fields || {}; Q.fields[e.id] = e.value; if (e.tagName === 'TEXTAREA') autoH(e); calc(); }));
+  $('#lang').onchange = e => { Q.lang = e.target.value; paintStatic(); paintRows(); };
+  $('#cur').onchange = e => { Q.cur = e.target.value; calc(); };
+  $('#addLine').onclick = () => { Q.lines.push({ desc: '', qty: '', unit: 4, price: '' }); paintRows(); const t = document.querySelectorAll('#rows textarea'); t[t.length - 1].focus(); };
+  $('#addProd').onchange = e => {
+    const p = PRODUCTS[+e.target.value]; e.target.value = ''; if (!p) return;
+    const l = Q.lang, extra = [tx(p.origin, l) && (l === 'ar' ? 'المنشأ: ' : 'Origin: ') + tx(p.origin, l), tx(p.packing, l)].filter(Boolean).join(' — ');
+    Q.lines.push({ desc: tx(p.name, l) + (extra ? '\n' + extra : ''), qty: '', unit: 4, price: '' });
+    if (!Q.fields.pack && tx(p.packing, l)) { Q.fields.pack = tx(p.packing, l); $('#pack').value = Q.fields.pack; }
+    if (p.incoterms && !Q.inco) { Q.inco = p.incoterms; $('#inco').value = p.incoterms; }
+    paintRows();
+  };
+  const toast = m => { const b = $('#bSave'), o = b.textContent; b.textContent = m; setTimeout(() => b.textContent = T[Q.lang].save, 1300); };
+  function save() {
+    const all = store.get('q_saved', []); const i = all.findIndex(x => x.id === Q.id);
+    Q.savedAt = new Date().toISOString(); if (i >= 0) all[i] = Q; else all.unshift(Q);
+    store.set('q_saved', all);
+    const m = /^QT-(\d{4})-(\d+)$/.exec(Q.no); if (m) { const c = store.get('q_counter', {}); if (+m[2] > (c[m[1]] || 0)) { c[m[1]] = +m[2]; store.set('q_counter', c); } }
+    toast(T[Q.lang].saved);
+  }
+  $('#bSave').onclick = save;
+  $('#bNew').onclick = () => { if (Q.lines.length && !confirm(T[Q.lang].confirmNew)) return; const lang = Q.lang, cur = Q.cur; load(Object.assign(blank(), { lang, cur })); };
+  $('#bDup').onclick = () => { const c = JSON.parse(JSON.stringify(Q)); c.id = Date.now(); c.no = nextNo().no; c.date = today(); c.validTo = addDays(today(), 15); delete c.savedAt; load(c); };
+  $('#bPrint').onclick = () => { save(); document.title = `${Q.no} — ${Q.fields.cName || ''}`; window.print(); };
+  $('#bList').onclick = () => {
+    const box = $('#saved'), L = T[Q.lang]; if (box.classList.toggle('open') === false) return;
+    const all = store.get('q_saved', []);
+    box.innerHTML = `<b>${L.savedT}</b>` + (all.length ? `<table>${all.map((q, i) => { const t = q.lines.reduce((s, r) => s + (+r.qty || 0) * (+r.price || 0), 0); return `<tr><td dir="ltr">${esc(q.no)}</td><td>${esc((q.fields || {}).cName || '')}</td><td dir="ltr">${esc(q.date)}</td><td dir="ltr">${fmt(t)} ${esc(q.cur)}</td><td><button data-o="${i}">${L.open}</button> <button class="del" data-d="${i}">${L.del}</button></td></tr>`; }).join('')}</table>` : `<p>${L.none}</p>`);
+    box.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { load(JSON.parse(JSON.stringify(all[+b.dataset.o]))); box.classList.remove('open'); });
+    box.querySelectorAll('[data-d]').forEach(b => b.onclick = () => { if (!confirm(L.confirmDel)) return; all.splice(+b.dataset.d, 1); store.set('q_saved', all); box.classList.remove('open'); $('#bList').click(); });
+  };
+
+  fetch('site.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ settings: {}, sections: [] })).then(d => {
+    SITE = d; PRODUCTS = (d.sections || []).filter(s => s.type === 'products').flatMap(s => s.items || []);
+    load(store.get('q_draft', null) || blank());
+  });
+})();
+</script>
+</body>
+</html>

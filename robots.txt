@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /quotation.html
 Sitemap: https://crestline-impex.com/sitemap.xml
