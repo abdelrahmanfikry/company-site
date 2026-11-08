@@ -1,8 +1,8 @@
 (function () {
   'use strict';
   const UI = {
-    ar: { all: 'الكل', quote: 'اطلب عرض سعر', season: 'الموسم', origin: 'المنشأ', name: 'الاسم', phone: 'رقم الجوال', email: 'الإيميل', company: 'الشركة', product: 'المنتج المطلوب', message: 'رسالتك', send: 'إرسال', call: 'اتصل بنا', mail: 'راسلنا', address: 'العنوان', hours: 'مواعيد العمل', rights: 'جميع الحقوق محفوظة', follow: 'تابعنا', quick: 'روابط سريعة', contact: 'تواصل', menu: 'القائمة', langBtn: 'EN', hello: 'مرحباً، أنا', want: 'أريد عرض سعر لـ', catalog: 'تحميل الكتالوج', details: 'التفاصيل', specs: 'المواصفات', moq: 'أقل كمية للطلب', packing: 'التعبئة', incoterms: 'شروط التسليم', quoteForm: 'اطلب بالفورم', sending: 'جاري الإرسال…', sent: 'تم الإرسال ✓ هنرد عليك في أقرب وقت', sendFail: 'تعذّر الإرسال — هنفتحلك واتساب', readMore: 'اقرأ المزيد', view: 'عرض الشهادة', close: 'إغلاق' },
-    en: { all: 'All', quote: 'Request a Quote', season: 'Season', origin: 'Origin', name: 'Name', phone: 'Phone', email: 'Email', company: 'Company', product: 'Product', message: 'Your message', send: 'Send', call: 'Call Us', mail: 'Email Us', address: 'Address', hours: 'Working Hours', rights: 'All rights reserved', follow: 'Follow Us', quick: 'Quick Links', contact: 'Contact', menu: 'Menu', langBtn: 'ع', hello: 'Hello, I am', want: 'I would like a quote for', catalog: 'Download Catalog', details: 'Details', specs: 'Specifications', moq: 'Minimum Order', packing: 'Packing', incoterms: 'Delivery Terms', quoteForm: 'Request via form', sending: 'Sending…', sent: 'Sent ✓ We will get back to you shortly', sendFail: 'Could not send — opening WhatsApp instead', readMore: 'Read more', view: 'View certificate', close: 'Close' }
+    ar: { all: 'الكل', quote: 'اطلب عرض سعر', season: 'الموسم', origin: 'المنشأ', name: 'الاسم', phone: 'رقم الجوال', email: 'الإيميل', company: 'الشركة', product: 'المنتج المطلوب', message: 'رسالتك', send: 'إرسال', call: 'اتصل بنا', mail: 'راسلنا', address: 'العنوان', hours: 'مواعيد العمل', rights: 'جميع الحقوق محفوظة', follow: 'تابعنا', quick: 'روابط سريعة', contact: 'تواصل', menu: 'القائمة', langBtn: 'EN', hello: 'مرحباً، أنا', want: 'أريد عرض سعر لـ', catalog: 'تحميل الكتالوج', details: 'التفاصيل', specs: 'المواصفات', moq: 'أقل كمية للطلب', packing: 'التعبئة', incoterms: 'شروط التسليم', quoteForm: 'اطلب بالفورم', sending: 'جاري الإرسال…', sent: 'تم الإرسال ✓ هنرد عليك في أقرب وقت', sendFail: 'تعذّر الإرسال — هنفتحلك واتساب', readMore: 'اقرأ المزيد', view: 'عرض الشهادة', close: 'إغلاق', addQ: 'أضف للطلب', added: 'اتضاف لطلب السعر ✓', inQ: 'في الطلب ✓', myQ: 'طلب عرض السعر', qty: 'الكمية', unit: 'الوحدة', remove: 'حذف', qEmpty: 'لسه مضفتش منتجات — اضغط «أضف للطلب» على أي منتج.', yourInfo: 'بياناتك', country: 'الدولة', notes: 'ملاحظات (موعد التسليم، الميناء، المواصفات…)', sendEmail: 'إرسال الطلب', sendWa: 'إرسال على واتساب', clearQ: 'تفريغ الطلب', qSent: 'تم إرسال طلبك ✓ فريق المبيعات هيرد عليك بعرض سعر قريبًا', needInfo: 'اكتب الاسم ورقم الجوال الأول', units: ['كجم', 'طن', 'كرتون', 'حاوية 20 قدم', 'حاوية 40 قدم', 'قطعة'], items: 'المنتجات' },
+    en: { all: 'All', quote: 'Request a Quote', season: 'Season', origin: 'Origin', name: 'Name', phone: 'Phone', email: 'Email', company: 'Company', product: 'Product', message: 'Your message', send: 'Send', call: 'Call Us', mail: 'Email Us', address: 'Address', hours: 'Working Hours', rights: 'All rights reserved', follow: 'Follow Us', quick: 'Quick Links', contact: 'Contact', menu: 'Menu', langBtn: 'ع', hello: 'Hello, I am', want: 'I would like a quote for', catalog: 'Download Catalog', details: 'Details', specs: 'Specifications', moq: 'Minimum Order', packing: 'Packing', incoterms: 'Delivery Terms', quoteForm: 'Request via form', sending: 'Sending…', sent: 'Sent ✓ We will get back to you shortly', sendFail: 'Could not send — opening WhatsApp instead', readMore: 'Read more', view: 'View certificate', close: 'Close', addQ: 'Add to quote', added: 'Added to your quote ✓', inQ: 'In quote ✓', myQ: 'Quote Request', qty: 'Quantity', unit: 'Unit', remove: 'Remove', qEmpty: 'No products yet — tap “Add to quote” on any product.', yourInfo: 'Your details', country: 'Country', notes: 'Notes (delivery date, port, specifications…)', sendEmail: 'Send request', sendWa: 'Send via WhatsApp', clearQ: 'Clear quote', qSent: 'Your request was sent ✓ Our sales team will reply with a quotation soon', needInfo: 'Please enter your name and phone first', units: ['kg', 'ton', 'carton', '20ft container', '40ft container', 'piece'], items: 'Products' }
   };
   const ICONS = {
     facebook: '<path d="M14 9h3V5h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9.5c0-.3.2-.5.5-.5z"/>',
@@ -32,6 +32,10 @@
   const P = src => (RAW && src && /^(images|files)\/uploads\//.test(src)) ? RAW + src : (src || '');
   const img = (src, alt = '', cls = '') => src ? `<img src="${esc(P(src))}" alt="${esc(alt)}" loading="lazy" class="${cls}">` : '';
   const S = () => DATA.settings;
+  let QUOTE = []; try { QUOTE = JSON.parse(localStorage.getItem('quote') || '[]') || []; } catch (e) { QUOTE = []; }
+  const saveQ = () => { try { localStorage.setItem('quote', JSON.stringify(QUOTE)); } catch (e) {} };
+  const inQ = (sec, i) => QUOTE.some(q => q.sec === sec && q.i === i);
+  const prodOf = q => { const s = DATA.sections.find(x => x.id === q.sec); return s && (s.items || [])[q.i]; };
   const waLink = (msg) => `https://wa.me/${(S().whatsapp || '').replace(/\D/g, '')}?text=${encodeURIComponent(msg || t(S().whatsappMessage))}`;
   const mails = () => { const st = S(); const l = (st.emails || []).filter(e => e && e.address); return l.length ? l : (st.email ? [{ label: '', address: st.email }] : []); };
   const fmtWa = n => { const d = String(n || '').replace(/\D/g, ''); return d.startsWith('20') && d.length === 12 ? `+20 ${d.slice(2, 5)} ${d.slice(5, 8)} ${d.slice(8)}` : '+' + d; };
@@ -79,7 +83,7 @@
             <div class="prod-img">${img(p.image, t(p.name))}${p.category ? `<span class="tag">${T(p.category)}</span>` : ''}</div>
             <div class="prod-body"><h3>${T(p.name)}</h3><p>${T(p.description)}</p>
               <div class="meta">${p.season && t(p.season) ? `<span>🗓 ${u('season')}: ${T(p.season)}</span>` : ''}${p.origin && t(p.origin) ? `<span>📍 ${u('origin')}: ${T(p.origin)}</span>` : ''}</div>
-              <div class="prod-actions"><button type="button" class="btn btn-sm btn-light more">${u('details')}</button>${s.showQuoteButton ? `<a class="btn btn-sm btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${u('quote')}</a>` : ''}</div>
+              <div class="prod-actions"><button type="button" class="btn btn-sm btn-light more">${u('details')}</button>${s.showQuoteButton !== false ? `<button type="button" class="btn btn-sm btn-primary addq${inQ(s.id, i) ? ' on' : ''}" data-sec="${esc(s.id)}" data-i="${i}">${inQ(s.id, i) ? u('inQ') : '+ ' + u('addQ')}</button>` : ''}</div>
             </div>
           </article>`).join('')}</div></div></section>`;
     },
@@ -226,6 +230,21 @@
       </div><div class="copy">© ${new Date().getFullYear()} ${T(st.name)} — ${u('rights')}</div></footer>
       ${st.whatsapp ? `<a class="wa-float" target="_blank" rel="noopener" href="${esc(waLink())}" aria-label="WhatsApp">${svg('whatsapp', 30)}</a>` : ''}
       <button class="to-top" id="toTop" aria-label="top">↑</button>
+      <button class="q-fab" id="qFab" type="button">🧾 <span>${u('myQ')}</span> <b id="qCount">0</b></button>
+      <div class="qdrawer" id="qd" role="dialog" aria-modal="true"><div class="qd-card">
+        <div class="qd-head"><h3>🧾 ${u('myQ')}</h3><button class="pm-x qd-x" type="button" aria-label="${u('close')}">✕</button></div>
+        <div class="qd-body"><div class="q-items" id="qItems"></div>
+          <form class="q-form" id="qForm" novalidate>
+            <h4>${u('yourInfo')}</h4>
+            <div class="row2"><label><span>${u('name')} *</span><input name="name" required></label><label><span>${u('company')}</span><input name="company"></label></div>
+            <div class="row2"><label><span>${u('phone')} *</span><input name="phone" dir="ltr" required></label><label><span>${u('email')}</span><input name="email" type="email" dir="ltr"></label></div>
+            <label><span>${u('country')}</span><input name="country"></label>
+            <label><span>${u('notes')}</span><textarea name="notes" rows="3"></textarea></label>
+            <p class="form-status" id="qStatus" role="status" aria-live="polite"></p>
+            <div class="qd-btns"><button class="btn btn-primary" type="submit">${svg('mail', 18)} ${u('sendEmail')}</button>${S().whatsapp ? `<button class="btn btn-wa" type="button" id="qWa">${svg('whatsapp', 18)} ${u('sendWa')}</button>` : ''}</div>
+            <button class="q-clear" type="button" id="qClear">${u('clearQ')}</button>
+          </form></div></div></div>
+      <div class="toast" id="toast"></div>
       <div class="pmodal" id="pm" role="dialog" aria-modal="true"><div class="pm-card"><button class="pm-x" aria-label="${u('close')}">✕</button><div class="pm-in"></div></div></div>
       <div class="lightbox" id="lb"><button class="lb-x">✕</button><button class="lb-prev">‹</button><img alt=""><button class="lb-next">›</button><p></p></div>`;
     wire();
@@ -292,7 +311,7 @@
         <div class="pm-img">${img(p.image, t(p.name))}</div>
         <div class="pm-body">${p.category ? `<span class="kicker">${T(p.category)}</span>` : ''}<h2>${T(p.name)}</h2>${paras(p.longDescription && t(p.longDescription) ? p.longDescription : p.description)}
           ${table ? `<h4>${u('specs')}</h4><table class="spec">${table}</table>` : ''}
-          <div class="pm-btns">${S().whatsapp ? `<a class="btn btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${svg('whatsapp', 18)} ${u('quote')}</a>` : ''}${hasForm ? `<button type="button" class="btn btn-ghost-dark pm-form">${svg('mail', 18)} ${u('quoteForm')}</button>` : ''}</div>
+          <div class="pm-btns"><button type="button" class="btn btn-accent addq${inQ(secId, i) ? ' on' : ''}" data-sec="${esc(secId)}" data-i="${i}">${inQ(secId, i) ? u('inQ') : '+ ' + u('addQ')}</button>${S().whatsapp ? `<a class="btn btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${svg('whatsapp', 18)} ${u('quote')}</a>` : ''}${hasForm ? `<button type="button" class="btn btn-ghost-dark pm-form">${svg('mail', 18)} ${u('quoteForm')}</button>` : ''}</div>
         </div>`;
       const fb = $('.pm-form', pm);
       if (fb) fb.onclick = () => { closePM(); const f = $('.contact-form'); f.elements.product.value = t(p.name); f.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => f.elements.name.focus(), 600); };
@@ -307,6 +326,59 @@
     pm.onclick = e => { if (e.target === pm) closePM(); };
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && pm.classList.contains('open')) closePM(); });
     const mh = location.hash.match(/^#p\/([^/]+)\/(\d+)$/); if (mh) setTimeout(() => openPM(mh[1], +mh[2]), 300);
+
+    // quote cart
+    const qd = $('#qd'), qFab = $('#qFab');
+    const toast = m => { const el = $('#toast'); el.textContent = m; el.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 2200); };
+    const units = UI[LANG].units;
+    const paintBtns = () => $$('.addq').forEach(b => { const on = inQ(b.dataset.sec, +b.dataset.i); b.classList.toggle('on', on); b.textContent = on ? u('inQ') : '+ ' + u('addQ'); });
+    const paintQ = () => {
+      QUOTE = QUOTE.filter(prodOf);
+      $('#qCount').textContent = QUOTE.length; qFab.classList.toggle('show', QUOTE.length > 0);
+      $('#qItems').innerHTML = QUOTE.length ? QUOTE.map((q, k) => { const p = prodOf(q); return `
+        <div class="q-item" data-k="${k}">
+          <div class="q-thumb">${img(p.image, t(p.name))}</div>
+          <div class="q-main"><b>${T(p.name)}</b>
+            <div class="q-row"><label>${u('qty')}<input type="number" min="0" step="any" class="q-qty" value="${esc(q.qty || '')}" dir="ltr"></label>
+            <label>${u('unit')}<select class="q-unit">${units.map((x, n) => `<option value="${n}"${+q.unit === n ? ' selected' : ''}>${esc(x)}</option>`).join('')}</select></label></div>
+          </div>
+          <button type="button" class="q-del" aria-label="${u('remove')}">✕</button>
+        </div>`; }).join('') : `<p class="q-empty">${u('qEmpty')}</p>`;
+      $$('.q-item', qd).forEach(row => { const q = QUOTE[+row.dataset.k];
+        $('.q-qty', row).oninput = e => { q.qty = e.target.value; saveQ(); };
+        $('.q-unit', row).onchange = e => { q.unit = +e.target.value; saveQ(); };
+        $('.q-del', row).onclick = () => { QUOTE.splice(+row.dataset.k, 1); saveQ(); paintQ(); paintBtns(); }; });
+      saveQ();
+    };
+    const openQ = () => { paintQ(); qd.classList.add('open'); document.body.classList.add('noscroll'); };
+    const closeQ = () => { qd.classList.remove('open'); if (!pm.classList.contains('open')) document.body.classList.remove('noscroll'); };
+    window.__addQ = e => { const b = e.target.closest('.addq'); if (!b) return; e.stopPropagation();
+      const sec = b.dataset.sec, i = +b.dataset.i;
+      if (inQ(sec, i)) { closePM(); openQ(); return; }
+      QUOTE.push({ sec, i, qty: '', unit: 4 }); saveQ(); paintQ(); paintBtns(); toast(u('added')); };
+    if (!window.__qBound) { window.__qBound = 1; document.addEventListener('click', e => window.__addQ(e), true); }
+    qFab.onclick = openQ; $('.qd-x', qd).onclick = closeQ; qd.onclick = e => { if (e.target === qd) closeQ(); };
+    $('#qClear').onclick = () => { QUOTE = []; paintQ(); paintBtns(); };
+    const qText = d => {
+      const lines = QUOTE.map((q, n) => { const p = prodOf(q); return `${n + 1}. ${t(p.name)} — ${q.qty || '?'} ${units[+q.unit] || ''}`; });
+      return [`${u('hello')} ${d.name}`, d.company && `${u('company')}: ${d.company}`, d.country && `${u('country')}: ${d.country}`, `${u('phone')}: ${d.phone}`, d.email && `${u('email')}: ${d.email}`, '', `${u('items')}:`, ...lines, d.notes ? '\n' + d.notes : ''].filter(x => x !== false && x !== undefined && x !== null).join('\n');
+    };
+    const qData = () => { const d = Object.fromEntries(new FormData($('#qForm'))); const st = $('#qStatus');
+      if (!QUOTE.length) { st.textContent = u('qEmpty'); st.className = 'form-status bad'; return null; }
+      if (!d.name.trim() || !d.phone.trim()) { st.textContent = u('needInfo'); st.className = 'form-status bad'; return null; }
+      return d; };
+    $('#qForm').onsubmit = async e => { e.preventDefault(); const d = qData(); if (!d) return;
+      const st = $('#qStatus'), btn = $('button[type=submit]', e.target), old = btn.innerHTML; btn.disabled = true; btn.textContent = u('sending'); st.className = 'form-status';
+      const products = QUOTE.map((q, n) => { const p = prodOf(q); return `${n + 1}. ${t(p.name)} — ${q.qty || '?'} ${units[+q.unit] || ''}`; }).join('\n');
+      try {
+        const r = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(S().email), { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ _subject: `${u('myQ')} — ${d.name} (${QUOTE.length})`, _template: 'table', _captcha: 'false', _replyto: d.email || undefined, Name: d.name, Company: d.company, Country: d.country, Phone: d.phone, Email: d.email, Products: products, Notes: d.notes, Language: LANG }) });
+        const j = await r.json().catch(() => ({})); if (!r.ok || String(j.success) === 'false') throw new Error(j.message || r.status);
+        st.textContent = u('qSent'); st.className = 'form-status ok'; QUOTE = []; paintQ(); paintBtns(); e.target.reset();
+      } catch (err) { st.textContent = u('sendFail'); st.className = 'form-status bad'; setTimeout(() => window.open(waLink(qText(d)), '_blank'), 900); }
+      btn.disabled = false; btn.innerHTML = old; };
+    const qw = $('#qWa'); if (qw) qw.onclick = () => { const d = qData(); if (d) window.open(waLink(qText(d)), '_blank'); };
+    paintQ();
 
     // contact form
     $$('.contact-form').forEach(f => f.onsubmit = async e => {
