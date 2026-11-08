@@ -268,7 +268,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   $('#addProd').onchange = e => {
     const p = PRODUCTS[+e.target.value]; e.target.value = ''; if (!p) return;
     const l = Q.lang, extra = [tx(p.origin, l) && (l === 'ar' ? 'المنشأ: ' : 'Origin: ') + tx(p.origin, l), tx(p.packing, l)].filter(Boolean).join(' — ');
-    Q.lines.push({ desc: tx(p.name, l) + (extra ? '\n' + extra : ''), qty: '', unit: 4, price: '' });
+    Q.lines.push({ desc: tx(p.name, l) + (p.code ? ' [' + p.code + ']' : '') + (extra ? '\n' + extra : ''), qty: '', unit: 4, price: (p.price && (!p.currency || p.currency === Q.cur)) ? p.price : '' });
     if (!Q.fields.pack && tx(p.packing, l)) { Q.fields.pack = tx(p.packing, l); $('#pack').value = Q.fields.pack; }
     if (p.incoterms && !Q.inco) { Q.inco = p.incoterms; $('#inco').value = p.incoterms; }
     paintRows();

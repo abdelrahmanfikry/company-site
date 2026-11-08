@@ -61,8 +61,21 @@ window.SECTION_TYPES = {
         { key: 'name', type: 'i18n', label: 'اسم القسم (اكتبه بنفس الشكل في خانة «القسم» في المنتج)' }
       ]},
       { key: 'items', type: 'list', label: 'المنتجات', itemLabel: 'منتج', fields: [
-        { key: 'image', type: 'image', label: 'صورة المنتج' },
+        { key: 'image', type: 'image', label: 'صورة المنتج الرئيسية' },
         { key: 'name', type: 'i18n', label: 'اسم المنتج' },
+        { key: 'hidden', type: 'bool', label: '🙈 إخفاء المنتج من الموقع (من غير ما يتمسح)' },
+        { key: 'featured', type: 'bool', label: '★ منتج مميز (عليه علامة «مميز»)' },
+        { key: 'availability', type: 'select', label: 'التوفر', options: [['', '— بدون —'], ['available', 'متاح'], ['seasonal', 'حسب الموسم'], ['preorder', 'بالطلب المسبق'], ['soon', 'قريبًا'], ['out', 'غير متاح حاليًا']] },
+        { key: 'showPrice', type: 'bool', label: '💲 إظهار السعر في الموقع (لو مقفول مش هيظهر في الصفحات وبيتسحب في عروض الأسعار — بس الملف عام، فمتكتبش أسعار سرية جدًا)' },
+        { key: 'price', type: 'text', label: 'السعر (رقم — مثال 850)' },
+        { key: 'currency', type: 'select', label: 'العملة', options: [['USD', 'USD'], ['EUR', 'EUR'], ['EGP', 'EGP'], ['SAR', 'SAR'], ['AED', 'AED']] },
+        { key: 'priceUnit', type: 'i18n', label: 'السعر لكل (مثال: طن / Ton)' },
+        { key: 'priceFrom', type: 'bool', label: 'اكتب «يبدأ من» قبل السعر' },
+        { key: 'code', type: 'text', label: 'كود المنتج (SKU)' },
+        { key: 'hs', type: 'text', label: 'HS Code (الكود الجمركي)' },
+        { key: 'gallery', type: 'list', label: 'صور إضافية للمنتج', itemLabel: 'صورة', fields: [
+          { key: 'src', type: 'image', label: 'الصورة' }
+        ]},
         { key: 'category', type: 'i18n', label: 'القسم (لازم يطابق اسم قسم من «أقسام المنتجات»)' },
         { key: 'description', type: 'i18nArea', label: 'وصف قصير (يظهر على الكارت)' },
         { key: 'longDescription', type: 'i18nArea', label: 'وصف تفصيلي (يظهر في صفحة التفاصيل — اختياري)' },
