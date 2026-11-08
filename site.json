@@ -425,7 +425,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -448,7 +449,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -471,7 +473,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -494,7 +497,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -517,7 +521,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -540,7 +545,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -563,7 +569,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         },
         {
           "name": {
@@ -586,7 +593,8 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "availability": "available"
         }
       ],
       "categories": [
