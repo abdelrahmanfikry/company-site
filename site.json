@@ -426,7 +426,27 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": [],
+          "showPrice": true,
+          "price": "20"
         },
         {
           "name": {
@@ -450,7 +470,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         },
         {
           "name": {
@@ -474,7 +512,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         },
         {
           "name": {
@@ -498,7 +554,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         },
         {
           "name": {
@@ -522,7 +596,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         },
         {
           "name": {
@@ -546,7 +638,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         },
         {
           "name": {
@@ -570,7 +680,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         },
         {
           "name": {
@@ -594,7 +722,25 @@
             "ar": "",
             "en": ""
           },
-          "availability": "available"
+          "availability": "available",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         }
       ],
       "categories": [
