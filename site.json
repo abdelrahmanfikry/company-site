@@ -991,7 +991,7 @@
     {
       "id": "news",
       "type": "news",
-      "visible": false,
+      "visible": true,
       "showInNav": false,
       "navLabel": {
         "ar": "الأخبار",
