@@ -860,6 +860,16 @@
             "ar": "فحص الجودة قبل الشحن.",
             "en": "Quality check before shipping."
           }
+        },
+        {
+          "title": {
+            "ar": "البطاطس",
+            "en": ""
+          },
+          "text": {
+            "ar": "",
+            "en": ""
+          }
         }
       ]
     },
