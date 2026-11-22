@@ -843,22 +843,22 @@
         },
         {
           "title": {
-            "ar": "الشحن والتسليم",
-            "en": "Shipping & Delivery"
-          },
-          "text": {
-            "ar": "نوصّل لحد مخزنك.",
-            "en": "Delivered to your warehouse."
-          }
-        },
-        {
-          "title": {
             "ar": "الفحص",
             "en": "Inspection"
           },
           "text": {
             "ar": "فحص الجودة قبل الشحن.",
             "en": "Quality check before shipping."
+          }
+        },
+        {
+          "title": {
+            "ar": "الشحن والتسليم",
+            "en": "Shipping & Delivery"
+          },
+          "text": {
+            "ar": "نوصّل لحد مخزنك.",
+            "en": "Delivered to your warehouse."
           }
         },
         {
