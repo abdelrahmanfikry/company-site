@@ -764,7 +764,25 @@
           "origin": {
             "ar": "",
             "en": ""
-          }
+          },
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "specs": []
         }
       ],
       "categories": [
@@ -790,6 +808,12 @@
           "name": {
             "ar": "مبيدات وأسمدة",
             "en": "Pesticides & Fertilizers"
+          }
+        },
+        {
+          "name": {
+            "ar": "test",
+            "en": "test"
           }
         }
       ]
