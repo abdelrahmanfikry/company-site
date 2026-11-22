@@ -36,6 +36,15 @@
   const saveQ = () => { try { localStorage.setItem('quote', JSON.stringify(QUOTE)); } catch (e) {} };
   const avB = p => p.availability ? `<span class="av av-${esc(p.availability)}">${esc((u('av') || {})[p.availability] || '')}</span>` : '';
   const priceTxt = p => (p.showPrice && p.price !== '' && p.price != null) ? `${p.priceFrom ? u('from') + ' ' : ''}<b dir="ltr">${esc(p.price)} ${esc(p.currency || 'USD')}</b>${t(p.priceUnit) ? ' / ' + T(p.priceUnit) : ''}` : '';
+  const W3F_KEY = '5f041c04-d9b2-42e9-aaa6-1bee8221e783';
+  const sendMail = async (subject, fields, replyto) => {
+    const key = S().formKey || W3F_KEY;
+    const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.assign({ access_key: key, subject, from_name: t(S().name) || 'Website', replyto: replyto || undefined, botcheck: '' }, fields)) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || j.success === false || String(j.success) === 'false') throw new Error(j.message || r.status);
+    return j;
+  };
   const inQ = (sec, i) => QUOTE.some(q => q.sec === sec && q.i === i);
   const prodOf = q => { const s = DATA.sections.find(x => x.id === q.sec); return s && (s.items || [])[q.i]; };
   const waLink = (msg) => `https://wa.me/${(S().whatsapp || '').replace(/\D/g, '')}?text=${encodeURIComponent(msg || t(S().whatsappMessage))}`;
@@ -376,9 +385,7 @@
       const st = $('#qStatus'), btn = $('button[type=submit]', e.target), old = btn.innerHTML; btn.disabled = true; btn.textContent = u('sending'); st.className = 'form-status';
       const products = QUOTE.map((q, n) => { const p = prodOf(q); return `${n + 1}. ${t(p.name)} — ${q.qty || '?'} ${units[+q.unit] || ''}`; }).join('\n');
       try {
-        const r = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(S().email), { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ _subject: `${u('myQ')} — ${d.name} (${QUOTE.length})`, _template: 'table', _captcha: 'false', _replyto: d.email || undefined, Name: d.name, Company: d.company, Country: d.country, Phone: d.phone, Email: d.email, Products: products, Notes: d.notes, Language: LANG }) });
-        const j = await r.json().catch(() => ({})); if (!r.ok || String(j.success) === 'false') throw new Error(j.message || r.status);
+        await sendMail(`${u('myQ')} — ${d.name} (${QUOTE.length})`, { Name: d.name, Company: d.company, Country: d.country, Phone: d.phone, Email: d.email, Products: products, Notes: d.notes, Language: LANG }, d.email);
         st.textContent = u('qSent'); st.className = 'form-status ok'; QUOTE = []; paintQ(); paintBtns(); e.target.reset();
       } catch (err) { st.textContent = u('sendFail'); st.className = 'form-status bad'; setTimeout(() => window.open(waLink(qText(d)), '_blank'), 900); }
       btn.disabled = false; btn.innerHTML = old; };
@@ -391,14 +398,11 @@
       const d = Object.fromEntries(new FormData(f));
       const lines = [`${u('hello')} ${d.name}`, d.company && `${u('company')}: ${d.company}`, `${u('phone')}: ${d.phone}`, d.email && `${u('email')}: ${d.email}`, d.product && `${u('product')}: ${d.product}`, d.message].filter(Boolean).join('\n');
       const to = f.dataset.to;
-      if (to === 'emailform' && S().email) {
+      if ((to === 'emailform' || to === 'email') && S().email) {
         const btn = $('button[type=submit]', f), st = $('.form-status', f), old = btn.innerHTML;
         btn.disabled = true; btn.textContent = u('sending'); st.className = 'form-status';
         try {
-          const r = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(S().email), { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({ _subject: `${u('quote')} — ${d.name}${d.product ? ' — ' + d.product : ''}`, _template: 'table', _captcha: 'false', _replyto: d.email || undefined, Name: d.name, Company: d.company, Phone: d.phone, Email: d.email, Product: d.product, Message: d.message, Language: LANG }) });
-          const j = await r.json().catch(() => ({}));
-          if (!r.ok || String(j.success) === 'false') throw new Error(j.message || r.status);
+          await sendMail(`${u('quote')} — ${d.name}${d.product ? ' — ' + d.product : ''}`, { Name: d.name, Company: d.company, Phone: d.phone, Email: d.email, Product: d.product, Message: d.message, Language: LANG }, d.email);
           st.textContent = u('sent'); st.classList.add('ok'); f.reset();
         } catch (err) {
           st.textContent = u('sendFail'); st.classList.add('bad'); setTimeout(() => window.open(waLink(lines), '_blank'), 900);

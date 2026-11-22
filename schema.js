@@ -248,7 +248,7 @@ window.SECTION_TYPES = {
       { key: 'kicker', type: 'i18n', label: 'عنوان صغير' },
       { key: 'title', type: 'i18n', label: 'العنوان' },
       { key: 'showMap', type: 'bool', label: 'إظهار الخريطة' },
-      { key: 'formTo', type: 'select', label: 'الفورم يبعت على', options: [['emailform', 'إيميل مباشر (يوصل للإيميل الرئيسي)'], ['whatsapp', 'واتساب'], ['email', 'يفتح برنامج الإيميل عند الزائر']] }
+      { key: 'formTo', type: 'select', label: 'الفورم يبعت على', options: [['emailform', 'الإيميل (يوصل للإيميل الرئيسي)'], ['whatsapp', 'واتساب']] }
     ]
   }
 };
@@ -263,7 +263,8 @@ window.SETTINGS_FIELDS = [
     { key: 'seoDescription', type: 'i18nArea', label: 'وصف الموقع لجوجل' },
     { key: 'footerText', type: 'i18n', label: 'جملة الفوتر' },
     { key: 'catalog', type: 'file', label: 'الكتالوج PDF (يظهر زر «تحميل الكتالوج» — اتركه فاضي لإخفائه)' },
-    { key: 'gaId', type: 'text', label: 'Google Analytics — رقم القياس (G-XXXXXXX)' }
+    { key: 'gaId', type: 'text', label: 'Google Analytics — رقم القياس (G-XXXXXXX)' },
+    { key: 'formKey', type: 'text', label: 'مفتاح Web3Forms لإرسال الفورم على الإيميل (Access Key)' }
   ]},
   { group: 'الألوان', fields: [
     { key: 'colors.primary', type: 'color', label: 'اللون الأساسي' },
