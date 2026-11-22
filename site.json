@@ -783,57 +783,6 @@
             "en": ""
           },
           "specs": []
-        },
-        {
-          "image": "",
-          "name": {
-            "ar": "test",
-            "en": ""
-          },
-          "hidden": false,
-          "featured": false,
-          "availability": "",
-          "showPrice": false,
-          "price": "",
-          "currency": "USD",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "priceFrom": false,
-          "code": "",
-          "hs": "",
-          "gallery": [],
-          "category": {
-            "ar": "test",
-            "en": ""
-          },
-          "description": {
-            "ar": "",
-            "en": ""
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "incoterms": "",
-          "specs": []
         }
       ],
       "categories": [
