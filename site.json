@@ -162,39 +162,6 @@
       "autoplay": 6
     },
     {
-      "id": "values",
-      "type": "values",
-      "visible": true,
-      "showInNav": false,
-      "navLabel": {
-        "ar": "قيمنا",
-        "en": "Values"
-      },
-      "items": [
-        {
-          "icon": "🏅",
-          "title": {
-            "ar": "الجودة",
-            "en": "Quality"
-          }
-        },
-        {
-          "icon": "🤝",
-          "title": {
-            "ar": "الموثوقية",
-            "en": "Reliability"
-          }
-        },
-        {
-          "icon": "🌍",
-          "title": {
-            "ar": "انتشار عالمي",
-            "en": "Global Reach"
-          }
-        }
-      ]
-    },
-    {
       "id": "services",
       "type": "features",
       "visible": true,
@@ -276,6 +243,39 @@
           "text": {
             "ar": "فحص البضاعة في المصنع قبل الشحن.",
             "en": "Pre-shipment inspection at the factory."
+          }
+        }
+      ]
+    },
+    {
+      "id": "values",
+      "type": "values",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "قيمنا",
+        "en": "Values"
+      },
+      "items": [
+        {
+          "icon": "🏅",
+          "title": {
+            "ar": "الجودة",
+            "en": "Quality"
+          }
+        },
+        {
+          "icon": "🤝",
+          "title": {
+            "ar": "الموثوقية",
+            "en": "Reliability"
+          }
+        },
+        {
+          "icon": "🌍",
+          "title": {
+            "ar": "انتشار عالمي",
+            "en": "Global Reach"
           }
         }
       ]
@@ -1201,7 +1201,7 @@
         "en": "Contact Us"
       },
       "showMap": true,
-      "formTo": "emailform"
+      "formTo": "email"
     }
   ]
 }
