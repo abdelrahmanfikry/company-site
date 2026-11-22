@@ -388,7 +388,7 @@
       box.innerHTML = '';
       arr.forEach((item, i) => {
         const imgKey = f.fields.find(x => x.type === 'image');
-        const title = f.fields.map(x => tx(item[x.key])).find(x => x && !/^(images\/|data:|https?:)/.test(x)) || `${f.itemLabel} ${i + 1}`;
+        const title = f.fields.map(x => tx(item[x.key])).find(x => x && !/^(images\/|files\/|data:|https?:)/.test(x) && !/\.(svg|png|jpe?g|webp|gif|pdf)$/i.test(x)) || `${f.itemLabel} ${i + 1}`;
         const body = h('div', { class: 'item-body' }); f.fields.forEach(sf => body.append(field(item, sf)));
         const el = h('div', { class: 'item' + (i === openIdx ? '' : ' closed') },
           h('div', { class: 'item-head', onclick: e => { if (e.target.closest('.iconbtn')) return; el.classList.toggle('closed'); } },
