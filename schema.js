@@ -65,6 +65,7 @@ window.SECTION_TYPES = {
         { key: 'name', type: 'i18n', label: 'اسم المنتج' },
         { key: 'hidden', type: 'bool', label: '🙈 إخفاء المنتج من الموقع (من غير ما يتمسح)' },
         { key: 'featured', type: 'bool', label: '★ منتج مميز (عليه علامة «مميز»)' },
+        { key: 'trade', type: 'select', label: 'صادر ولا وارد؟ (لو فيه منتجات وارد بيظهر في الموقع زرارين: الصادرات / الواردات)', options: [['', 'صادر (تصدير)'], ['import', 'وارد (استيراد)'], ['both', 'الاتنين']] },
         { key: 'availability', type: 'select', label: 'التوفر', options: [['', '— بدون —'], ['available', 'متاح'], ['seasonal', 'حسب الموسم'], ['preorder', 'بالطلب المسبق'], ['soon', 'قريبًا'], ['out', 'غير متاح حاليًا']] },
         { key: 'showPrice', type: 'bool', label: '💲 إظهار السعر في الموقع (لو مقفول مش هيظهر في الصفحات وبيتسحب في عروض الأسعار — بس الملف عام، فمتكتبش أسعار سرية جدًا)' },
         { key: 'price', type: 'text', label: 'السعر (رقم — مثال 850)' },

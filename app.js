@@ -1,8 +1,8 @@
 (function () {
   'use strict';
   const UI = {
-    ar: { all: 'الكل', quote: 'اطلب عرض سعر', season: 'الموسم', origin: 'المنشأ', name: 'الاسم', phone: 'رقم الجوال', email: 'الإيميل', company: 'الشركة', product: 'المنتج المطلوب', message: 'رسالتك', send: 'إرسال', call: 'اتصل بنا', mail: 'راسلنا', address: 'العنوان', hours: 'مواعيد العمل', rights: 'جميع الحقوق محفوظة', follow: 'تابعنا', quick: 'روابط سريعة', contact: 'تواصل', menu: 'القائمة', langBtn: 'EN', hello: 'مرحباً، أنا', want: 'أريد عرض سعر لـ', catalog: 'تحميل الكتالوج', details: 'التفاصيل', specs: 'المواصفات', moq: 'أقل كمية للطلب', packing: 'التعبئة', incoterms: 'شروط التسليم', quoteForm: 'اطلب بالفورم', sending: 'جاري الإرسال…', sent: 'تم الإرسال ✓ هنرد عليك في أقرب وقت', sendFail: 'تعذّر الإرسال — هنفتحلك واتساب', readMore: 'اقرأ المزيد', view: 'عرض الشهادة', close: 'إغلاق', addQ: 'أضف للطلب', added: 'اتضاف لطلب السعر ✓', inQ: 'في الطلب ✓', myQ: 'طلب عرض السعر', qty: 'الكمية', unit: 'الوحدة', remove: 'حذف', qEmpty: 'لسه مضفتش منتجات — اضغط «أضف للطلب» على أي منتج.', yourInfo: 'بياناتك', country: 'الدولة', notes: 'ملاحظات (موعد التسليم، الميناء، المواصفات…)', sendEmail: 'إرسال الطلب', sendWa: 'إرسال على واتساب', clearQ: 'تفريغ الطلب', qSent: 'تم إرسال طلبك ✓ فريق المبيعات هيرد عليك بعرض سعر قريبًا', needInfo: 'اكتب الاسم ورقم الجوال الأول', units: ['كجم', 'طن', 'كرتون', 'حاوية 20 قدم', 'حاوية 40 قدم', 'قطعة'], items: 'المنتجات', avail: 'التوفر', av: { available: 'متاح', seasonal: 'حسب الموسم', preorder: 'بالطلب المسبق', soon: 'قريبًا', out: 'غير متاح حاليًا' }, priceL: 'السعر', from: 'يبدأ من', code: 'كود المنتج', hs: 'HS Code', featured: 'مميز', onReq: 'السعر عند الطلب' },
-    en: { all: 'All', quote: 'Request a Quote', season: 'Season', origin: 'Origin', name: 'Name', phone: 'Phone', email: 'Email', company: 'Company', product: 'Product', message: 'Your message', send: 'Send', call: 'Call Us', mail: 'Email Us', address: 'Address', hours: 'Working Hours', rights: 'All rights reserved', follow: 'Follow Us', quick: 'Quick Links', contact: 'Contact', menu: 'Menu', langBtn: 'ع', hello: 'Hello, I am', want: 'I would like a quote for', catalog: 'Download Catalog', details: 'Details', specs: 'Specifications', moq: 'Minimum Order', packing: 'Packing', incoterms: 'Delivery Terms', quoteForm: 'Request via form', sending: 'Sending…', sent: 'Sent ✓ We will get back to you shortly', sendFail: 'Could not send — opening WhatsApp instead', readMore: 'Read more', view: 'View certificate', close: 'Close', addQ: 'Add to quote', added: 'Added to your quote ✓', inQ: 'In quote ✓', myQ: 'Quote Request', qty: 'Quantity', unit: 'Unit', remove: 'Remove', qEmpty: 'No products yet — tap “Add to quote” on any product.', yourInfo: 'Your details', country: 'Country', notes: 'Notes (delivery date, port, specifications…)', sendEmail: 'Send request', sendWa: 'Send via WhatsApp', clearQ: 'Clear quote', qSent: 'Your request was sent ✓ Our sales team will reply with a quotation soon', needInfo: 'Please enter your name and phone first', units: ['kg', 'ton', 'carton', '20ft container', '40ft container', 'piece'], items: 'Products', avail: 'Availability', av: { available: 'Available', seasonal: 'Seasonal', preorder: 'Pre-order', soon: 'Coming soon', out: 'Out of stock' }, priceL: 'Price', from: 'From', code: 'Product code', hs: 'HS Code', featured: 'Featured', onReq: 'Price on request' }
+    ar: { all: 'الكل', quote: 'اطلب عرض سعر', season: 'الموسم', origin: 'المنشأ', name: 'الاسم', phone: 'رقم الجوال', email: 'الإيميل', company: 'الشركة', product: 'المنتج المطلوب', message: 'رسالتك', send: 'إرسال', call: 'اتصل بنا', mail: 'راسلنا', address: 'العنوان', hours: 'مواعيد العمل', rights: 'جميع الحقوق محفوظة', follow: 'تابعنا', quick: 'روابط سريعة', contact: 'تواصل', menu: 'القائمة', langBtn: 'EN', hello: 'مرحباً، أنا', want: 'أريد عرض سعر لـ', catalog: 'تحميل الكتالوج', details: 'التفاصيل', specs: 'المواصفات', moq: 'أقل كمية للطلب', packing: 'التعبئة', incoterms: 'شروط التسليم', quoteForm: 'اطلب بالفورم', sending: 'جاري الإرسال…', sent: 'تم الإرسال ✓ هنرد عليك في أقرب وقت', sendFail: 'تعذّر الإرسال — هنفتحلك واتساب', readMore: 'اقرأ المزيد', view: 'عرض الشهادة', close: 'إغلاق', addQ: 'أضف للطلب', added: 'اتضاف لطلب السعر ✓', inQ: 'في الطلب ✓', myQ: 'طلب عرض السعر', qty: 'الكمية', unit: 'الوحدة', remove: 'حذف', qEmpty: 'لسه مضفتش منتجات — اضغط «أضف للطلب» على أي منتج.', yourInfo: 'بياناتك', country: 'الدولة', notes: 'ملاحظات (موعد التسليم، الميناء، المواصفات…)', sendEmail: 'إرسال الطلب', sendWa: 'إرسال على واتساب', clearQ: 'تفريغ الطلب', qSent: 'تم إرسال طلبك ✓ فريق المبيعات هيرد عليك بعرض سعر قريبًا', needInfo: 'اكتب الاسم ورقم الجوال الأول', units: ['كجم', 'طن', 'كرتون', 'حاوية 20 قدم', 'حاوية 40 قدم', 'قطعة'], items: 'المنتجات', avail: 'التوفر', av: { available: 'متاح', seasonal: 'حسب الموسم', preorder: 'بالطلب المسبق', soon: 'قريبًا', out: 'غير متاح حاليًا' }, priceL: 'السعر', from: 'يبدأ من', code: 'كود المنتج', hs: 'HS Code', featured: 'مميز', exp: 'الصادرات', imp: 'الواردات', onReq: 'السعر عند الطلب' },
+    en: { all: 'All', quote: 'Request a Quote', season: 'Season', origin: 'Origin', name: 'Name', phone: 'Phone', email: 'Email', company: 'Company', product: 'Product', message: 'Your message', send: 'Send', call: 'Call Us', mail: 'Email Us', address: 'Address', hours: 'Working Hours', rights: 'All rights reserved', follow: 'Follow Us', quick: 'Quick Links', contact: 'Contact', menu: 'Menu', langBtn: 'ع', hello: 'Hello, I am', want: 'I would like a quote for', catalog: 'Download Catalog', details: 'Details', specs: 'Specifications', moq: 'Minimum Order', packing: 'Packing', incoterms: 'Delivery Terms', quoteForm: 'Request via form', sending: 'Sending…', sent: 'Sent ✓ We will get back to you shortly', sendFail: 'Could not send — opening WhatsApp instead', readMore: 'Read more', view: 'View certificate', close: 'Close', addQ: 'Add to quote', added: 'Added to your quote ✓', inQ: 'In quote ✓', myQ: 'Quote Request', qty: 'Quantity', unit: 'Unit', remove: 'Remove', qEmpty: 'No products yet — tap “Add to quote” on any product.', yourInfo: 'Your details', country: 'Country', notes: 'Notes (delivery date, port, specifications…)', sendEmail: 'Send request', sendWa: 'Send via WhatsApp', clearQ: 'Clear quote', qSent: 'Your request was sent ✓ Our sales team will reply with a quotation soon', needInfo: 'Please enter your name and phone first', units: ['kg', 'ton', 'carton', '20ft container', '40ft container', 'piece'], items: 'Products', avail: 'Availability', av: { available: 'Available', seasonal: 'Seasonal', preorder: 'Pre-order', soon: 'Coming soon', out: 'Out of stock' }, priceL: 'Price', from: 'From', code: 'Product code', hs: 'HS Code', featured: 'Featured', exp: 'Exports', imp: 'Imports', onReq: 'Price on request' }
   };
   const ICONS = {
     facebook: '<path d="M14 9h3V5h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9.5c0-.3.2-.5.5-.5z"/>',
@@ -84,13 +84,18 @@
       </div></section>`;
     },
     products(s) {
-      const used = new Set((s.items || []).filter(p => !p.hidden).map(p => t(p.category)).filter(Boolean));
+      const vis = (s.items || []).filter(p => !p.hidden);
+      const used = new Set(vis.map(p => t(p.category)).filter(Boolean));
       const cats = [...new Set([...(s.categories || []).map(c => t(c.name)).filter(c => used.has(c)), ...used])];
+      const trd = p => p.trade === 'import' || p.trade === 'both' ? p.trade : 'export';
+      const hasImp = vis.some(p => trd(p) !== 'export'), hasExp = vis.some(p => trd(p) !== 'import');
+      const tabs = hasImp && hasExp;
       return `<section class="sec products" id="${esc(s.id)}"><div class="container">${head(s)}
         ${S().catalog ? `<div class="center reveal" style="margin:-10px 0 26px"><a class="btn btn-ghost-dark" href="${esc(P(S().catalog))}" target="_blank" rel="noopener" download>${svg('download', 18)} ${u('catalog')}</a></div>` : ''}
+        ${tabs ? `<div class="trade-tabs reveal"><button class="on" data-trade="export">${u('exp')}</button><button data-trade="import">${u('imp')}</button></div>` : ''}
         ${cats.length > 1 ? `<div class="filters reveal"><button class="on" data-cat="*">${u('all')}</button>${cats.map(c => `<button data-cat="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}
         <div class="prod-grid">${(s.items || []).map((p, i) => p.hidden ? '' : `
-          <article class="prod reveal${p.featured ? ' feat-p' : ''}${p.availability === 'out' ? ' is-out' : ''}" data-cat="${esc(t(p.category))}" data-i="${i}" tabindex="0" role="button" aria-label="${T(p.name)} — ${u('details')}">
+          <article class="prod reveal${p.featured ? ' feat-p' : ''}${p.availability === 'out' ? ' is-out' : ''}" data-cat="${esc(t(p.category))}" data-trade="${trd(p)}" data-i="${i}" tabindex="0" role="button" aria-label="${T(p.name)} — ${u('details')}">
             <div class="prod-img">${img(p.image, t(p.name))}${p.category ? `<span class="tag">${T(p.category)}</span>` : ''}${p.featured ? `<span class="tag star">★ ${u('featured')}</span>` : ''}${avB(p)}</div>
             <div class="prod-body"><h3>${T(p.name)}</h3><p>${T(p.description)}</p>${priceTxt(p) ? `<div class="price">${priceTxt(p)}</div>` : ''}
               <div class="meta">${p.season && t(p.season) ? `<span>🗓 ${u('season')}: ${T(p.season)}</span>` : ''}${p.origin && t(p.origin) ? `<span>📍 ${u('origin')}: ${T(p.origin)}</span>` : ''}</div>
@@ -294,10 +299,24 @@
     });
 
     // filters
-    $$('.products').forEach(sec => $$('.filters button', sec).forEach(b => b.onclick = () => {
-      $$('.filters button', sec).forEach(x => x.classList.remove('on')); b.classList.add('on');
-      $$('.prod', sec).forEach(p => p.classList.toggle('hide', b.dataset.cat !== '*' && p.dataset.cat !== b.dataset.cat));
-    }));
+    $$('.products').forEach(sec => {
+      const st = { trade: $('.trade-tabs', sec) ? 'export' : '', cat: '*' };
+      const okT = p => !st.trade || p.dataset.trade === st.trade || p.dataset.trade === 'both';
+      const apply = () => {
+        $$('.prod', sec).forEach(p => p.classList.toggle('hide', !okT(p) || (st.cat !== '*' && p.dataset.cat !== st.cat)));
+        const fb = $$('.filters button', sec); let n = 0;
+        fb.forEach(b => { const has = b.dataset.cat === '*' || $$('.prod', sec).some(p => okT(p) && p.dataset.cat === b.dataset.cat); b.style.display = has ? '' : 'none'; if (has && b.dataset.cat !== '*') n++; });
+        const f = $('.filters', sec); if (f) f.style.display = n > 1 ? '' : 'none';
+      };
+      $$('.trade-tabs button', sec).forEach(b => b.onclick = () => {
+        $$('.trade-tabs button', sec).forEach(x => x.classList.remove('on')); b.classList.add('on'); st.trade = b.dataset.trade;
+        st.cat = '*'; $$('.filters button', sec).forEach(x => x.classList.toggle('on', x.dataset.cat === '*')); apply();
+      });
+      $$('.filters button', sec).forEach(b => b.onclick = () => {
+        $$('.filters button', sec).forEach(x => x.classList.remove('on')); b.classList.add('on'); st.cat = b.dataset.cat; apply();
+      });
+      apply();
+    });
 
     // lightbox
     const lb = $('#lb'); let gal = [], gi = 0;
