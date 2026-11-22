@@ -741,6 +741,30 @@
             "en": ""
           },
           "specs": []
+        },
+        {
+          "image": "cat-chemical.svg",
+          "name": {
+            "ar": "مبيدات وأسمدة زراعية",
+            "en": "Pesticides & Fertilizers"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات وأسمدة",
+            "en": "Pesticides & Fertilizers"
+          },
+          "description": {
+            "ar": "أسمدة عضوية وكيماوية، ومبيدات زراعية، ومستلزمات تغذية النبات.",
+            "en": "Organic and chemical fertilizers, crop protection products, and plant nutrition supplies."
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          }
         }
       ],
       "categories": [
@@ -764,8 +788,8 @@
         },
         {
           "name": {
-            "ar": "مبيدات و أسمدة ",
-            "en": ""
+            "ar": "مبيدات وأسمدة",
+            "en": "Pesticides & Fertilizers"
           }
         }
       ]
