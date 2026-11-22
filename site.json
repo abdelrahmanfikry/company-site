@@ -678,7 +678,6 @@
             "ar": "إلكترونيات",
             "en": "Electronics"
           },
-          "trade": "import",
           "category": {
             "ar": "استهلاكي",
             "en": "Consumer"
@@ -798,7 +797,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "trade": "import"
         }
       ],
       "categories": [
