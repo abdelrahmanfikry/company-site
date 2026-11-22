@@ -796,7 +796,7 @@
     {
       "id": "process",
       "type": "process",
-      "visible": true,
+      "visible": false,
       "showInNav": false,
       "navLabel": {
         "ar": "كيف نعمل",
