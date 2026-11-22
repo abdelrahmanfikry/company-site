@@ -783,6 +783,58 @@
             "en": ""
           },
           "specs": []
+        },
+        {
+          "image": "",
+          "name": {
+            "ar": "",
+            "en": ""
+          },
+          "hidden": false,
+          "featured": false,
+          "trade": "",
+          "availability": "",
+          "showPrice": false,
+          "price": "",
+          "currency": "USD",
+          "priceUnit": {
+            "ar": "",
+            "en": ""
+          },
+          "priceFrom": false,
+          "code": "",
+          "hs": "",
+          "gallery": [],
+          "category": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "",
+            "en": ""
+          },
+          "longDescription": {
+            "ar": "",
+            "en": ""
+          },
+          "season": {
+            "ar": "",
+            "en": ""
+          },
+          "origin": {
+            "ar": "",
+            "en": ""
+          },
+          "moq": {
+            "ar": "",
+            "en": ""
+          },
+          "packing": {
+            "ar": "",
+            "en": ""
+          },
+          "incoterms": "",
+          "specs": []
         }
       ],
       "categories": [
@@ -844,7 +896,7 @@
     {
       "id": "process",
       "type": "process",
-      "visible": false,
+      "visible": true,
       "showInNav": false,
       "navLabel": {
         "ar": "كيف نعمل",
