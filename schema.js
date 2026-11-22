@@ -11,7 +11,7 @@ window.SECTION_TYPES = {
       ]},
       { key: 'buttons', type: 'list', label: 'الأزرار', itemLabel: 'زر', fields: [
         { key: 'label', type: 'i18n', label: 'نص الزر' },
-        { key: 'link', type: 'text', label: 'الرابط (مثال: #products أو whatsapp)' },
+        { key: 'link', type: 'link', label: 'الرابط' },
         { key: 'style', type: 'select', label: 'الشكل', options: [['primary', 'ممتلئ'], ['ghost', 'مفرّغ']] }
       ]},
       { key: 'autoplay', type: 'number', label: 'تبديل الشرائح كل (ثانية) — 0 = يدوي' }
@@ -58,7 +58,7 @@ window.SECTION_TYPES = {
       { key: 'text', type: 'i18nArea', label: 'وصف القسم' },
       { key: 'showQuoteButton', type: 'bool', label: 'زر «اطلب عرض سعر» على كل منتج' },
       { key: 'categories', type: 'list', label: 'أقسام المنتجات (ترتيبها هنا = ترتيب الفلاتر في الموقع)', itemLabel: 'قسم', fields: [
-        { key: 'name', type: 'i18n', label: 'اسم القسم (اكتبه بنفس الشكل في خانة «القسم» في المنتج)' }
+        { key: 'name', type: 'i18n', label: 'اسم القسم (بعدها تختاره من خانة «القسم» جوه المنتج)' }
       ]},
       { key: 'items', type: 'list', label: 'المنتجات', itemLabel: 'منتج', fields: [
         { key: 'image', type: 'image', label: 'صورة المنتج الرئيسية' },
@@ -70,21 +70,21 @@ window.SECTION_TYPES = {
         { key: 'showPrice', type: 'bool', label: '💲 إظهار السعر في الموقع (لو مقفول مش هيظهر في الصفحات وبيتسحب في عروض الأسعار — بس الملف عام، فمتكتبش أسعار سرية جدًا)' },
         { key: 'price', type: 'text', label: 'السعر (رقم — مثال 850)' },
         { key: 'currency', type: 'select', label: 'العملة', options: [['USD', 'USD'], ['EUR', 'EUR'], ['EGP', 'EGP'], ['SAR', 'SAR'], ['AED', 'AED']] },
-        { key: 'priceUnit', type: 'i18n', label: 'السعر لكل (مثال: طن / Ton)' },
+        { key: 'priceUnit', type: 'unitPick', label: 'السعر لكل' },
         { key: 'priceFrom', type: 'bool', label: 'اكتب «يبدأ من» قبل السعر' },
         { key: 'code', type: 'text', label: 'كود المنتج (SKU)' },
         { key: 'hs', type: 'text', label: 'HS Code (الكود الجمركي)' },
         { key: 'gallery', type: 'list', label: 'صور إضافية للمنتج', itemLabel: 'صورة', fields: [
           { key: 'src', type: 'image', label: 'الصورة' }
         ]},
-        { key: 'category', type: 'i18n', label: 'القسم (لازم يطابق اسم قسم من «أقسام المنتجات»)' },
+        { key: 'category', type: 'catPick', label: 'القسم' },
         { key: 'description', type: 'i18nArea', label: 'وصف قصير (يظهر على الكارت)' },
         { key: 'longDescription', type: 'i18nArea', label: 'وصف تفصيلي (يظهر في صفحة التفاصيل — اختياري)' },
         { key: 'season', type: 'i18n', label: 'الموسم' },
         { key: 'origin', type: 'i18n', label: 'المنشأ' },
         { key: 'moq', type: 'i18n', label: 'أقل كمية للطلب (MOQ) — مثال: حاوية 40 قدم' },
         { key: 'packing', type: 'i18n', label: 'التعبئة — مثال: كرتون 15 كجم' },
-        { key: 'incoterms', type: 'text', label: 'شروط التسليم — مثال: FOB / CIF' },
+        { key: 'incoterms', type: 'suggest', label: 'شروط التسليم', options: ['FOB', 'CIF', 'CFR', 'EXW', 'DDP', 'DAP', 'FOB / CIF', 'FOB / CIF / CFR'], hint: 'دوس في الخانة واختار، أو اكتب بنفسك' },
         { key: 'specs', type: 'list', label: 'مواصفات إضافية', itemLabel: 'مواصفة', fields: [
           { key: 'label', type: 'i18n', label: 'المواصفة (مثال: المقاس)' },
           { key: 'value', type: 'i18n', label: 'القيمة (مثال: 60–80 مم)' }
@@ -178,7 +178,7 @@ window.SECTION_TYPES = {
       { key: 'title', type: 'i18n', label: 'العنوان' },
       { key: 'text', type: 'i18nArea', label: 'النص' },
       { key: 'buttonLabel', type: 'i18n', label: 'نص الزر' },
-      { key: 'buttonLink', type: 'text', label: 'رابط الزر (whatsapp أو #contact أو رابط كامل)' }
+      { key: 'buttonLink', type: 'link', label: 'رابط الزر' }
     ]
   },
   video: {

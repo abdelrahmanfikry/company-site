@@ -23,6 +23,7 @@
   const setPath = (o, p, v) => { const ks = p.split('.'); const last = ks.pop(); const t = ks.reduce((a, k) => (a[k] = a[k] || {}), o); t[last] = v; };
   const tx = v => v == null ? '' : typeof v === 'object' ? (v.ar || v.en || '') : String(v);
 
+  let CUR_SEC = null;
   let DATA = null, GH = null, OFFLINE = false, DEV = false, VIEW = 'media', DIRTY = false;
   const BLOBS = {}; // مسار الصورة ← رابط مؤقت لعرضها قبل ما GitHub ينشرها
 
@@ -174,7 +175,7 @@
     DATA.sections.push(s); dirty(); renderSide(); show(DATA.sections.length - 1);
     toast('اتضاف القسم في آخر الصفحة — اسحبه لمكانه');
   }
-  function emptyOf(f) { return ({ i18n: { ar: '', en: '' }, i18nArea: { ar: '', en: '' }, list: [], bool: false, number: 0, select: f.options ? f.options[0][0] : '' })[f.type] ?? ''; }
+  function emptyOf(f) { return ({ catPick: { ar: '', en: '' }, unitPick: { ar: '', en: '' }, i18n: { ar: '', en: '' }, i18nArea: { ar: '', en: '' }, list: [], bool: false, number: 0, select: f.options ? f.options[0][0] : '' })[f.type] ?? ''; }
 
   /* ---------------- المحرر ---------------- */
   function show(v) {
@@ -185,7 +186,7 @@
       SETTINGS_FIELDS.forEach(g => { const c = h('div', { class: 'card' }, h('h3', {}, g.group)); g.fields.forEach(f => c.append(field(DATA.settings, f))); ed.append(c); });
       return;
     }
-    const s = DATA.sections[v]; if (!s) return show('settings');
+    const s = DATA.sections[v]; if (!s) return show('settings'); CUR_SEC = s;
     const def = SECTION_TYPES[s.type] || { label: s.type, fields: [] };
     ed.append(h('h2', {}, tx(s.navLabel) || def.label), h('p', { class: 'sub' }, 'نوع القسم: ' + def.label));
     const base = h('div', { class: 'card' }, h('h3', {}, 'إعدادات القسم'));
@@ -302,6 +303,13 @@
       case 'number': { const i = h('input', { type: 'number', dir: 'ltr' }); i.value = val ?? 0; i.oninput = () => set(+i.value); wrap.append(i); break; }
       case 'color': { const i = h('input', { type: 'color' }); i.value = val || '#000000'; const t = h('input', { dir: 'ltr', style: 'max-width:140px' }); t.value = val || ''; i.oninput = () => { t.value = i.value; set(i.value); }; t.oninput = () => { if (/^#[0-9a-f]{6}$/i.test(t.value)) { i.value = t.value; set(t.value); } }; wrap.append(h('div', { class: 'row' }, i, t)); break; }
       case 'select': { const sel = h('select', {}, f.options.map(([k, l]) => h('option', { value: k }, l))); sel.value = val ?? f.options[0][0]; sel.onchange = () => set(sel.value); wrap.append(sel); break; }
+      case 'catPick': wrap.append(catPick(obj, f, val, set)); break;
+      case 'unitPick': wrap.append(unitPick(val, set)); break;
+      case 'suggest': { const id = 'dl-' + f.key; const i = h('input', { dir: 'ltr', list: id }); i.value = val ?? ''; i.oninput = () => set(i.value); wrap.append(i, h('datalist', { id }, (f.options || []).map(o => h('option', { value: o })))); if (f.hint) wrap.append(h('small', { class: 'hint' }, f.hint)); break; }
+      case 'link': { const id = 'dl-links'; const i = h('input', { dir: 'ltr', list: id }); i.value = val ?? ''; i.oninput = () => set(i.value);
+        const opts = () => [['#contact', 'تواصل معنا'], ['whatsapp', 'يفتح واتساب'], ...DATA.sections.map(x => ['#' + x.id, tx(x.navLabel) || (SECTION_TYPES[x.type] || {}).label || x.type])];
+        const dl = h('datalist', { id }); const fill = () => { dl.innerHTML = ''; opts().forEach(([v2, l]) => dl.append(h('option', { value: v2 }, l))); }; fill(); i.onfocus = fill;
+        wrap.append(i, dl, h('small', { class: 'hint' }, 'دوس في الخانة واختار من القايمة، أو اكتب رابط كامل يبدأ بـ https://')); break; }
       case 'image': wrap.append(imageField(val, set)); break;
       case 'file': wrap.append(fileField(val, set)); break;
       case 'date': { const i = h('input', { type: 'date', dir: 'ltr', style: 'max-width:200px' }); i.value = val || ''; i.oninput = () => set(i.value); wrap.append(i); break; }
@@ -381,6 +389,54 @@
     return path;
   }
 
+  const sameTx = (a, b) => (a || '').trim().replace(/\s+/g, ' ') === (b || '').trim().replace(/\s+/g, ' ');
+  function catPick(obj, f, val, set) {
+    const sec = CUR_SEC;
+    const cats = () => ((sec && sec.categories) || []).map(c => c.name || {}).filter(n => tx(n));
+    const cur = (val && typeof val === 'object') ? val : { ar: val || '', en: '' };
+    const sel = h('select', {});
+    const idxOf = v => cats().findIndex(n => (v.ar && sameTx(n.ar, v.ar)) || (v.en && sameTx(n.en, v.en)));
+    const fill = () => {
+      const v = getPath(obj, f.key) || {}; const list = cats(); const k = idxOf(v);
+      sel.innerHTML = '';
+      sel.append(h('option', { value: '' }, '— من غير قسم —'));
+      list.forEach((n, i) => sel.append(h('option', { value: String(i) }, (n.ar || '') + (n.en ? '  /  ' + n.en : ''))));
+      if (k < 0 && (v.ar || v.en)) sel.append(h('option', { value: 'bad' }, '⚠ ' + (v.ar || v.en) + ' — مش موجود في «أقسام المنتجات»، اختار قسم صح'));
+      sel.append(h('option', { value: 'new' }, '＋ قسم جديد…'));
+      sel.value = k >= 0 ? String(k) : (v.ar || v.en ? 'bad' : '');
+      sel.classList.toggle('bad', sel.value === 'bad');
+    };
+    sel.onchange = () => {
+      if (sel.value === 'new') {
+        const ar = (prompt('اسم القسم الجديد بالعربي:') || '').trim();
+        if (!ar) { fill(); return; }
+        const en = (prompt('اسم القسم بالإنجليزي:', '') || '').trim();
+        if (sec) { sec.categories = sec.categories || []; sec.categories.push({ name: { ar, en } }); }
+        set({ ar, en }); fill(); return;
+      }
+      if (sel.value === 'bad') return;
+      const n = cats()[+sel.value]; set(sel.value === '' ? { ar: '', en: '' } : { ar: n.ar || '', en: n.en || '' }); fill();
+    };
+    sel.onfocus = fill; sel.onmousedown = fill;
+    fill();
+    return h('div', {}, sel, h('small', { class: 'hint' }, 'الأقسام دي جاية من «أقسام المنتجات» فوق. اختار «＋ قسم جديد» لو عاوز تضيف واحد.'));
+  }
+  const UNITS = [['طن', 'Ton'], ['كجم', 'kg'], ['كرتون', 'Carton'], ['حاوية 20 قدم', '20ft container'], ['حاوية 40 قدم', '40ft container'], ['قطعة', 'Piece'], ['لتر', 'Liter'], ['متر', 'Meter'], ['متر مربع', 'm²'], ['شيكارة', 'Bag']];
+  function unitPick(val, set) {
+    const v = (val && typeof val === 'object') ? val : { ar: val || '', en: '' };
+    const k = UNITS.findIndex(([a, e]) => sameTx(a, v.ar) || sameTx(e, v.en));
+    const sel = h('select', {}, h('option', { value: '' }, '— من غير وحدة —'), ...UNITS.map(([a, e], i) => h('option', { value: String(i) }, a + '  /  ' + e)), h('option', { value: 'other' }, 'وحدة تانية (اكتبها)…'));
+    const ar = h('input', { dir: 'rtl', placeholder: 'عربي' }), en = h('input', { dir: 'ltr', placeholder: 'English' });
+    ar.value = v.ar || ''; en.value = v.en || '';
+    const other = h('div', { class: 'i18n' }, h('div', { 'data-l': 'عربي' }, ar), h('div', { 'data-l': 'English' }, en));
+    const upd = () => set({ ar: ar.value, en: en.value });
+    ar.oninput = upd; en.oninput = upd;
+    sel.value = k >= 0 ? String(k) : (v.ar || v.en ? 'other' : '');
+    other.style.display = sel.value === 'other' ? '' : 'none';
+    sel.onchange = () => { other.style.display = sel.value === 'other' ? '' : 'none';
+      if (sel.value === '') { ar.value = en.value = ''; upd(); } else if (sel.value !== 'other') { [ar.value, en.value] = UNITS[+sel.value]; upd(); } };
+    return h('div', {}, sel, other);
+  }
   function listField(obj, f) {
     let arr = getPath(obj, f.key); if (!Array.isArray(arr)) { arr = []; setPath(obj, f.key, arr); }
     const box = h('div', { class: 'list' });
