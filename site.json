@@ -830,6 +830,7 @@
             "ar": "كواترو أكت 2.5% SC",
             "en": "Quattro Act 2.5% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -863,6 +864,7 @@
             "ar": "فوركست بي 60% WP",
             "en": "Forcust P 60% WP"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -892,6 +894,7 @@
             "ar": "هيورانول 30% SC",
             "en": "Hioranol 30% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -925,6 +928,7 @@
             "ar": "بيني 9% SC",
             "en": "Penny 9% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -962,6 +966,7 @@
             "ar": "موسبيلان 20% SP",
             "en": "Mospilan 20% SP"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -995,6 +1000,7 @@
             "ar": "دولف-إكس 5% EC",
             "en": "Dolf-X 5% EC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -1028,6 +1034,7 @@
             "ar": "فلوكي 50% WG",
             "en": "Floki 50% WG"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -1057,6 +1064,7 @@
             "ar": "آرتويس 24% SC",
             "en": "Artwis 24% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -1086,6 +1094,7 @@
             "ar": "رايفديل 20% SC",
             "en": "Rivedale 20% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -1115,6 +1124,7 @@
             "ar": "تاراكلور 36% SC",
             "en": "Tarachlor 36% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -1144,6 +1154,7 @@
             "ar": "أباكلين 10% SC",
             "en": "Abaclean 10% SC"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
@@ -1173,6 +1184,7 @@
             "ar": "كيمكلام 50% WP",
             "en": "Kemclam 50% WP"
           },
+          "trade": "import",
           "availability": "available",
           "category": {
             "ar": "مبيدات زراعية",
