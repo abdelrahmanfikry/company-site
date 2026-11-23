@@ -32,7 +32,10 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
   const paras = v => t(v).split(/\n\s*\n/).map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
   let RAW = '';
   const P = src => (RAW && src && /^(images|files)\/uploads\//.test(src)) ? RAW + src : (src || '');
-  const img = (src, alt = '', cls = '') => src ? `<img src="${esc(P(src))}" alt="${esc(alt)}" loading="lazy" class="${cls}">` : '';
+  const img = (src, alt = '', cls = '') => src ? `<img src="${esc(P(src))}" alt="${esc(alt)}" loading="lazy" decoding="async" class="${cls}">` : '';
+  // نسخة صغيرة للصور (أسرع) — ولو مش موجودة يرجع للأصلية
+  const SM = src => /^images\/(catalog|uploads)\/[^/]+\.(jpe?g|png|webp)$/i.test(src || '') ? src.replace(/^images\/(catalog|uploads)\//, 'images/$1/sm/') : '';
+  const imgS = (src, alt = '', cls = '') => { const s = SM(src); return !s ? img(src, alt, cls) : `<img src="${esc(P(s))}" data-full="${esc(P(src))}" onerror="if(this.dataset.full&&this.src.indexOf('/sm/')>-1){this.src=this.dataset.full}" alt="${esc(alt)}" loading="lazy" decoding="async" class="${cls}">`; };
   const S = () => DATA.settings;
   let QUOTE = []; try { QUOTE = JSON.parse(localStorage.getItem('quote') || '[]') || []; } catch (e) { QUOTE = []; }
   const saveQ = () => { try { localStorage.setItem('quote', JSON.stringify(QUOTE)); } catch (e) {} };
@@ -61,7 +64,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     hero(s) {
       const slides = (s.slides || []).map((sl, i) => `
         <div class="slide${i === 0 ? ' active' : ''}">
-          <div class="slide-bg" style="background-image:url('${esc(P(sl.image))}')"></div>
+          <div class="slide-bg" ${i === 0 ? `style="background-image:url('${esc(P(sl.image))}')"` : `data-bg="${esc(P(sl.image))}"`}></div>
           <div class="container slide-content">
             ${sl.kicker ? `<span class="kicker light">${T(sl.kicker)}</span>` : ''}
             ${i === 0 ? `<h1>${T(sl.title)}</h1>` : `<h2 class="h1">${T(sl.title)}</h2>`}
@@ -99,7 +102,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
         ${cats.length > 1 ? `<div class="filters reveal"><button class="on" data-cat="*">${u('all')}</button>${cats.map(c => `<button data-cat="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}
         <div class="prod-grid">${(s.items || []).map((p, i) => p.hidden ? '' : `
           <article class="prod reveal${p.featured ? ' feat-p' : ''}${p.availability === 'out' ? ' is-out' : ''}" data-cat="${esc(t(p.category))}" data-trade="${trd(p)}" data-i="${i}" tabindex="0" role="button" aria-label="${T(p.name)} — ${u('details')}">
-            <div class="prod-img">${img(p.image, t(p.name))}${p.category ? `<span class="tag">${T(p.category)}</span>` : ''}${p.featured ? `<span class="tag star">★ ${u('featured')}</span>` : ''}${avB(p)}</div>
+            <div class="prod-img">${imgS(p.image, t(p.name))}${p.category ? `<span class="tag">${T(p.category)}</span>` : ''}${p.featured ? `<span class="tag star">★ ${u('featured')}</span>` : ''}${avB(p)}</div>
             <div class="prod-body"><h3>${T(p.name)}</h3><p>${T(p.description)}</p>${priceTxt(p) ? `<div class="price">${priceTxt(p)}</div>` : ''}
               <div class="meta">${p.season && t(p.season) ? `<span>🗓 ${u('season')}: ${T(p.season)}</span>` : ''}${p.origin && t(p.origin) ? `<span>📍 ${u('origin')}: ${T(p.origin)}</span>` : ''}</div>
               <div class="prod-actions"><button type="button" class="btn btn-sm btn-light more">${u('details')}</button>${s.showQuoteButton !== false ? `<button type="button" class="btn btn-sm btn-primary addq${inQ(s.id, i) ? ' on' : ''}" data-sec="${esc(s.id)}" data-i="${i}">${inQ(s.id, i) ? u('inQ') : '+ ' + u('addQ')}</button>` : ''}</div>
@@ -121,7 +124,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     },
     gallery(s) {
       return `<section class="sec gallery" id="${esc(s.id)}"><div class="container">${head(s)}<div class="gal-grid">${(s.images || []).map((g, i) => `
-        <figure class="gal reveal" data-i="${i}">${img(g.src, t(g.caption))}${g.caption && t(g.caption) ? `<figcaption>${T(g.caption)}</figcaption>` : ''}</figure>`).join('')}</div></div></section>`;
+        <figure class="gal reveal" data-i="${i}">${imgS(g.src, t(g.caption))}${g.caption && t(g.caption) ? `<figcaption>${T(g.caption)}</figcaption>` : ''}</figure>`).join('')}</div></div></section>`;
     },
     logos(s) {
       return `<section class="sec logos" id="${esc(s.id)}"><div class="container">${head(s)}<div class="logo-grid">${(s.items || []).map(l => `
@@ -154,7 +157,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       return `<section class="sec certs" id="${esc(s.id)}"><div class="container">${head(s)}
         <div class="cert-grid">${items.map(c => { const link = c.file || c.image; return `
           <a class="cert reveal"${link ? ` href="${esc(P(link))}" target="_blank" rel="noopener"` : ''}>
-            <div class="cert-img">${c.image ? img(c.image, t(c.name)) : '<span>🏅</span>'}</div>
+            <div class="cert-img">${c.image ? imgS(c.image, t(c.name)) : '<span>🏅</span>'}</div>
             <div class="cert-body"><h3>${T(c.name)}</h3>${t(c.issuer) ? `<small>${T(c.issuer)}</small>` : ''}${link ? `<span class="cert-link">${u('view')} ↗</span>` : ''}</div>
           </a>`; }).join('')}</div></div></section>`;
     },
@@ -163,7 +166,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       return `<section class="sec team" id="${esc(s.id)}"><div class="container">${head(s)}
         <div class="team-grid">${(s.items || []).map(m => `
           <div class="member reveal">
-            <div class="avatar">${m.photo ? img(m.photo, t(m.name)) : `<span>${esc(ini(m.name))}</span>`}</div>
+            <div class="avatar">${m.photo ? imgS(m.photo, t(m.name)) : `<span>${esc(ini(m.name))}</span>`}</div>
             <h3>${T(m.name)}</h3>${t(m.role) ? `<p class="role">${T(m.role)}</p>` : ''}
             <div class="m-links">
               ${m.email ? `<a href="mailto:${esc(m.email)}" title="${esc(m.email)}">${svg('mail', 18)}<span dir="ltr">${esc(m.email)}</span></a>` : ''}
@@ -178,7 +181,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       return `<section class="sec news" id="${esc(s.id)}"><div class="container">${head(s)}
         <div class="news-grid">${items.map(n => { const full = t(n.text); const short = full.length > 160 ? full.slice(0, 160).replace(/\s+\S*$/, '') + '…' : full; return `
           <article class="post reveal">
-            ${n.image ? `<div class="post-img">${img(n.image, t(n.title))}</div>` : ''}
+            ${n.image ? `<div class="post-img">${imgS(n.image, t(n.title))}</div>` : ''}
             <div class="post-body">${n.date ? `<time>${fd(n.date)}</time>` : ''}<h3>${T(n.title)}</h3>
               ${full.length > 160 ? `<details><summary><span class="ex">${esc(short)}</span><b>${u('readMore')}</b></summary>${paras(n.text)}</details>` : paras(n.text)}
             </div>
@@ -209,6 +212,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
 
   function nextId(s) { const v = DATA.sections.filter(x => x.visible !== false); const i = v.indexOf(s); return v[i + 1] ? v[i + 1].id : s.id; }
 
+  const lazyBg = (ms = 0) => setTimeout(() => $$('.slide-bg[data-bg]').forEach(e => { e.style.backgroundImage = `url('${e.dataset.bg}')`; e.removeAttribute('data-bg'); }), ms);
   function render() {
     const st = S();
     document.documentElement.lang = LANG;
@@ -270,7 +274,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
   }
 
   function wire() {
-    $('#langBtn').onclick = () => { LANG = LANG === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('lang', LANG); } catch (e) {} render(); };
+    $('#langBtn').onclick = () => { LANG = LANG === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('lang', LANG); } catch (e) {} render(); lazyBg(300); };
     const nav = $('#nav'), menu = $('#menu');
     $('#burger').onclick = () => { nav.classList.toggle('open'); };
     $$('a[href^="#"]', menu).forEach(a => a.onclick = () => nav.classList.remove('open'));
@@ -323,7 +327,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
 
     // lightbox
     const lb = $('#lb'); let gal = [], gi = 0;
-    const show = () => { const f = gal[gi]; $('img', lb).src = $('img', f).src; $('p', lb).textContent = ($('figcaption', f) || {}).textContent || ''; };
+    const show = () => { const f = gal[gi]; const gi0 = $('img', f); $('img', lb).src = gi0.dataset.full || gi0.src; $('p', lb).textContent = ($('figcaption', f) || {}).textContent || ''; };
     $$('.gallery').forEach(sec => $$('.gal', sec).forEach(f => f.onclick = () => { gal = $$('.gal', sec); gi = +f.dataset.i; show(); lb.classList.add('open'); }));
     $('.lb-x', lb).onclick = () => lb.classList.remove('open');
     lb.onclick = e => { if (e.target === lb) lb.classList.remove('open'); };
@@ -343,7 +347,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       const table = av + pr + (p.code ? `<tr><th>${u('code')}</th><td dir="ltr">${esc(p.code)}</td></tr>` : '') + (p.hs ? `<tr><th>${u('hs')}</th><td dir="ltr">${esc(p.hs)}</td></tr>` : '') + row('origin', p.origin) + row('season', p.season) + row('moq', p.moq) + row('packing', p.packing) + (p.incoterms ? `<tr><th>${u('incoterms')}</th><td dir="ltr">${esc(p.incoterms)}</td></tr>` : '') + specs;
       const hasForm = !!$('.contact-form');
       $('.pm-in', pm).innerHTML = `
-        <div class="pm-img"><div class="pm-main">${img(p.image, t(p.name))}</div>${(p.gallery || []).filter(g => g.src).length ? `<div class="pm-thumbs">${[p.image, ...(p.gallery || []).map(g => g.src)].filter(Boolean).map(src => `<button type="button" data-src="${esc(P(src))}">${img(src, '')}</button>`).join('')}</div>` : ''}</div>
+        <div class="pm-img"><div class="pm-main">${img(p.image, t(p.name))}</div>${(p.gallery || []).filter(g => g.src).length ? `<div class="pm-thumbs">${[p.image, ...(p.gallery || []).map(g => g.src)].filter(Boolean).map(src => `<button type="button" data-src="${esc(P(src))}">${imgS(src, '')}</button>`).join('')}</div>` : ''}</div>
         <div class="pm-body">${p.category ? `<span class="kicker">${T(p.category)}</span>` : ''}<h2>${T(p.name)}</h2>${paras(p.longDescription && t(p.longDescription) ? p.longDescription : p.description)}
           ${table ? `<h4>${u('specs')}</h4><table class="spec">${table}</table>` : ''}
           <div class="pm-btns"><button type="button" class="btn btn-accent addq${inQ(secId, i) ? ' on' : ''}" data-sec="${esc(secId)}" data-i="${i}">${inQ(secId, i) ? u('inQ') : '+ ' + u('addQ')}</button>${S().whatsapp ? `<a class="btn btn-primary" target="_blank" rel="noopener" href="${esc(waLink(u('want') + ': ' + t(p.name)))}">${svg('whatsapp', 18)} ${u('quote')}</a>` : ''}${hasForm ? `<button type="button" class="btn btn-ghost-dark pm-form">${svg('mail', 18)} ${u('quoteForm')}</button>` : ''}</div>
@@ -373,7 +377,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       $('#qCount').textContent = QUOTE.length; qFab.classList.toggle('show', QUOTE.length > 0);
       $('#qItems').innerHTML = QUOTE.length ? QUOTE.map((q, k) => { const p = prodOf(q); return `
         <div class="q-item" data-k="${k}">
-          <div class="q-thumb">${img(p.image, t(p.name))}</div>
+          <div class="q-thumb">${imgS(p.image, t(p.name))}</div>
           <div class="q-main"><b>${T(p.name)}</b>
             <div class="q-row"><label>${u('qty')}<input type="number" min="0" step="any" class="q-qty" value="${esc(q.qty || '')}" dir="ltr"></label>
             <label>${u('unit')}<select class="q-unit">${units.map((x, n) => `<option value="${n}"${+q.unit === n ? ' selected' : ''}>${esc(x)}</option>`).join('')}</select></label></div>
@@ -447,7 +451,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
   async function load() {
     const q = new URLSearchParams(location.search);
     if (q.has('preview')) { try { RAW = localStorage.getItem('site_draft_raw') || ''; const d = localStorage.getItem('site_draft'); if (d) { document.body.insertAdjacentHTML('afterbegin', '<div class="preview-bar">معاينة — التعديلات لم تُنشر بعد</div>'); return JSON.parse(d); } } catch (e) {} }
-    const r = await fetch('site.json?v=' + Date.now());
+    const r = await fetch('site.json', { cache: 'no-cache' });
     return r.json();
   }
 
@@ -457,5 +461,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     LANG = saved || (d.settings.defaultLang || 'ar');
     render();
     document.body.classList.add('ready');
+    // صور السلايدر التانية تتحمّل بعد ما الصفحة تفتح
+    lazyBg(1200);
   }).catch(err => { $('#app').innerHTML = '<p style="padding:40px;text-align:center">تعذّر تحميل بيانات الموقع (site.json)</p>'; console.error(err); });
 })();

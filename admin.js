@@ -381,6 +381,16 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     if (blob.size >= file.size && r === 1) return { blob: file, ext: (file.name.split('.').pop() || 'jpg').toLowerCase() };
     return { blob, ext: keepAlpha ? 'webp' : 'jpg' };
   }
+  // نسخة صغيرة (800px) عشان الموقع يفتح أسرع
+  async function uploadSmall(blob, smPath) {
+    if (!/jpe?g|png|webp/i.test(blob.type)) return;
+    const bmp = await createImageBitmap(blob); const r = Math.min(1, 800 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas'); c.width = Math.round(bmp.width * r); c.height = Math.round(bmp.height * r);
+    const cx = c.getContext('2d'); cx.imageSmoothingQuality = 'high'; cx.drawImage(bmp, 0, 0, c.width, c.height);
+    const keep = /png|webp/.test(blob.type); const sm = await new Promise(res => c.toBlob(res, keep ? 'image/webp' : 'image/jpeg', .82));
+    const du = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(sm); });
+    await putFile(smPath, du.split(',')[1], 'نسخة صغيرة: ' + smPath);
+  }
   async function uploadImage(file) {
     const { blob, ext } = await shrink(file);
     const dataURL = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(blob); });
@@ -389,6 +399,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     const path = `images/uploads/${Date.now()}-${safe}.${ext}`;
     await putFile(path, dataURL.split(',')[1], 'رفع صورة: ' + path);
     BLOBS[path] = URL.createObjectURL(blob);
+    try { await uploadSmall(blob, path.replace('images/uploads/', 'images/uploads/sm/')); } catch (e) { /* النسخة الصغيرة اختيارية */ }
     return path;
   }
 
