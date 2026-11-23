@@ -10,7 +10,7 @@
     },
     "logo": "logo.webp",
     "favicon": "logo.webp",
-    "defaultLang": "ar",
+    "defaultLang": "en",
     "colors": {
       "primary": "#0f2747",
       "accent": "#c9a24a",
@@ -500,24 +500,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/peas-iqf.jpg",
@@ -538,24 +521,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "https://images.unsplash.com/photo-1558408525-1092038389ae?w=1600&h=1200&fit=crop&crop=entropy&q=82&fm=jpg",
@@ -576,24 +542,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/mango-iqf.jpg",
@@ -618,24 +567,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/peppers-iqf.jpg",
@@ -656,24 +588,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/onion.jpg",
@@ -702,20 +617,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/garlic.jpg",
@@ -744,20 +646,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/potato.jpg",
@@ -786,20 +675,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/tomato.jpg",
@@ -828,20 +704,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/bellpepper.jpg",
@@ -870,20 +733,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/cucumber.jpg",
@@ -908,20 +758,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/orange.jpg",
@@ -953,20 +790,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/pomegranate.jpg",
@@ -994,24 +818,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/grapes.jpg",
@@ -1040,20 +847,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/mango.jpg",
@@ -1085,20 +879,7 @@
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
-          },
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": []
+          }
         },
         {
           "image": "images/catalog/quattro.jpg",
@@ -1132,23 +913,7 @@
                 "en": "Spinosad 2.5%"
               }
             }
-          ],
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/forcust.jpg",
@@ -1178,27 +943,7 @@
                 "en": "Acetamiprid 60%"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/hioranol.jpg",
@@ -1232,23 +977,7 @@
                 "en": "Etofenprox 30%"
               }
             }
-          ],
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/penny.jpg",
@@ -1286,23 +1015,7 @@
                 "en": "Emamectin benzoate 1.5% + Indoxacarb 7.5%"
               }
             }
-          ],
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/mospilan.jpg",
@@ -1336,23 +1049,7 @@
                 "en": "Acetamiprid 20%"
               }
             }
-          ],
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/dolfx.jpg",
@@ -1386,23 +1083,7 @@
                 "en": "Lambda-cyhalothrin 5%"
               }
             }
-          ],
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/floki.jpg",
@@ -1432,27 +1113,7 @@
                 "en": "Flonicamid 50%"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/artwis.jpg",
@@ -1482,27 +1143,7 @@
                 "en": "Spiromesifen 24%"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/rivedale.jpg",
@@ -1532,27 +1173,7 @@
                 "en": "Abamectin 1% + Bifenazate 19%"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/tarachlor.jpg",
@@ -1582,27 +1203,7 @@
                 "en": "Chlorfenapyr 36%"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/abaclean.jpg",
@@ -1632,27 +1233,7 @@
                 "en": "Abamectin"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         },
         {
           "image": "images/catalog/kemclam.jpg",
@@ -1682,27 +1263,7 @@
                 "en": "Thiocyclam hydrogen oxalate 50%"
               }
             }
-          ],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          }
+          ]
         }
       ],
       "categories": [
