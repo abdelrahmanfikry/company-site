@@ -369,13 +369,14 @@
   }
 
   async function shrink(file) {
-    if (/svg|gif/.test(file.type) || file.size < 350 * 1024) return { blob: file, ext: (file.name.split('.').pop() || 'png').toLowerCase() };
-    const bmp = await createImageBitmap(file); const max = 1920; const r = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    if (/svg|gif/.test(file.type) || file.size < 900 * 1024) return { blob: file, ext: (file.name.split('.').pop() || 'png').toLowerCase() };
+    const bmp = await createImageBitmap(file); const max = 2560; const r = Math.min(1, max / Math.max(bmp.width, bmp.height));
     const c = document.createElement('canvas'); c.width = Math.round(bmp.width * r); c.height = Math.round(bmp.height * r);
     const keepAlpha = /png|webp/.test(file.type);
-    c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+    const cx = c.getContext('2d'); cx.imageSmoothingEnabled = true; cx.imageSmoothingQuality = 'high'; cx.drawImage(bmp, 0, 0, c.width, c.height);
     const type = keepAlpha ? 'image/webp' : 'image/jpeg';
-    const blob = await new Promise(res => c.toBlob(res, type, .84));
+    const blob = await new Promise(res => c.toBlob(res, type, .92));
+    if (blob.size >= file.size && r === 1) return { blob: file, ext: (file.name.split('.').pop() || 'jpg').toLowerCase() };
     return { blob, ext: keepAlpha ? 'webp' : 'jpg' };
   }
   async function uploadImage(file) {
