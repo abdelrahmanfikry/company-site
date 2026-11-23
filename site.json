@@ -410,15 +410,792 @@
         "en": "What We Trade"
       },
       "title": {
-        "ar": "فئات المنتجات",
-        "en": "Product Categories"
+        "ar": "منتجاتنا",
+        "en": "Our Products"
       },
       "text": {
-        "ar": "نورّد ونصدّر مجموعة واسعة من المنتجات حسب طلب العميل ومواصفاته.",
-        "en": "We source and export a wide range of products to client specifications."
+        "ar": "خضروات وفواكه مصرية طازجة ومجمدة بتقنية IQF، ومبيدات زراعية معتمدة — بمواصفات التصدير.",
+        "en": "Fresh and IQF-frozen Egyptian fruits and vegetables, plus certified crop-protection products — to export standards."
       },
       "showQuoteButton": true,
       "items": [
+        {
+          "image": "images/products/strawberry-iqf.jpg",
+          "name": {
+            "ar": "فراولة مجمدة IQF",
+            "en": "IQF Frozen Strawberries"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          },
+          "description": {
+            "ar": "فراولة مصرية طازجة مجمدة بتقنية التجميد السريع الفردي (IQF)، تحتفظ بلونها الأحمر الزاهي وطعمها الطبيعي. مثالية للأسواق الأوروبية والأمريكية.",
+            "en": "Fresh Egyptian strawberries frozen with IQF (Individual Quick Freezing) technology. Retains its vibrant red color and natural flavor. Ideal for European and American markets."
+          },
+          "gallery": [
+            {
+              "src": "images/products/strawberry-iqf-2.jpg"
+            }
+          ],
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/peas-iqf.jpg",
+          "name": {
+            "ar": "بسلة مجمدة IQF",
+            "en": "IQF Frozen Peas"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          },
+          "description": {
+            "ar": "بسلة خضراء مصرية طازجة مجمدة بتقنية IQF، تحتفظ بلونها الأخضر الزاهي وطعمها الطبيعي. مثالية للأسواق الأوروبية والأمريكية.",
+            "en": "Fresh Egyptian green peas frozen with IQF technology. Retains its vibrant green color and natural flavor. Ideal for European and American markets."
+          },
+          "gallery": [],
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "",
+          "name": {
+            "ar": "بامية مجمدة IQF",
+            "en": "IQF Frozen Okra"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          },
+          "description": {
+            "ar": "بامية مصرية طازجة مجمدة بتقنية IQF، مختارة بعناية بحجم متجانس ولون أخضر داكن، وتحتفظ بقوامها المتماسك بعد الطهي. عليها طلب كبير في الأسواق العربية والأفريقية.",
+            "en": "Fresh Egyptian okra frozen with IQF technology. Carefully selected uniform size and dark green color. Retains its firm texture after cooking. Highly demanded in Arab and African markets."
+          },
+          "gallery": [],
+          "hidden": true,
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/mango-iqf.jpg",
+          "name": {
+            "ar": "مانجو مجمدة IQF",
+            "en": "IQF Frozen Mango"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          },
+          "description": {
+            "ar": "مانجو مصرية طازجة مجمدة بتقنية IQF — قطع ومكعبات وشرائح. تحتفظ بلونها الذهبي وطعمها الحلو. مثالية للعصائر والحلويات.",
+            "en": "Fresh Egyptian mango frozen with IQF technology — chunks, cubes, and slices. Retains its golden color and sweet flavor. Ideal for juices and confectionery."
+          },
+          "gallery": [
+            {
+              "src": "images/products/mango-iqf-2.jpg"
+            }
+          ],
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/peppers-iqf.jpg",
+          "name": {
+            "ar": "فلفل ألوان مجمد IQF",
+            "en": "IQF Frozen Mixed Peppers"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          },
+          "description": {
+            "ar": "فلفل مصري مشكّل مجمد بتقنية IQF — مكعبات وشرائح بألوان زاهية (أحمر وأصفر وأخضر). مثالي للمطاعم ومصانع الأغذية.",
+            "en": "Egyptian mixed peppers frozen with IQF technology — diced, cubes, and strips. Vibrant colors (red, yellow, green). Ideal for restaurants and food manufacturing."
+          },
+          "gallery": [],
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/onion.jpg",
+          "name": {
+            "ar": "بصل مصري طازج",
+            "en": "Fresh Egyptian Onions"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          },
+          "description": {
+            "ar": "بصل مصري طازج بكل أنواعه — أحمر وأبيض وذهبي. معروف بحجمه الكبير وقشرته اللامعة وصلابته العالية التي تتحمل الشحن لمسافات طويلة. مثالي للتصدير للأسواق الأوروبية والخليجية.",
+            "en": "Fresh Egyptian onions in all varieties — red, white, and golden. Known for their large size, shiny skin, and high firmness that withstands long shipping. Ideal for export to European and Gulf markets."
+          },
+          "gallery": [
+            {
+              "src": "images/products/onion-2.jpg"
+            }
+          ],
+          "season": {
+            "ar": "طوال العام",
+            "en": "Year-round"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/garlic.jpg",
+          "name": {
+            "ar": "ثوم مصري ممتاز",
+            "en": "Premium Egyptian Garlic"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          },
+          "description": {
+            "ar": "ثوم مصري ممتاز بفصوص كبيرة وطعم قوي ورائحة مميزة، مزروع في أجود الأراضي الزراعية في مصر ومفرز بعناية. يُصدَّر طازجًا أو مجففًا حسب طلب العميل.",
+            "en": "Premium Egyptian garlic with large cloves, strong flavor, and distinctive aroma. Grown in Egypt's finest agricultural lands and carefully sorted. Exported fresh or dried per client request."
+          },
+          "gallery": [
+            {
+              "src": "images/products/garlic-2.jpg"
+            }
+          ],
+          "season": {
+            "ar": "مارس – يونيو",
+            "en": "March – June"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/potato.jpg",
+          "name": {
+            "ar": "بطاطس مصرية",
+            "en": "Egyptian Potatoes"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          },
+          "description": {
+            "ar": "بطاطس مصرية بأصناف ممتازة — سبونتا وديزيريه ونيكولا. لون أصفر ذهبي وقوام متماسك، مثالية للقلي والطهي، ومعبأة بالمعايير الدولية للحفاظ على جودتها أثناء النقل.",
+            "en": "Egyptian potatoes in premium varieties — Spunta, Desiree, and Nicola. Golden yellow color, firm texture, perfect for frying and cooking. Packed to international standards to maintain quality during transport."
+          },
+          "gallery": [
+            {
+              "src": "images/products/potato-2.jpg"
+            }
+          ],
+          "season": {
+            "ar": "نوفمبر – مايو",
+            "en": "November – May"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/tomato.jpg",
+          "name": {
+            "ar": "طماطم مصرية طازجة",
+            "en": "Fresh Egyptian Tomatoes"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          },
+          "description": {
+            "ar": "طماطم مصرية طازجة بأصناف ممتازة — روما وشيري وبيف. لون أحمر زاهي ولُب كثيف وطعم حلو، ومعبأة بمعايير GlobalGAP لضمان الجودة أثناء الشحن.",
+            "en": "Fresh Egyptian tomatoes in premium varieties — Roma, Cherry, and Beef. Bright red color, dense flesh, sweet taste. Packed under GlobalGAP standards to ensure quality during shipping."
+          },
+          "gallery": [
+            {
+              "src": "images/products/tomato-2.jpg"
+            }
+          ],
+          "season": {
+            "ar": "نوفمبر – يونيو",
+            "en": "November – June"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/bellpepper.jpg",
+          "name": {
+            "ar": "فلفل ألوان مصري",
+            "en": "Egyptian Bell Peppers"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          },
+          "description": {
+            "ar": "فلفل ألوان مصري بألوان زاهية — أحمر وأصفر وأخضر وبرتقالي. حجم متجانس وقشرة لامعة ولُب سميك. يُصدَّر طازجًا للأسواق الأوروبية والخليجية.",
+            "en": "Egyptian bell peppers in vibrant colors — red, yellow, green, and orange. Uniform size, shiny skin, thick flesh. Exported fresh to European and Gulf markets."
+          },
+          "gallery": [
+            {
+              "src": "images/products/bellpepper-2.jpg"
+            }
+          ],
+          "season": {
+            "ar": "أكتوبر – يونيو",
+            "en": "October – June"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/cucumber.jpg",
+          "name": {
+            "ar": "خيار مصري طازج",
+            "en": "Fresh Egyptian Cucumbers"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          },
+          "description": {
+            "ar": "خيار مصري طازج بكل أنواعه — أبيض وأخضر وكونتيننتال. قشرة ناعمة ولون أخضر زاهي وطعم مقرمش، مزروع في أجود مزارع دلتا النيل.",
+            "en": "Fresh Egyptian cucumbers in all varieties — white, green, and continental. Smooth skin, vibrant green color, crunchy taste. Grown in the finest Nile Delta farms."
+          },
+          "gallery": [],
+          "season": {
+            "ar": "أكتوبر – يونيو",
+            "en": "October – June"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/orange.jpg",
+          "name": {
+            "ar": "برتقال مصري طازج",
+            "en": "Fresh Egyptian Oranges"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "فواكه طازجة",
+            "en": "Fresh Fruits"
+          },
+          "description": {
+            "ar": "برتقال مصري طازج بأصناف ممتازة — فالنسيا وأبو سرة وبلدي. قشرة لامعة وعصير وفير وطعم حلو مميز. يُصدَّر طازجًا في حاويات مبردة للأسواق الأوروبية والخليجية والأفريقية.",
+            "en": "Fresh Egyptian oranges in premium varieties — Valencia, Navel, and Baladi. Shiny skin, rich juice, and distinctive sweet taste. Exported fresh in reefer containers to European, Gulf, and African markets."
+          },
+          "gallery": [
+            {
+              "src": "images/products/orange-2.jpg"
+            },
+            {
+              "src": "images/products/orange-3.jpg"
+            }
+          ],
+          "season": {
+            "ar": "نوفمبر – مارس",
+            "en": "November – March"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/pomegranate.jpg",
+          "name": {
+            "ar": "رمان مصري طازج",
+            "en": "Fresh Egyptian Pomegranate"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "فواكه طازجة",
+            "en": "Fresh Fruits"
+          },
+          "description": {
+            "ar": "رمان مصري ممتاز بأفضل الأصناف — منفلوطي (Mandelina) و Wonderful. لون أحمر داكن وحبات كثيفة وطعم مميز بين الحلو والمز.",
+            "en": "Premium Egyptian pomegranate in top varieties — Mandelina and Wonderful. Dark red color, dense seeds, distinctive sweet-tart taste."
+          },
+          "gallery": [
+            {
+              "src": "images/products/pomegranate-2.jpg"
+            },
+            {
+              "src": "images/products/pomegranate-3.jpg"
+            }
+          ],
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/grapes.jpg",
+          "name": {
+            "ar": "عنب أحمر مصري",
+            "en": "Egyptian Red Grapes"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "فواكه طازجة",
+            "en": "Fresh Fruits"
+          },
+          "description": {
+            "ar": "عنب أحمر مصري بأصناف عالمية — كريمسون وريد جلوب وفليم سيدلس. حبات كبيرة ولون أحمر داكن وحلاوة مميزة.",
+            "en": "Egyptian red grapes in world-class varieties — Crimson, Red Globe, and Flame Seedless. Large berries, deep red color, distinctive sweetness."
+          },
+          "gallery": [
+            {
+              "src": "images/products/grapes-2.jpg"
+            }
+          ],
+          "season": {
+            "ar": "يونيو – أغسطس",
+            "en": "June – August"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/mango.jpg",
+          "name": {
+            "ar": "مانجو مصرية طازجة",
+            "en": "Fresh Egyptian Mango"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "فواكه طازجة",
+            "en": "Fresh Fruits"
+          },
+          "description": {
+            "ar": "مانجو مصرية طازجة بأشهر الأصناف — كيت وعويسي وفجري كلان. معروفة بحجمها الكبير ولونها الذهبي وطعمها الحلو جدًا.",
+            "en": "Fresh Egyptian mango in famous varieties — Keitt, Ewaisi, and Fagri Kalan. Known for its large size, golden color, and exceptionally sweet taste."
+          },
+          "gallery": [
+            {
+              "src": "images/products/mango-2.jpg"
+            },
+            {
+              "src": "images/products/mango-packing.jpg"
+            }
+          ],
+          "season": {
+            "ar": "يوليو – سبتمبر",
+            "en": "July – September"
+          },
+          "origin": {
+            "ar": "مصر",
+            "en": "Egypt"
+          }
+        },
+        {
+          "image": "images/products/quattro.jpg",
+          "name": {
+            "ar": "كواترو أكت 2.5% SC",
+            "en": "Quattro Act 2.5% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد حشري عالي الفاعلية بمادة سبينوساد ذات الأصل الطبيعي، لمكافحة ديدان ثمار العنب والحشرات حرشفية الأجنحة.",
+            "en": "Highly effective insecticide based on Spinosad, a natural-origin active ingredient, for controlling grape fruit borers and lepidopteran pests."
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "كواترو أكت 2.5% SC مبيد حشري عالي الفاعلية مركّب بمادة سبينوساد، وهي مادة فعالة ذات أصل طبيعي ناتجة عن تخمير بكتيريا Saccharopolyspora spinosa. يوفر مكافحة قوية لديدان الثمار وحشرات حرشفية الأجنحة، لمحصول عنب أنظف وأعلى جودة.\n\nالمميزات:\n- مكافحة ممتازة لديدان الثمار في العنب.\n- يعمل بالملامسة وكسم معدي، بتأثير سريع وحماية طويلة.\n- من مصدر طبيعي، صديق للبيئة وآمن على الحشرات النافعة عند الاستخدام حسب التعليمات.\n- متوافق مع أغلب برامج المكافحة المتكاملة (IPM).\n- ثمار أنظف وأكثر قابلية للتسويق وإنتاجية أعلى.",
+            "en": "Quattro Act 2.5% SC is a highly effective insecticide formulated with Spinosad, a natural-origin active ingredient derived from the fermentation of Saccharopolyspora spinosa. It offers powerful control against fruit borers and other lepidopteran pests, ensuring healthier and higher-quality grape yields.\n\nBenefits:\n- Excellent control of fruit worms in grape crops.\n- Acts by both ingestion and contact, delivering fast knockdown and long-lasting protection.\n- Derived from a natural source, environmentally friendly and safe for beneficial insects when used as directed.\n- Compatible with most integrated pest management (IPM) programs.\n- Promotes cleaner and more marketable fruit with higher productivity."
+          },
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "سبينوساد 2.5%",
+                "en": "Spinosad 2.5%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/forcust.jpg",
+          "name": {
+            "ar": "فوركست بي 60% WP",
+            "en": "Forcust P 60% WP"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد حشري في صورة مسحوق قابل للذوبان بمادة أسيتاميبريد 60%.",
+            "en": "Insecticide in wettable powder form, based on Acetamiprid 60%."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "أسيتاميبريد 60%",
+                "en": "Acetamiprid 60%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/hioranol.jpg",
+          "name": {
+            "ar": "هيورانول 30% SC",
+            "en": "Hioranol 30% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد حشري عالي الفاعلية مخصص لمكافحة الذبابة البيضاء في محصول البطاطس، بتأثير موجّه يقلل الضرر على الحشرات النافعة.",
+            "en": "Highly effective insecticide specifically formulated for the control of whiteflies in potato crops, with targeted action that minimizes disruption to beneficial insects."
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "هيورانول 30% SC مبيد حشري عالي الفاعلية مخصص لمكافحة الذبابة البيضاء في محصول البطاطس. تركيبته الدقيقة تضمن تأثيرًا موجّهًا على الآفة، مع أقل ضرر ممكن على الحشرات النافعة والنظام البيئي للمزرعة.",
+            "en": "Hioranol 30% SC is a highly effective insecticide specifically formulated for the control of whiteflies in potato crops. Its precise formulation ensures targeted action against these pests, minimizing disruption to beneficial insects and the overall ecosystem of your plantation."
+          },
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "إيتوفنبروكس 30%",
+                "en": "Etofenprox 30%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/penny.jpg",
+          "name": {
+            "ar": "بيني 9% SC",
+            "en": "Penny 9% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد واسع المدى لمكافحة الآفات الحشرية والأكاروسية، خاصة حرشفيات الأجنحة، بمكافحة طويلة الأمد.",
+            "en": "Broad-spectrum control of insect and mite pests, especially lepidoptera, with long-lasting protection."
+          },
+          "gallery": [
+            {
+              "src": "images/products/penny-2.jpg"
+            }
+          ],
+          "longDescription": {
+            "ar": "خصائص ومميزات:\n- فعال لمكافحة مدى واسع من الآفات الحشرية والأكاروسية، خاصة حرشفيات الأجنحة (مثل ديدان ثمار الطماطم، فراشة درنات البطاطس، دودة ورق القطن، الدودة الخضراء، ديدان ثمار العنب، دودة الذرة الأوروبية، وصانعات الأنفاق في مختلف الأعمار، وغيرها).\n- مسجل في العديد من دول العالم، ويستخدم على العديد من المحاصيل الحقلية والخضر والفاكهة.\n- مناسب لبرامج المكافحة المتكاملة.\n- يقلل تلوث البيئة ويحافظ على الأعداء الحيوية.\n- يعمل بكفاءة عالية تحت الظروف المناخية غير المواتية مثل ارتفاع درجات الحرارة.\n- يعمل في نطاق pH من 5 – 10، فلا تتأثر فعاليته بحموضة أو قلوية محلول الرش.\n- يحقق مكافحة طويلة الأمد.\n- يزيد المحصول ويحسن جودته، ومناسب للتصدير.",
+            "en": "Features:\n- Effective against a wide range of insect and mite pests, especially lepidoptera (tomato fruit worms, potato tuber moth, cotton leafworm, green worm, grape berry moth, European corn borer, leaf miners at all stages, and more).\n- Registered in many countries and used on many field crops, vegetables, and fruits.\n- Suitable for integrated pest management programs.\n- Reduces environmental pollution and preserves natural enemies.\n- Works efficiently under unfavorable conditions such as high temperatures.\n- Works within a pH range of 5–10, so its efficacy is not affected by the acidity or alkalinity of the spray solution.\n- Provides long-lasting control.\n- Increases yield and improves quality; suitable for export crops."
+          },
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "إيمامكتين بنزوات 1.5% + إندوكساكارب 7.5%",
+                "en": "Emamectin benzoate 1.5% + Indoxacarb 7.5%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/mospilan.jpg",
+          "name": {
+            "ar": "موسبيلان 20% SP",
+            "en": "Mospilan 20% SP"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "كفاءة عالية في مكافحة المن والذبابة البيضاء والجاسيد وحشرات أخرى، بتأثير جهازي وانتقالي ممتد المفعول.",
+            "en": "Highly effective against aphids, whiteflies, jassids, and other insects, with long-lasting systemic and translaminar action."
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "خصائص ومميزات:\n- كفاءة عالية في مكافحة المن والذبابة البيضاء والجاسيد وحشرات أخرى.\n- تأثير ممتد المفعول على الحشرات الكاملة واليرقات وكذلك البيض، وتأثير جهازي وانتقالي يضمن فاعلية عالية عند رشه على أوراق النبات.\n- كمية ضئيلة من المادة الفعالة (20% فقط) مع ضمان الفاعلية.\n- قليل السمية للثدييات والكائنات المائية والحشرات النافعة ونحل العسل.\n- شديد الفاعلية على العديد من الحشرات المتواجدة على النباتات المهمة للمزارعين.\n- تأثير جانبي واسع يفيد في القضاء على أكثر من آفة تصيب نفس المحصول، فيوفر مجهود العمالة وتكلفة الرش والوقت.",
+            "en": "Features:\n- Highly effective against aphids, whiteflies, jassids, and other insects.\n- Long-lasting effect on adults, larvae, and eggs, with systemic and translaminar action ensuring high efficacy when sprayed on leaves.\n- Low active ingredient content (only 20%) while maintaining efficacy.\n- Low toxicity to mammals, aquatic organisms, beneficial insects, and honeybees.\n- Highly effective on many insects found on important crops.\n- Broad side effect that controls more than one pest on the same crop, saving labor, spraying costs, and time."
+          },
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "أسيتاميبريد 20%",
+                "en": "Acetamiprid 20%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/dolfx.jpg",
+          "name": {
+            "ar": "دولف-إكس 5% EC",
+            "en": "Dolf-X 5% EC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد حشري ذو تأثير صاعق وقوي بمعدلات استخدام منخفضة، بالملامسة وكسم معدي.",
+            "en": "Fast, powerful knockdown insecticide at low use rates, acting by contact and ingestion."
+          },
+          "gallery": [],
+          "longDescription": {
+            "ar": "خصائص ومميزات:\n- مبيد حشري ذو تأثير صاعق وقوي.\n- يستخدم بمعدلات منخفضة.\n- له تأثير بالملامسة وكسم معدي للحشرات.\n- متوافق مع برامج المكافحة المتكاملة (IPM).\n- مدى واسع في مكافحة الحشرات الثاقبة الماصة وحرشفية الأجنحة وبعض الخنافس والأكاروسات التي تصيب العديد من المحاصيل.\n- يعمل على طرد الحشرة الكاملة (الفراشات) من الحقل المعامل، فيقلل وضع البيض على المحاصيل وبالتالي تقليل تعدادها.",
+            "en": "Features:\n- Fast and powerful knockdown insecticide.\n- Used at low application rates.\n- Acts by contact and as a stomach poison.\n- Compatible with integrated pest management (IPM) programs.\n- Broad-spectrum control of piercing-sucking insects, lepidoptera, some beetles, and mites on many crops.\n- Repels adult moths from treated fields, reducing egg laying and pest populations."
+          },
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "لامبدا سيهالوثرين 5%",
+                "en": "Lambda-cyhalothrin 5%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/floki.jpg",
+          "name": {
+            "ar": "فلوكي 50% WG",
+            "en": "Floki 50% WG"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد حشري جهازي بالملامسة وكسم معدي، يعمل كمانع للتغذية، فعال ضد الحشرات الثاقبة الماصة على مدى واسع من المحاصيل.",
+            "en": "Systemic insecticide with contact and stomach action, acting as a feeding inhibitor, effective against piercing-sucking insect pests on a wide range of crops."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "فلونيكاميد 50%",
+                "en": "Flonicamid 50%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/artwis.jpg",
+          "name": {
+            "ar": "آرتويس 24% SC",
+            "en": "Artwis 24% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد أكاروسي وحشري يكافح كل الأطوار (البيض واليرقات والحوريات) ما عدا الذكور الكاملة، وكذلك الذبابة البيضاء، على مدى واسع من النباتات والمحاصيل.",
+            "en": "An acaricide and insecticide that controls all stages (eggs, larvae, and nymphs), except adult males, as well as whiteflies, on a wide range of plants and crops."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "سبيروميسيفين 24%",
+                "en": "Spiromesifen 24%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/rivedale.jpg",
+          "name": {
+            "ar": "رايفديل 20% SC",
+            "en": "Rivedale 20% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد أكاروسي وحشري متخصص لمكافحة كل أطوار العنكبوت الأحمر، وكذلك الذبابة البيضاء وصانعات الأنفاق.",
+            "en": "A specialized acaricide and insecticide for controlling all stages of spider mites, as well as whiteflies and leaf miners."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "أبامكتين 1% + بيفينازيت 19%",
+                "en": "Abamectin 1% + Bifenazate 19%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/tarachlor.jpg",
+          "name": {
+            "ar": "تاراكلور 36% SC",
+            "en": "Tarachlor 36% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد أكاروسي وحشري لمكافحة الآفات الحشرية والأكاروسات والخنافس وأكاروس الطماطم والتربس ودودة ثمار العنب ودودة ورق القطن.",
+            "en": "An acaricide and insecticide for controlling insect pests, mites, beetles, tomato russet mites, thrips, grape berry moth, and cotton leafworm."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "كلورفينابير 36%",
+                "en": "Chlorfenapyr 36%"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/abaclean.jpg",
+          "name": {
+            "ar": "أباكلين 10% SC",
+            "en": "Abaclean 10% SC"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد أكاروسي وحشري ونيماتودي يعمل بالملامسة وكسم معدي لمكافحة الأطوار المتحركة (الحوريات والكاملة)، وكذلك صانعات الأنفاق والذبابة البيضاء.",
+            "en": "An acaricide, insecticide, and nematicide that acts by contact and ingestion to control mobile stages such as nymphs and adults, as well as leaf miners and whiteflies."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "أبامكتين",
+                "en": "Abamectin"
+              }
+            }
+          ]
+        },
+        {
+          "image": "images/products/kemclam.jpg",
+          "name": {
+            "ar": "كيمكلام 50% WP",
+            "en": "Kemclam 50% WP"
+          },
+          "availability": "available",
+          "category": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          },
+          "description": {
+            "ar": "مبيد حشري جهازي بالملامسة وكسم معدي، يكافح آفات متنوعة مثل توتا أبسلوتا وديدان الثمار والدودة القارضة والذبابة البيضاء والمن والخنافس.",
+            "en": "A systemic insecticide that acts by contact and as a stomach poison, controlling various pests such as tomato pinworm, fruit worms, cutworms, whiteflies, aphids, and beetles."
+          },
+          "gallery": [],
+          "specs": [
+            {
+              "label": {
+                "ar": "المادة الفعالة",
+                "en": "Active ingredient"
+              },
+              "value": {
+                "ar": "ثيوسيكلام هيدروجين أوكسالات 50%",
+                "en": "Thiocyclam hydrogen oxalate 50%"
+              }
+            }
+          ]
+        },
         {
           "name": {
             "ar": "منتجات غذائية وزراعية",
@@ -461,7 +1238,8 @@
           },
           "specs": [],
           "showPrice": true,
-          "price": "20"
+          "price": "20",
+          "hidden": true
         },
         {
           "name": {
@@ -503,7 +1281,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "name": {
@@ -545,7 +1324,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "name": {
@@ -587,7 +1367,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "name": {
@@ -629,7 +1410,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "name": {
@@ -671,7 +1453,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "name": {
@@ -713,7 +1496,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "name": {
@@ -755,7 +1539,8 @@
             "ar": "",
             "en": ""
           },
-          "specs": []
+          "specs": [],
+          "hidden": true
         },
         {
           "image": "cat-chemical.svg",
@@ -798,10 +1583,35 @@
             "en": ""
           },
           "specs": [],
-          "trade": "import"
+          "trade": "import",
+          "hidden": true
         }
       ],
       "categories": [
+        {
+          "name": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          }
+        },
+        {
+          "name": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh Vegetables"
+          }
+        },
+        {
+          "name": {
+            "ar": "فواكه طازجة",
+            "en": "Fresh Fruits"
+          }
+        },
+        {
+          "name": {
+            "ar": "مبيدات زراعية",
+            "en": "Pesticides"
+          }
+        },
         {
           "name": {
             "ar": "غذائي",
@@ -822,17 +1632,36 @@
         },
         {
           "name": {
-            "ar": "مبيدات وأسمدة",
-            "en": "Pesticides & Fertilizers"
-          }
-        },
-        {
-          "name": {
             "ar": "test",
             "en": "test"
           }
         }
       ]
+    },
+    {
+      "id": "iqf",
+      "type": "richtext",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "تقنية IQF",
+        "en": "IQF"
+      },
+      "kicker": {
+        "ar": "من الحقل للتجميد",
+        "en": "From Field to Frozen"
+      },
+      "title": {
+        "ar": "مراحل التجميد السريع IQF",
+        "en": "The IQF Process"
+      },
+      "text": {
+        "ar": "نحصد الخضروات والفواكه في قمة نضجها، ثم تُغسل وتُفرز وتُقطّع حسب الطلب.\n\nبعد ذلك تُجمَّد كل قطعة على حدة بسرعة عالية بتقنية IQF (التجميد السريع الفردي)، فتبقى منفصلة وتحتفظ بلونها وطعمها وقيمتها الغذائية.\n\nوأخيرًا تُعبّأ وتُخزّن وتُشحن عبر سلسلة تبريد متكاملة حتى تصل إلى العميل.",
+        "en": "Fruits and vegetables are harvested at peak ripeness, then washed, sorted, and cut to order.\n\nEach piece is then frozen individually at high speed using IQF (Individual Quick Freezing), so it stays separate and keeps its color, flavor, and nutritional value.\n\nFinally, products are packed, stored, and shipped through a complete cold chain all the way to the client."
+      },
+      "image": "images/products/iqf-range.jpg",
+      "imageSide": "end",
+      "dark": false
     },
     {
       "id": "certificates",
@@ -1035,6 +1864,34 @@
         "en": "Gallery"
       },
       "images": [
+        {
+          "src": "images/products/mango-packing.jpg",
+          "caption": {
+            "ar": "تعبئة المانجو للتصدير",
+            "en": "Mango packing for export"
+          }
+        },
+        {
+          "src": "images/products/veg-mix.jpg",
+          "caption": {
+            "ar": "خضروات طازجة",
+            "en": "Fresh vegetables"
+          }
+        },
+        {
+          "src": "images/products/fruit-mix.jpg",
+          "caption": {
+            "ar": "فواكه طازجة",
+            "en": "Fresh fruits"
+          }
+        },
+        {
+          "src": "images/products/peppers-iqf.jpg",
+          "caption": {
+            "ar": "خط التجميد IQF",
+            "en": "IQF freezing line"
+          }
+        },
         {
           "src": "hero-port.svg",
           "caption": {
