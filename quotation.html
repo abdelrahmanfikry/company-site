@@ -295,6 +295,27 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 
   fetch('site.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ settings: {}, sections: [] })).then(d => {
     SITE = d; PRODUCTS = (d.sections || []).filter(s => s.type === 'products').flatMap(s => s.items || []);
+    const m = location.hash.match(/req=([\w-]+)/);
+    if (m) {
+      try {
+        const req = JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g, '+').replace(/_/g, '/')))));
+        const l = req.l === 'en' ? 'en' : 'ar', c = req.c || {};
+        const q = Object.assign(blank(), { lang: l, cur: (store.get('q_draft', null) || {}).cur || 'USD' });
+        q.fields = { cName: c.n || '', cCompany: c.co || '', cCountry: c.ct || '', cPhone: c.ph || '', cEmail: c.em || '', notes: c.nt || '' };
+        (req.it || []).forEach(it => {
+          const sec = (SITE.sections || []).find(s => s.id === it.s); let p = sec && (sec.items || [])[it.i];
+          if (!p || (it.nm && tx(p.name, l) !== it.nm && tx(p.name, 'ar') !== it.nm && tx(p.name, 'en') !== it.nm)) p = PRODUCTS.find(x => [tx(x.name, 'ar'), tx(x.name, 'en')].includes(it.nm));
+          if (!p) { q.lines.push({ desc: it.nm || '', qty: it.q, unit: +it.u || 0, price: '' }); return; }
+          const extra = [tx(p.origin, l) && (l === 'ar' ? 'المنشأ: ' : 'Origin: ') + tx(p.origin, l), tx(p.packing, l)].filter(Boolean).join(' — ');
+          q.lines.push({ desc: tx(p.name, l) + (p.code ? ' [' + p.code + ']' : '') + (extra ? '\n' + extra : ''), qty: it.q, unit: +it.u || 0, price: (p.price && (!p.currency || p.currency === q.cur)) ? p.price : '' });
+          if (!q.fields.pack && tx(p.packing, l)) q.fields.pack = tx(p.packing, l);
+          if (p.incoterms && !q.inco) q.inco = p.incoterms;
+        });
+        history.replaceState(null, '', location.pathname);
+        load(q); store.set('q_draft', q);
+        return;
+      } catch (e) { console.error('bad request link', e); }
+    }
     load(store.get('q_draft', null) || blank());
   });
 })();

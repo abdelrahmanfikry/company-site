@@ -412,7 +412,11 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       const st = $('#qStatus'), btn = $('button[type=submit]', e.target), old = btn.innerHTML; btn.disabled = true; btn.textContent = u('sending'); st.className = 'form-status';
       const products = QUOTE.map((q, n) => { const p = prodOf(q); return `${n + 1}. ${t(p.name)} — ${q.qty || '?'} ${units[+q.unit] || ''}`; }).join('\n');
       try {
-        await sendMail(`${u('myQ')} — ${d.name} (${QUOTE.length})`, { Name: d.name, Company: d.company, Country: d.country, Phone: d.phone, Email: d.email, Products: products, Notes: d.notes, Language: LANG }, d.email);
+        // رابط يفتح صفحة عروض الأسعار وفيها الطلب جاهز
+        const req = { l: LANG, c: { n: d.name, co: d.company, ct: d.country, ph: d.phone, em: d.email, nt: d.notes }, it: QUOTE.map(q => { const p = prodOf(q); return { s: q.sec, i: q.i, nm: t(p.name), q: q.qty || '', u: +q.unit || 0 }; }) };
+        const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(req)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        const qLink = location.origin + location.pathname.replace(/[^/]*$/, '') + 'quotation.html#req=' + b64;
+        await sendMail(`${u('myQ')} — ${d.name} (${QUOTE.length})`, { Name: d.name, Company: d.company, Country: d.country, Phone: d.phone, Email: d.email, Products: products, Notes: d.notes, Language: LANG, 'Open in quotation builder / افتح في صفحة عروض الأسعار': qLink }, d.email);
         st.textContent = u('qSent'); st.className = 'form-status ok'; QUOTE = []; paintQ(); paintBtns(); e.target.reset();
       } catch (err) { st.textContent = u('sendFail'); st.className = 'form-status bad'; setTimeout(() => window.open(waLink(qText(d)), '_blank'), 900); }
       btn.disabled = false; btn.innerHTML = old; };
