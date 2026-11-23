@@ -292,7 +292,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     const wrap = h('div', { class: 'field' });
     const val = getPath(obj, f.key);
     const set = v => { setPath(obj, f.key, v); dirty(); if (f.key === 'navLabel' || f.key === 'id') renderSide(); };
-    if (f.type === 'bool') { wrap.append(toggle(obj, f.key, f.label)); return wrap; }
+    if (f.type === 'bool') { wrap.append(toggle(obj, f.key, f.label, f.def === true)); return wrap; }
     wrap.append(h('label', {}, f.label));
     switch (f.type) {
       case 'i18n': case 'i18nArea': {

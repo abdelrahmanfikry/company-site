@@ -65,8 +65,8 @@
     const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const T = v => esc(t(v));
     const U = {
-      ar: { print: '🖨 تحميل / طباعة PDF', other: 'English', back: '← الموقع', title: 'كتالوج المنتجات', exp: 'تصدير', imp: 'استيراد', season: 'الموسم', origin: 'المنشأ', moq: 'أقل كمية', packing: 'التعبئة', incoterms: 'شروط التسليم', code: 'الكود', hs: 'HS Code', items: 'منتج' },
-      en: { print: '🖨 Download / Print PDF', other: 'العربية', back: 'Website →', title: 'Product Catalog', exp: 'Export', imp: 'Import', season: 'Season', origin: 'Origin', moq: 'Min. order', packing: 'Packing', incoterms: 'Delivery terms', code: 'Code', hs: 'HS Code', items: 'items' }
+      ar: { print: '🖨 تحميل / طباعة PDF', other: 'English', back: '← الموقع', title: 'كتالوج المنتجات', exp: 'تصدير', imp: 'استيراد', season: 'الموسم', origin: 'المنشأ', moq: 'أقل كمية', packing: 'التعبئة', incoterms: 'شروط التسليم', code: 'الكود', hs: 'HS Code', items: 'منتج', from: 'يبدأ من', price: 'السعر' },
+      en: { print: '🖨 Download / Print PDF', other: 'العربية', back: 'Website →', title: 'Product Catalog', exp: 'Export', imp: 'Import', season: 'Season', origin: 'Origin', moq: 'Min. order', packing: 'Packing', incoterms: 'Delivery terms', code: 'Code', hs: 'HS Code', items: 'items', from: 'From', price: 'Price' }
     }[LANG];
     document.documentElement.lang = LANG; document.documentElement.dir = LANG === 'en' ? 'ltr' : 'rtl';
     document.getElementById('pr').textContent = U.print;
@@ -77,14 +77,16 @@
       const st = d.settings || {}, c = st.colors || {}, root = document.documentElement.style;
       if (c.primary) root.setProperty('--primary', c.primary); if (c.accent) root.setProperty('--accent', c.accent); if (c.dark) root.setProperty('--dark', c.dark);
       const name = t(st.name), sub = t(st.subtitle);
+      if (t(st.catalogTitle)) U.title = t(st.catalogTitle);
       document.title = `${U.title} — ${name}`;
+      const price = p => st.catalogShowPrice && p.showPrice && p.price ? `${p.priceFrom ? U.from + ' ' : ''}${p.price} ${p.currency || 'USD'}${t(p.priceUnit) ? ' / ' + t(p.priceUnit) : ''}` : '';
       const secs = (d.sections || []).filter(s => s.type === 'products' && s.visible !== false);
       const items = secs.flatMap(s => (s.items || []).filter(p => !p.hidden));
       const order = [...new Set([...secs.flatMap(s => (s.categories || []).map(x => t(x.name))), ...items.map(p => t(p.category))])].filter(Boolean);
       if (items.some(p => !t(p.category))) order.push('');
       const contacts = [...(st.phones || []).map(p => `<span>☎ ${esc(p.number)}</span>`), st.whatsapp ? `<span>WhatsApp +${esc(st.whatsapp)}</span>` : '', st.email ? `<span>✉ ${esc(st.email)}</span>` : '', st.domain ? `<span>🌐 ${esc(st.domain)}</span>` : ''].join('');
       const spec = p => {
-        const rows = [[U.season, t(p.season)], [U.origin, t(p.origin)], ...(p.specs || []).map(s => [t(s.label), t(s.value)]), [U.moq, t(p.moq)], [U.packing, t(p.packing)], [U.incoterms, p.incoterms], [U.code, p.code], [U.hs, p.hs]].filter(r => r[0] && r[1]);
+        const rows = [[U.price, price(p)], [U.season, t(p.season)], [U.origin, t(p.origin)], ...(p.specs || []).map(s => [t(s.label), t(s.value)]), [U.moq, t(p.moq)], [U.packing, t(p.packing)], [U.incoterms, p.incoterms], [U.code, p.code], [U.hs, p.hs]].filter(r => r[0] && r[1]);
         return rows.length ? `<ul class="sp">${rows.map(r => `<li><b>${esc(r[0])}</b><span>${esc(r[1])}</span></li>`).join('')}</ul>` : '';
       };
       const card = p => `<div class="card">${p.image ? `<div class="im"><img src="${esc(p.image)}" alt="${T(p.name)}"></div>` : ''}<div class="bd"><h3>${T(p.name)}</h3><span class="badge${p.trade === 'import' ? ' imp' : ''}">${p.trade === 'import' ? U.imp : p.trade === 'both' ? U.exp + ' / ' + U.imp : U.exp}</span><p>${T(p.description)}</p>${spec(p)}</div></div>`;

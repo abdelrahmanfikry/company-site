@@ -36,6 +36,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
   const S = () => DATA.settings;
   let QUOTE = []; try { QUOTE = JSON.parse(localStorage.getItem('quote') || '[]') || []; } catch (e) { QUOTE = []; }
   const saveQ = () => { try { localStorage.setItem('quote', JSON.stringify(QUOTE)); } catch (e) {} };
+  const catHref = () => { const st = S(), m = st.catalogMode || (st.catalog ? 'file' : 'auto'); if (m === 'off') return ''; if (m === 'file') return st.catalog ? P(st.catalog) : ''; return 'catalog.html' + (LANG === 'en' ? '?lang=en' : ''); };
   const avB = p => p.availability ? `<span class="av av-${esc(p.availability)}">${esc((u('av') || {})[p.availability] || '')}</span>` : '';
   const priceTxt = p => (p.showPrice && p.price !== '' && p.price != null) ? `${p.priceFrom ? u('from') + ' ' : ''}<b dir="ltr">${esc(p.price)} ${esc(p.currency || 'USD')}</b>${t(p.priceUnit) ? ' / ' + T(p.priceUnit) : ''}` : '';
   const W3F_KEY = '5f041c04-d9b2-42e9-aaa6-1bee8221e783';
@@ -93,7 +94,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
       const hasImp = vis.some(p => trd(p) !== 'export'), hasExp = vis.some(p => trd(p) !== 'import');
       const tabs = hasImp && hasExp;
       return `<section class="sec products" id="${esc(s.id)}"><div class="container">${head(s)}
-        <div class="center reveal" style="margin:-10px 0 26px"><a class="btn btn-ghost-dark" href="${S().catalog ? esc(P(S().catalog)) : 'catalog.html' + (LANG === 'en' ? '?lang=en' : '')}" target="_blank" rel="noopener">${svg('download', 18)} ${u('catalog')}</a></div>
+        ${catHref() && S().catalogInProducts !== false ? `<div class="center reveal" style="margin:-10px 0 26px"><a class="btn btn-ghost-dark" href="${esc(catHref())}" target="_blank" rel="noopener">${svg('download', 18)} ${T(S().catalogLabel) || u('catalog')}</a></div>` : ''}
         ${tabs ? `<div class="trade-tabs reveal"><button class="on" data-trade="export">${u('exp')}</button><button data-trade="import">${u('imp')}</button></div>` : ''}
         ${cats.length > 1 ? `<div class="filters reveal"><button class="on" data-cat="*">${u('all')}</button>${cats.map(c => `<button data-cat="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}
         <div class="prod-grid">${(s.items || []).map((p, i) => p.hidden ? '' : `
@@ -232,7 +233,7 @@ if (window.top !== window.self) { try { window.top.location.replace(window.locat
     $('#app').innerHTML = `
       <div class="topbar"><div class="container topbar-in">
         <div class="tb-info">${firstPhone ? `<a href="tel:${esc(String(firstPhone.number).replace(/[^\d+]/g, ''))}">${svg('phone', 14)} <span dir="ltr">${esc(firstPhone.number)}</span></a>` : ''}${st.email ? `<a href="mailto:${esc(st.email)}">${svg('mail', 14)} ${esc(st.email)}</a>` : ''}</div>
-        <div class="tb-social"><a class="tb-cat" href="${st.catalog ? esc(P(st.catalog)) : 'catalog.html' + (LANG === 'en' ? '?lang=en' : '')}" target="_blank" rel="noopener">${svg('download', 14)} ${u('catalog')}</a>${socials}</div>
+        <div class="tb-social">${catHref() && st.catalogInTop !== false ? `<a class="tb-cat" href="${esc(catHref())}" target="_blank" rel="noopener">${svg('download', 14)} ${T(st.catalogLabel) || u('catalog')}</a>` : ''}${socials}</div>
       </div></div>
       <header class="nav" id="nav"><div class="container nav-in">${brand}
         <nav class="menu" id="menu">${nav}</nav>
