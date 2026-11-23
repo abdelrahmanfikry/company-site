@@ -2229,7 +2229,7 @@
       "id": "TEST",
       "type": "hero",
       "visible": true,
-      "showInNav": false,
+      "showInNav": true,
       "navLabel": {
         "ar": "TEST",
         "en": "TEST"
