@@ -2224,6 +2224,19 @@
       },
       "showMap": true,
       "formTo": "email"
+    },
+    {
+      "id": "TEST",
+      "type": "hero",
+      "visible": true,
+      "showInNav": false,
+      "navLabel": {
+        "ar": "TEST",
+        "en": "TEST"
+      },
+      "slides": [],
+      "buttons": [],
+      "autoplay": 0
     }
   ]
 }
