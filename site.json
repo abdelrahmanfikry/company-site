@@ -479,7 +479,7 @@
           }
         },
         {
-          "image": "",
+          "image": "https://images.unsplash.com/photo-1558408525-1092038389ae?w=1600&h=1200&fit=crop&crop=entropy&q=82&fm=jpg",
           "name": {
             "ar": "بامية مجمدة IQF",
             "en": "IQF Frozen Okra"
@@ -494,7 +494,6 @@
             "en": "Fresh Egyptian okra frozen with IQF technology. Carefully selected uniform size and dark green color. Retains its firm texture after cooking. Highly demanded in Arab and African markets."
           },
           "gallery": [],
-          "hidden": true,
           "origin": {
             "ar": "مصر",
             "en": "Egypt"
