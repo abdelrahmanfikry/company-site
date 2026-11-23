@@ -261,9 +261,10 @@ window.SETTINGS_FIELDS = [
     { key: 'logo', type: 'image', label: 'اللوجو (لو فاضي يظهر الاسم)' },
     { key: 'favicon', type: 'image', label: 'أيقونة المتصفح' },
     { key: 'defaultLang', type: 'select', label: 'اللغة الافتراضية', options: [['ar', 'عربي'], ['en', 'English']] },
+    { key: 'seoTitle', type: 'i18n', label: 'عنوان الموقع في جوجل وتاب المتصفح (لو فاضي: الاسم | السطر اللي تحته)' },
     { key: 'seoDescription', type: 'i18nArea', label: 'وصف الموقع لجوجل' },
     { key: 'footerText', type: 'i18n', label: 'جملة الفوتر' },
-    { key: 'catalog', type: 'file', label: 'الكتالوج PDF (يظهر زر «تحميل الكتالوج» — اتركه فاضي لإخفائه)' },
+    { key: 'catalog', type: 'file', label: 'الكتالوج PDF (اختياري) — لو فاضي، زرار «تحميل الكتالوج» بيفتح كتالوج تلقائي من المنتجات' },
     { key: 'gaId', type: 'text', label: 'Google Analytics — رقم القياس (G-XXXXXXX)' },
     { key: 'formKey', type: 'text', label: 'مفتاح Web3Forms لإرسال الفورم على الإيميل (Access Key)' }
   ]},

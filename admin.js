@@ -1,3 +1,5 @@
+/* منع عرض الموقع داخل موقع تاني */
+if (window.top !== window.self) { try { window.top.location.replace(window.location.href); } catch (e) { document.documentElement.style.display = 'none'; } }
 (function () {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -115,8 +117,8 @@
   }
 
   async function setClientPassword() {
-    const p1 = prompt('اكتب كلمة السر الجديدة للعميل (8 حروف على الأقل):'); if (!p1) return;
-    if (p1.length < 8) return toast('كلمة السر قصيرة — 8 حروف على الأقل', true);
+    const p1 = prompt('اكتب كلمة السر الجديدة للعميل (12 حرف على الأقل — حروف وأرقام):'); if (!p1) return;
+    if (p1.length < 12) return toast('كلمة السر قصيرة — 12 حرف على الأقل', true);
     const p2 = prompt('اكتبها تاني للتأكيد:'); if (p1 !== p2) return toast('كلمتا السر غير متطابقتين', true);
     try {
       const k = await encryptConn(GH, p1);

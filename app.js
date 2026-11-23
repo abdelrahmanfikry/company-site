@@ -1,3 +1,5 @@
+/* منع عرض الموقع داخل موقع تاني */
+if (window.top !== window.self) { try { window.top.location.replace(window.location.href); } catch (e) { document.documentElement.style.display = 'none'; } }
 (function () {
   'use strict';
   const UI = {
@@ -61,7 +63,7 @@
           <div class="slide-bg" style="background-image:url('${esc(P(sl.image))}')"></div>
           <div class="container slide-content">
             ${sl.kicker ? `<span class="kicker light">${T(sl.kicker)}</span>` : ''}
-            <h1>${T(sl.title)}</h1>
+            ${i === 0 ? `<h1>${T(sl.title)}</h1>` : `<h2 class="h1">${T(sl.title)}</h2>`}
             <p>${T(sl.text)}</p>
             <div class="btns">${(s.buttons || []).map(b => `<a class="btn ${b.style === 'ghost' ? 'btn-ghost' : 'btn-primary'}" href="${esc(resolveLink(b.link))}"${ext(resolveLink(b.link))}>${T(b.label)}</a>`).join('')}</div>
           </div>
@@ -91,7 +93,7 @@
       const hasImp = vis.some(p => trd(p) !== 'export'), hasExp = vis.some(p => trd(p) !== 'import');
       const tabs = hasImp && hasExp;
       return `<section class="sec products" id="${esc(s.id)}"><div class="container">${head(s)}
-        ${S().catalog ? `<div class="center reveal" style="margin:-10px 0 26px"><a class="btn btn-ghost-dark" href="${esc(P(S().catalog))}" target="_blank" rel="noopener" download>${svg('download', 18)} ${u('catalog')}</a></div>` : ''}
+        <div class="center reveal" style="margin:-10px 0 26px"><a class="btn btn-ghost-dark" href="${S().catalog ? esc(P(S().catalog)) : 'catalog.html' + (LANG === 'en' ? '?lang=en' : '')}" target="_blank" rel="noopener">${svg('download', 18)} ${u('catalog')}</a></div>
         ${tabs ? `<div class="trade-tabs reveal"><button class="on" data-trade="export">${u('exp')}</button><button data-trade="import">${u('imp')}</button></div>` : ''}
         ${cats.length > 1 ? `<div class="filters reveal"><button class="on" data-cat="*">${u('all')}</button>${cats.map(c => `<button data-cat="${esc(c)}">${esc(c)}</button>`).join('')}</div>` : ''}
         <div class="prod-grid">${(s.items || []).map((p, i) => p.hidden ? '' : `
@@ -192,7 +194,7 @@
           ${t(st.address) ? `<div class="c-row">${svg('pin')}<div><small>${u('address')}</small><b>${T(st.address)}</b></div></div>` : ''}
           ${t(st.workHours) ? `<div class="c-row">${svg('clock')}<div><small>${u('hours')}</small><b>${T(st.workHours)}</b></div></div>` : ''}
         </div>
-        <form class="contact-form reveal" data-to="${esc(s.formTo || 'whatsapp')}">
+        <form class="contact-form reveal" data-to="${esc(s.formTo || 'whatsapp')}"><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="row2"><label><span>${u('name')}</span><input name="name" required></label><label><span>${u('company')}</span><input name="company"></label></div>
           <div class="row2"><label><span>${u('phone')}</span><input name="phone" dir="ltr" required></label><label><span>${u('email')}</span><input name="email" type="email" dir="ltr"></label></div>
           <label><span>${u('product')}</span><input name="product"></label>
@@ -216,7 +218,7 @@
     if (c.accent) root.setProperty('--accent', c.accent);
     if (c.dark) root.setProperty('--dark', c.dark);
     if (c.light) root.setProperty('--light', c.light);
-    document.title = `${t(st.name)} | ${t(st.subtitle)}`;
+    document.title = t(st.seoTitle) || `${t(st.name)} | ${t(st.subtitle)}`;
     if (st.gaId && /^G-[A-Z0-9]+$/i.test(st.gaId) && !window.__ga && !/preview/.test(location.search)) { window.__ga = 1; const g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + st.gaId; document.head.append(g); window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; gtag('js', new Date()); gtag('config', st.gaId, { anonymize_ip: true }); }
     const md = $('meta[name="description"]'); if (md) md.content = t(st.seoDescription);
     if (st.favicon) { let l = $('link[rel="icon"]'); l.href = P(st.favicon); }
@@ -230,7 +232,7 @@
     $('#app').innerHTML = `
       <div class="topbar"><div class="container topbar-in">
         <div class="tb-info">${firstPhone ? `<a href="tel:${esc(String(firstPhone.number).replace(/[^\d+]/g, ''))}">${svg('phone', 14)} <span dir="ltr">${esc(firstPhone.number)}</span></a>` : ''}${st.email ? `<a href="mailto:${esc(st.email)}">${svg('mail', 14)} ${esc(st.email)}</a>` : ''}</div>
-        <div class="tb-social">${st.catalog ? `<a class="tb-cat" href="${esc(P(st.catalog))}" target="_blank" rel="noopener" download>${svg('download', 14)} ${u('catalog')}</a>` : ''}${socials}</div>
+        <div class="tb-social"><a class="tb-cat" href="${st.catalog ? esc(P(st.catalog)) : 'catalog.html' + (LANG === 'en' ? '?lang=en' : '')}" target="_blank" rel="noopener">${svg('download', 14)} ${u('catalog')}</a>${socials}</div>
       </div></div>
       <header class="nav" id="nav"><div class="container nav-in">${brand}
         <nav class="menu" id="menu">${nav}</nav>
@@ -250,7 +252,7 @@
       <div class="qdrawer" id="qd" role="dialog" aria-modal="true"><div class="qd-card">
         <div class="qd-head"><h3>🧾 ${u('myQ')}</h3><button class="pm-x qd-x" type="button" aria-label="${u('close')}">✕</button></div>
         <div class="qd-body"><div class="q-items" id="qItems"></div>
-          <form class="q-form" id="qForm" novalidate>
+          <form class="q-form" id="qForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
             <h4>${u('yourInfo')}</h4>
             <div class="row2"><label><span>${u('name')} *</span><input name="name" required></label><label><span>${u('company')}</span><input name="company"></label></div>
             <div class="row2"><label><span>${u('phone')} *</span><input name="phone" dir="ltr" required></label><label><span>${u('email')}</span><input name="email" type="email" dir="ltr"></label></div>
@@ -401,6 +403,7 @@
       if (!d.name.trim() || !d.phone.trim()) { st.textContent = u('needInfo'); st.className = 'form-status bad'; return null; }
       return d; };
     $('#qForm').onsubmit = async e => { e.preventDefault(); const d = qData(); if (!d) return;
+      if (d.website) { $('#qStatus').textContent = u('qSent'); $('#qStatus').className = 'form-status ok'; return; }
       const st = $('#qStatus'), btn = $('button[type=submit]', e.target), old = btn.innerHTML; btn.disabled = true; btn.textContent = u('sending'); st.className = 'form-status';
       const products = QUOTE.map((q, n) => { const p = prodOf(q); return `${n + 1}. ${t(p.name)} — ${q.qty || '?'} ${units[+q.unit] || ''}`; }).join('\n');
       try {
@@ -415,6 +418,7 @@
     $$('.contact-form').forEach(f => f.onsubmit = async e => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(f));
+      if (d.website) { const st0 = $('.form-status', f); if (st0) { st0.textContent = u('sent'); st0.className = 'form-status ok'; } f.reset(); return; }
       const lines = [`${u('hello')} ${d.name}`, d.company && `${u('company')}: ${d.company}`, `${u('phone')}: ${d.phone}`, d.email && `${u('email')}: ${d.email}`, d.product && `${u('product')}: ${d.product}`, d.message].filter(Boolean).join('\n');
       const to = f.dataset.to;
       if ((to === 'emailform' || to === 'email') && S().email) {

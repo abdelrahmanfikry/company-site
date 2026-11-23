@@ -42,16 +42,16 @@
     },
     "mapEmbed": "https://www.google.com/maps?q=Cairo%2C%20Egypt&output=embed",
     "social": {
-      "facebook": "#",
-      "instagram": "#",
-      "linkedin": "#",
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
       "x": "",
       "youtube": "",
       "tiktok": ""
     },
     "seoDescription": {
-      "ar": "كريستلاين للاستيراد والتصدير — شريكك الموثوق في التجارة الدولية: استيراد وتصدير، توريد عالمي، لوجستيات وسلاسل إمداد.",
-      "en": "Crestline for Import & Export — your trusted partner in global trade: import & export, global sourcing, logistics and supply chain."
+      "ar": "كريست لاين للاستيراد والتصدير — مُصدّر مصري للخضروات والفواكه الطازجة (برتقال، مانجو، رمان، عنب، بصل، ثوم، بطاطس، طماطم) والمجمدات بتقنية IQF (فراولة، بسلة، مانجو، فلفل)، ومستورد للمبيدات الزراعية. شحن بمواصفات التصدير لأوروبا والخليج وأفريقيا.",
+      "en": "Crestline Import & Export — Egyptian exporter of fresh fruits and vegetables (oranges, mango, pomegranate, grapes, onions, garlic, potatoes, tomatoes) and IQF frozen produce (strawberries, peas, mango, peppers), and importer of crop-protection products. Export-grade shipping to Europe, the Gulf and Africa."
     },
     "footerText": {
       "ar": "نربط الأسواق… ونصنع الفرص. معًا لغدٍ أكبر.",
@@ -82,7 +82,11 @@
     ],
     "domain": "crestline-impex.com",
     "catalog": "",
-    "gaId": ""
+    "gaId": "",
+    "seoTitle": {
+      "ar": "كريست لاين | تصدير الخضروات والفواكه المصرية والمجمدات IQF واستيراد المبيدات",
+      "en": "Crestline | Egyptian Fresh Produce & IQF Frozen Exporter — Pesticides Importer"
+    }
   },
   "sections": [
     {
@@ -420,7 +424,7 @@
       "showQuoteButton": true,
       "items": [
         {
-          "image": "images/products/strawberry-iqf.jpg",
+          "image": "images/catalog/strawberry-iqf.jpg",
           "name": {
             "ar": "فراولة مجمدة IQF",
             "en": "IQF Frozen Strawberries"
@@ -436,7 +440,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/strawberry-iqf-2.jpg"
+              "src": "images/catalog/strawberry-iqf-2.jpg"
             }
           ],
           "origin": {
@@ -445,7 +449,7 @@
           }
         },
         {
-          "image": "images/products/peas-iqf.jpg",
+          "image": "images/catalog/peas-iqf.jpg",
           "name": {
             "ar": "بسلة مجمدة IQF",
             "en": "IQF Frozen Peas"
@@ -488,7 +492,7 @@
           }
         },
         {
-          "image": "images/products/mango-iqf.jpg",
+          "image": "images/catalog/mango-iqf.jpg",
           "name": {
             "ar": "مانجو مجمدة IQF",
             "en": "IQF Frozen Mango"
@@ -504,7 +508,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/mango-iqf-2.jpg"
+              "src": "images/catalog/mango-iqf-2.jpg"
             }
           ],
           "origin": {
@@ -513,7 +517,7 @@
           }
         },
         {
-          "image": "images/products/peppers-iqf.jpg",
+          "image": "images/catalog/peppers-iqf.jpg",
           "name": {
             "ar": "فلفل ألوان مجمد IQF",
             "en": "IQF Frozen Mixed Peppers"
@@ -534,7 +538,7 @@
           }
         },
         {
-          "image": "images/products/onion.jpg",
+          "image": "images/catalog/onion.jpg",
           "name": {
             "ar": "بصل مصري طازج",
             "en": "Fresh Egyptian Onions"
@@ -550,7 +554,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/onion-2.jpg"
+              "src": "images/catalog/onion-2.jpg"
             }
           ],
           "season": {
@@ -563,7 +567,7 @@
           }
         },
         {
-          "image": "images/products/garlic.jpg",
+          "image": "images/catalog/garlic.jpg",
           "name": {
             "ar": "ثوم مصري ممتاز",
             "en": "Premium Egyptian Garlic"
@@ -579,7 +583,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/garlic-2.jpg"
+              "src": "images/catalog/garlic-2.jpg"
             }
           ],
           "season": {
@@ -592,7 +596,7 @@
           }
         },
         {
-          "image": "images/products/potato.jpg",
+          "image": "images/catalog/potato.jpg",
           "name": {
             "ar": "بطاطس مصرية",
             "en": "Egyptian Potatoes"
@@ -608,7 +612,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/potato-2.jpg"
+              "src": "images/catalog/potato-2.jpg"
             }
           ],
           "season": {
@@ -621,7 +625,7 @@
           }
         },
         {
-          "image": "images/products/tomato.jpg",
+          "image": "images/catalog/tomato.jpg",
           "name": {
             "ar": "طماطم مصرية طازجة",
             "en": "Fresh Egyptian Tomatoes"
@@ -637,7 +641,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/tomato-2.jpg"
+              "src": "images/catalog/tomato-2.jpg"
             }
           ],
           "season": {
@@ -650,7 +654,7 @@
           }
         },
         {
-          "image": "images/products/bellpepper.jpg",
+          "image": "images/catalog/bellpepper.jpg",
           "name": {
             "ar": "فلفل ألوان مصري",
             "en": "Egyptian Bell Peppers"
@@ -666,7 +670,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/bellpepper-2.jpg"
+              "src": "images/catalog/bellpepper-2.jpg"
             }
           ],
           "season": {
@@ -679,7 +683,7 @@
           }
         },
         {
-          "image": "images/products/cucumber.jpg",
+          "image": "images/catalog/cucumber.jpg",
           "name": {
             "ar": "خيار مصري طازج",
             "en": "Fresh Egyptian Cucumbers"
@@ -704,7 +708,7 @@
           }
         },
         {
-          "image": "images/products/orange.jpg",
+          "image": "images/catalog/orange.jpg",
           "name": {
             "ar": "برتقال مصري طازج",
             "en": "Fresh Egyptian Oranges"
@@ -720,10 +724,10 @@
           },
           "gallery": [
             {
-              "src": "images/products/orange-2.jpg"
+              "src": "images/catalog/orange-2.jpg"
             },
             {
-              "src": "images/products/orange-3.jpg"
+              "src": "images/catalog/orange-3.jpg"
             }
           ],
           "season": {
@@ -736,7 +740,7 @@
           }
         },
         {
-          "image": "images/products/pomegranate.jpg",
+          "image": "images/catalog/pomegranate.jpg",
           "name": {
             "ar": "رمان مصري طازج",
             "en": "Fresh Egyptian Pomegranate"
@@ -752,10 +756,10 @@
           },
           "gallery": [
             {
-              "src": "images/products/pomegranate-2.jpg"
+              "src": "images/catalog/pomegranate-2.jpg"
             },
             {
-              "src": "images/products/pomegranate-3.jpg"
+              "src": "images/catalog/pomegranate-3.jpg"
             }
           ],
           "origin": {
@@ -764,7 +768,7 @@
           }
         },
         {
-          "image": "images/products/grapes.jpg",
+          "image": "images/catalog/grapes.jpg",
           "name": {
             "ar": "عنب أحمر مصري",
             "en": "Egyptian Red Grapes"
@@ -780,7 +784,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/grapes-2.jpg"
+              "src": "images/catalog/grapes-2.jpg"
             }
           ],
           "season": {
@@ -793,7 +797,7 @@
           }
         },
         {
-          "image": "images/products/mango.jpg",
+          "image": "images/catalog/mango.jpg",
           "name": {
             "ar": "مانجو مصرية طازجة",
             "en": "Fresh Egyptian Mango"
@@ -809,10 +813,10 @@
           },
           "gallery": [
             {
-              "src": "images/products/mango-2.jpg"
+              "src": "images/catalog/mango-2.jpg"
             },
             {
-              "src": "images/products/mango-packing.jpg"
+              "src": "images/catalog/mango-packing.jpg"
             }
           ],
           "season": {
@@ -825,7 +829,7 @@
           }
         },
         {
-          "image": "images/products/quattro.jpg",
+          "image": "images/catalog/quattro.jpg",
           "name": {
             "ar": "كواترو أكت 2.5% SC",
             "en": "Quattro Act 2.5% SC"
@@ -859,7 +863,7 @@
           ]
         },
         {
-          "image": "images/products/forcust.jpg",
+          "image": "images/catalog/forcust.jpg",
           "name": {
             "ar": "فوركست بي 60% WP",
             "en": "Forcust P 60% WP"
@@ -889,7 +893,7 @@
           ]
         },
         {
-          "image": "images/products/hioranol.jpg",
+          "image": "images/catalog/hioranol.jpg",
           "name": {
             "ar": "هيورانول 30% SC",
             "en": "Hioranol 30% SC"
@@ -923,7 +927,7 @@
           ]
         },
         {
-          "image": "images/products/penny.jpg",
+          "image": "images/catalog/penny.jpg",
           "name": {
             "ar": "بيني 9% SC",
             "en": "Penny 9% SC"
@@ -940,7 +944,7 @@
           },
           "gallery": [
             {
-              "src": "images/products/penny-2.jpg"
+              "src": "images/catalog/penny-2.jpg"
             }
           ],
           "longDescription": {
@@ -961,7 +965,7 @@
           ]
         },
         {
-          "image": "images/products/mospilan.jpg",
+          "image": "images/catalog/mospilan.jpg",
           "name": {
             "ar": "موسبيلان 20% SP",
             "en": "Mospilan 20% SP"
@@ -995,7 +999,7 @@
           ]
         },
         {
-          "image": "images/products/dolfx.jpg",
+          "image": "images/catalog/dolfx.jpg",
           "name": {
             "ar": "دولف-إكس 5% EC",
             "en": "Dolf-X 5% EC"
@@ -1029,7 +1033,7 @@
           ]
         },
         {
-          "image": "images/products/floki.jpg",
+          "image": "images/catalog/floki.jpg",
           "name": {
             "ar": "فلوكي 50% WG",
             "en": "Floki 50% WG"
@@ -1059,7 +1063,7 @@
           ]
         },
         {
-          "image": "images/products/artwis.jpg",
+          "image": "images/catalog/artwis.jpg",
           "name": {
             "ar": "آرتويس 24% SC",
             "en": "Artwis 24% SC"
@@ -1089,7 +1093,7 @@
           ]
         },
         {
-          "image": "images/products/rivedale.jpg",
+          "image": "images/catalog/rivedale.jpg",
           "name": {
             "ar": "رايفديل 20% SC",
             "en": "Rivedale 20% SC"
@@ -1119,7 +1123,7 @@
           ]
         },
         {
-          "image": "images/products/tarachlor.jpg",
+          "image": "images/catalog/tarachlor.jpg",
           "name": {
             "ar": "تاراكلور 36% SC",
             "en": "Tarachlor 36% SC"
@@ -1149,7 +1153,7 @@
           ]
         },
         {
-          "image": "images/products/abaclean.jpg",
+          "image": "images/catalog/abaclean.jpg",
           "name": {
             "ar": "أباكلين 10% SC",
             "en": "Abaclean 10% SC"
@@ -1179,7 +1183,7 @@
           ]
         },
         {
-          "image": "images/products/kemclam.jpg",
+          "image": "images/catalog/kemclam.jpg",
           "name": {
             "ar": "كيمكلام 50% WP",
             "en": "Kemclam 50% WP"
@@ -1207,396 +1211,6 @@
               }
             }
           ]
-        },
-        {
-          "name": {
-            "ar": "منتجات غذائية وزراعية",
-            "en": "Food & Agricultural"
-          },
-          "category": {
-            "ar": "غذائي",
-            "en": "Food"
-          },
-          "image": "cat-food.svg",
-          "description": {
-            "ar": "خضروات وفواكه، بقوليات، توابل، ومنتجات معلّبة.",
-            "en": "Produce, pulses, spices and packaged foods."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "showPrice": true,
-          "price": "20",
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "مواد بناء",
-            "en": "Building Materials"
-          },
-          "category": {
-            "ar": "صناعي",
-            "en": "Industrial"
-          },
-          "image": "cat-building.svg",
-          "description": {
-            "ar": "رخام وجرانيت، سيراميك، حديد، وأدوات صحية.",
-            "en": "Marble & granite, ceramics, steel and sanitary ware."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "منسوجات وملابس",
-            "en": "Textiles & Clothing"
-          },
-          "category": {
-            "ar": "استهلاكي",
-            "en": "Consumer"
-          },
-          "image": "cat-textile.svg",
-          "description": {
-            "ar": "قطن، مفروشات، مناشف، وملابس جاهزة.",
-            "en": "Cotton, home linen, towels and ready-made garments."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "أثاث",
-            "en": "Furniture"
-          },
-          "category": {
-            "ar": "استهلاكي",
-            "en": "Consumer"
-          },
-          "image": "cat-furniture.svg",
-          "description": {
-            "ar": "أثاث منزلي ومكتبي وفندقي.",
-            "en": "Home, office and hotel furniture."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "معدات صناعية",
-            "en": "Industrial Equipment"
-          },
-          "category": {
-            "ar": "صناعي",
-            "en": "Industrial"
-          },
-          "image": "cat-industrial.svg",
-          "description": {
-            "ar": "ماكينات، قطع غيار، ومعدات إنتاج.",
-            "en": "Machinery, spare parts and production equipment."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "كيماويات وبلاستيك",
-            "en": "Chemicals & Plastics"
-          },
-          "category": {
-            "ar": "صناعي",
-            "en": "Industrial"
-          },
-          "image": "cat-chemical.svg",
-          "description": {
-            "ar": "خامات بلاستيك، أسمدة، ومواد تنظيف.",
-            "en": "Plastic raw materials, fertilizers and detergents."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "إلكترونيات",
-            "en": "Electronics"
-          },
-          "category": {
-            "ar": "استهلاكي",
-            "en": "Consumer"
-          },
-          "image": "cat-electronics.svg",
-          "description": {
-            "ar": "أجهزة منزلية، إضاءة، ومستلزمات كهربائية.",
-            "en": "Home appliances, lighting and electrical supplies."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "name": {
-            "ar": "سلع استهلاكية",
-            "en": "Consumer Goods"
-          },
-          "category": {
-            "ar": "استهلاكي",
-            "en": "Consumer"
-          },
-          "image": "cat-consumer.svg",
-          "description": {
-            "ar": "أدوات منزلية، تغليف، ومستلزمات تجزئة.",
-            "en": "Housewares, packaging and retail supplies."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "availability": "available",
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "hidden": true
-        },
-        {
-          "image": "cat-chemical.svg",
-          "name": {
-            "ar": "مبيدات وأسمدة زراعية",
-            "en": "Pesticides & Fertilizers"
-          },
-          "availability": "available",
-          "category": {
-            "ar": "مبيدات وأسمدة",
-            "en": "Pesticides & Fertilizers"
-          },
-          "description": {
-            "ar": "أسمدة عضوية وكيماوية، ومبيدات زراعية، ومستلزمات تغذية النبات.",
-            "en": "Organic and chemical fertilizers, crop protection products, and plant nutrition supplies."
-          },
-          "season": {
-            "ar": "",
-            "en": ""
-          },
-          "origin": {
-            "ar": "",
-            "en": ""
-          },
-          "priceUnit": {
-            "ar": "",
-            "en": ""
-          },
-          "gallery": [],
-          "longDescription": {
-            "ar": "",
-            "en": ""
-          },
-          "moq": {
-            "ar": "",
-            "en": ""
-          },
-          "packing": {
-            "ar": "",
-            "en": ""
-          },
-          "specs": [],
-          "trade": "import",
-          "hidden": true
         }
       ],
       "categories": [
@@ -1623,30 +1237,6 @@
             "ar": "مبيدات زراعية",
             "en": "Pesticides"
           }
-        },
-        {
-          "name": {
-            "ar": "غذائي",
-            "en": "Food"
-          }
-        },
-        {
-          "name": {
-            "ar": "صناعي",
-            "en": "Industrial"
-          }
-        },
-        {
-          "name": {
-            "ar": "استهلاكي",
-            "en": "Consumer"
-          }
-        },
-        {
-          "name": {
-            "ar": "test",
-            "en": "test"
-          }
         }
       ]
     },
@@ -1671,7 +1261,7 @@
         "ar": "نحصد الخضروات والفواكه في قمة نضجها، ثم تُغسل وتُفرز وتُقطّع حسب الطلب.\n\nبعد ذلك تُجمَّد كل قطعة على حدة بسرعة عالية بتقنية IQF (التجميد السريع الفردي)، فتبقى منفصلة وتحتفظ بلونها وطعمها وقيمتها الغذائية.\n\nوأخيرًا تُعبّأ وتُخزّن وتُشحن عبر سلسلة تبريد متكاملة حتى تصل إلى العميل.",
         "en": "Fruits and vegetables are harvested at peak ripeness, then washed, sorted, and cut to order.\n\nEach piece is then frozen individually at high speed using IQF (Individual Quick Freezing), so it stays separate and keeps its color, flavor, and nutritional value.\n\nFinally, products are packed, stored, and shipped through a complete cold chain all the way to the client."
       },
-      "image": "images/products/iqf-range.jpg",
+      "image": "images/catalog/iqf-range.jpg",
       "imageSide": "end",
       "dark": false
     },
@@ -1877,28 +1467,28 @@
       },
       "images": [
         {
-          "src": "images/products/mango-packing.jpg",
+          "src": "images/catalog/mango-packing.jpg",
           "caption": {
             "ar": "تعبئة المانجو للتصدير",
             "en": "Mango packing for export"
           }
         },
         {
-          "src": "images/products/veg-mix.jpg",
+          "src": "images/catalog/veg-mix.jpg",
           "caption": {
             "ar": "خضروات طازجة",
             "en": "Fresh vegetables"
           }
         },
         {
-          "src": "images/products/fruit-mix.jpg",
+          "src": "images/catalog/fruit-mix.jpg",
           "caption": {
             "ar": "فواكه طازجة",
             "en": "Fresh fruits"
           }
         },
         {
-          "src": "images/products/peppers-iqf.jpg",
+          "src": "images/catalog/peppers-iqf.jpg",
           "caption": {
             "ar": "خط التجميد IQF",
             "en": "IQF freezing line"
