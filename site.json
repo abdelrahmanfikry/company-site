@@ -86,7 +86,16 @@
     "seoTitle": {
       "ar": "كريست لاين | تصدير الخضروات والفواكه المصرية والمجمدات IQF واستيراد المبيدات",
       "en": "Crestline | Egyptian Fresh Produce & IQF Frozen Exporter — Pesticides Importer"
-    }
+    },
+    "catalogLabel": {
+      "ar": "",
+      "en": ""
+    },
+    "catalogTitle": {
+      "ar": "",
+      "en": ""
+    },
+    "catalogMode": "off"
   },
   "sections": [
     {
