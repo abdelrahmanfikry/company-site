@@ -448,4 +448,4 @@ html[dir=ltr] .qd-card{transform:translateX(-100%)}
 
 /* v6 seo/security */
 .hero h2.h1{font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:1.15;font-weight:800;margin:14px 0 18px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
-.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none}
+.hp{position:absolute!important;top:0!important;inset-inline-start:0!important;width:1px!important;height:1px!important;padding:0!important;border:0!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;opacity:0!important;pointer-events:none}
