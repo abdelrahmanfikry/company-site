@@ -167,6 +167,51 @@
             "ar": "",
             "en": ""
           }
+        },
+        {
+          "image": "images/catalog/mango-packing.jpg",
+          "kicker": {
+            "ar": "تصدير مصري",
+            "en": "Egyptian Export"
+          },
+          "title": {
+            "ar": "من مزارع مصر… إلى أسواق العالم",
+            "en": "From Egypt’s Farms… to the World"
+          },
+          "text": {
+            "ar": "فرز وتعبئة بمعايير التصدير، وشحن مبرّد حتى ميناء الوصول.",
+            "en": "Export-grade sorting and packing, with reefer shipping to your port."
+          }
+        },
+        {
+          "image": "images/catalog/veg-mix.jpg",
+          "kicker": {
+            "ar": "خضروات وفواكه طازجة",
+            "en": "Fresh Produce"
+          },
+          "title": {
+            "ar": "خضروات وفواكه مصرية طازجة",
+            "en": "Fresh Egyptian Fruits & Vegetables"
+          },
+          "text": {
+            "ar": "بصل وثوم وبطاطس وطماطم وموالح ومانجو… بمواصفات التصدير وعلى مدار المواسم.",
+            "en": "Onions, garlic, potatoes, tomatoes, citrus and mango — export quality, season after season."
+          }
+        },
+        {
+          "image": "images/catalog/iqf-range.jpg",
+          "kicker": {
+            "ar": "مجمدات IQF",
+            "en": "IQF Frozen"
+          },
+          "title": {
+            "ar": "طعم الحقل… طوال العام",
+            "en": "Field-Fresh Taste, All Year Round"
+          },
+          "text": {
+            "ar": "فراولة وبسلة ومانجو وفلفل مجمدة بتقنية التجميد السريع الفردي.",
+            "en": "Strawberries, peas, mango and peppers, individually quick frozen."
+          }
         }
       ],
       "buttons": [
